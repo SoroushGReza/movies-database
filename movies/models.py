@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 # Movie model
@@ -23,3 +24,28 @@ class Review(models.Model):
         max_length=1000, help_text="Enter your review here."
     )
     date = models.DateField(auto_now_add=True)
+
+
+# Rating Model
+class Rating(models.Model):
+    movie = models.ForeignKey(
+        Movie, on_delete=models.CASCADE, related_name='ratings'
+    )
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='ratings'
+    )
+    rating_value = models.IntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)]
+    )  # Rating values between 1 to 5
+    date = models.DateTimeField(auto_now_add=True)
+
+
+# User list  Model
+class UserList(models.Model):
+    """
+    Represents Users list of movies
+    """
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='lists'
+    )
+    movies = models.ManyToManyField(Movie, related_name='lists')
