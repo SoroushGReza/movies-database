@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-soroushgrez-moviesdatab-qr4neqj2lol.ws-us102.gitpod.io']
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-soroushgrez-moviesdatab-qr4neqj2lol.ws-us102.gitpod.io']
 
 # Application definition
 
