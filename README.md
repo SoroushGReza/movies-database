@@ -1,4 +1,4 @@
-# Movie Database Project  
+# Movie Database Project
 <img src="images/moviebase.gif" alt="Moviebase logo" width="250" height="250">
 
 

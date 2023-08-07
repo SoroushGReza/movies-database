@@ -11,9 +11,10 @@
     <h1>Movie List</h1>
     <ul>
         {% for movie in movies %}
-            <li>
-                <a href="{% url 'movie_detail' movie.pk %}">{{ movie.title }}</a>
-            </li>
+            <h2>{{ movie.title }}</h2>
+            <p>Release date: {{ movie.release_date }}</p>
+            <p>Rating: {{ movie.vote_average }}</p>
+            <p>{{ movie.overview }}</p>
         {% endfor %}
     </ul>
 </body>

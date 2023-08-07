@@ -1,12 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Movie, Genre, Review
 from .forms import MovieForm
+from .tmdb import get_movies_from_tmdb
+from .env import TMDB_API_KEY
 
 
 # Display of all movies
 def movie_list(request):
-    movies = Movie.objects.all()
-    return render(request, 'movies/movie_list.html', {'movies': movies})
+    movies = get_movies_from_tmdb()
+    print(movies)
+    return render(
+        request, 'movies/movie_list.html', {'movies': movies['results']}
+    )
 
 
 # Display of a SINGLE movie detail
