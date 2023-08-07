@@ -49,3 +49,11 @@ class UserList(models.Model):
         User, on_delete=models.CASCADE, related_name='lists'
     )
     movies = models.ManyToManyField(Movie, related_name='lists')
+
+
+# Movie Genre
+class Genre(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
