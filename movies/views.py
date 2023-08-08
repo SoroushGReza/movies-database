@@ -33,7 +33,7 @@ def user_login(request):
             return redirect('movies:movie_list')
         else:
             messages.error(request, 'Incorrect username or  password.')
-    return render(request, 'movies/login.html')
+    return render(request, 'login/login.html')
 
 
 # Display of all movies
