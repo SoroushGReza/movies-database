@@ -20,17 +20,36 @@ To install and run this project, follow these steps:
 - **Add Movie**: Users can add a new movie to the database.
 
 ## User Stories
-The following user stories have been completed:
 
-- As a **user**, I can **view a list of movies**, so that I can **see what movies are available**.
-- As a **user**, I can **view detailed information about a movie**, so that I can **learn more about the movie**.
-- As a **user**, I can **add a new movie to the database**, so that I can **share a movie I like with others**.
+### The following user stories is left Todo / Under Progress:
+
+- As a **User** I can **Register for an account**, so that I can **have a personlized experience and access to features for members**.
+- As a **User** I can **Log in to my account**, so that **I can access my personal settings and features**.
+- As a **User** I can **View and Edit my Profile**, so that **I can manage my personal information**.
+- As a **User** I can **search for movie titles**, so that **I can quickly find the movies I'm looking for**.
+- As a **User** I can **Sort movies by different criteria**, so that **I can view the movies in the order best suited for me**.
+- As a **User** I can **Write reviews for movies**, so that **I can share my thoughts and opinions about the movie**.
+- As a **User** I can **Rate movies**, so that **I can express my level of enjoyment or dissapointment**.
+- As an **Admin** I can **Add, Edit, and Delete movies**, so that **I can manage the movie database**.
+- As an **Admin** I can **Manage User Accounts**, so that **I can ensure the integrity and safety of the users**.
+- As a **Developer** I can **Make a README.md file**, so that **I can gradually add content to it during development**.
+
+
+### The following user stories is done:
+
+- As a **Developer** I can **set up the project environment**, so that **I have a structured workspace to start developing**.
+- As a **Developer** I can **Create basic Models for Movie and Genre**, so that **I can store and manage movie and genre data in database**.
+- As a **Developer** I can **Create basic Views and Templates for movie list and movie detail, so that users can view a list of movies and the details of  movie**.
+- As a **Developer** I can **Implement URL routing, so that users can navigate by using URLs**.
+- As a **Developer** I can *Create a form for adding a new movie, so that movie data can be collected and save to database**.
+- As a **Developer** I can **Create a GIF-logo**, so that **I can use it in my README.md**
+
+
+
 
 ## Future Improvements
 Future improvements for this project include:
 
-- Implementing user registration and login functionality.
-- Allowing users to edit and delete movies.
-- Adding a search feature to find movies.
+
 
 ## Credits
