@@ -1,16 +1,29 @@
+{% extends base.html %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Detail</title>
+    <title>{% block title %} Movie Base {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
-    <h1>{{ movie.title }}</h1>
-    <p>{{ movie.description }}</p>
-    <p>Genre: {{ movie.genre.name }}</p>
-    <p>Rating: {{ movie.rating }}</p>
-    
+    <header>
+        <nav>
+            Logo / Menu / Login / Logout / Register
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+            <h1>{{ movie.title }}</h1>
+            <p>{{ movie.description }}</p>
+            <p>Genre: {{ movie.genre.name }}</p>
+            <p>Rating: {{ movie.rating }}</p>
+        {% endblock %}
+    </main>
+    <footer>
+        Contact / Copyright / Link to github / LinkedIn etc
+    </footer>
 </body>
 </html>
