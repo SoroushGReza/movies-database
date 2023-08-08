@@ -23,7 +23,7 @@ To install and run this project, follow these steps:
 
 ### The following user stories is left Todo / Under Progress:
 
-- As a **User** I can **Register for an account**, so that I can **have a personlized experience and access to features for members**.
+
 - As a **User** I can **Log in to my account**, so that **I can access my personal settings and features**.
 - As a **User** I can **View and Edit my Profile**, so that **I can manage my personal information**.
 - As a **User** I can **search for movie titles**, so that **I can quickly find the movies I'm looking for**.
@@ -43,6 +43,7 @@ To install and run this project, follow these steps:
 - As a **Developer** I can **Implement URL routing, so that users can navigate by using URLs**.
 - As a **Developer** I can *Create a form for adding a new movie, so that movie data can be collected and save to database**.
 - As a **Developer** I can **Create a GIF-logo**, so that **I can use it in my README.md**
+- As a **User** I can **Register for an account**, so that I can **have a personlized experience and access to features for members**.
 
 
 
