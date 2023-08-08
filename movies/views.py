@@ -4,7 +4,7 @@ from .forms import MovieForm
 from .tmdb import get_movies_from_tmdb
 from .env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 
@@ -37,6 +37,12 @@ def user_login(request):
     else:
         form = AuthenticationForm()  # Create empty form
     return render(request, 'login/login.html', {'form': form})
+
+
+# User Logout
+def user_logout(request):
+    logout(request)
+    return redirect('movies:movie_list')
 
 
 # Display of all movies
