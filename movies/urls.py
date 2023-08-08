@@ -2,6 +2,9 @@ from django.urls import path
 from .views import movie_list, movie_detail, movie_create
 from . import views
 
+
+app_name = 'movies'
+
 # defining URL patterns for **MOVIES** app
 urlpatterns = [
     # Path for list of movies
