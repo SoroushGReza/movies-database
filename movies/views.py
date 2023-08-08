@@ -3,7 +3,7 @@ from .models import Movie, Genre, Review
 from .forms import MovieForm
 from .tmdb import get_movies_from_tmdb
 from .env import TMDB_API_KEY
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
@@ -33,7 +33,10 @@ def user_login(request):
             return redirect('movies:movie_list')
         else:
             messages.error(request, 'Incorrect username or  password.')
-    return render(request, 'login/login.html')
+            form = AuthenticationForm(request.POST)
+    else:
+        form = AuthenticationForm()  # Create empty form
+    return render(request, 'login/login.html', {'form': form})
 
 
 # Display of all movies
