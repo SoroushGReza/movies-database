@@ -12,4 +12,6 @@ urlpatterns = [
     path('new/', movie_create, name='movie_create'),
     # Path for Registration
     path('register/', views.register, name='register'),
+    # Path for Login
+    path('login/', views.user_login, name='user_login'),
 ]
