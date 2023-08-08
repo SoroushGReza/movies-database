@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import movie_list, movie_detail, movie_create
+from . import views
 
 # defining URL patterns for **MOVIES** app
 urlpatterns = [
@@ -9,4 +10,6 @@ urlpatterns = [
     path('<int:pk>/', movie_detail, name='movie_detail'),
     # Path for creating a **NEW** movie
     path('new/', movie_create, name='movie_create'),
+    # Path for Registration
+    path('register/', views.register, name='register'),
 ]

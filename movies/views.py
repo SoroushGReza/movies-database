@@ -1,8 +1,23 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Movie, Genre, Review
 from .forms import MovieForm
 from .tmdb import get_movies_from_tmdb
 from .env import TMDB_API_KEY
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+
+
+# Registration for Users
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)  # Login after registration
+            return redirect('movie_list')  # Redirect to movie list after Login
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
 
 
 # Display of all movies
