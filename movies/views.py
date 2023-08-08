@@ -4,7 +4,8 @@ from .forms import MovieForm
 from .tmdb import get_movies_from_tmdb
 from .env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
 # Registration for Users
@@ -18,6 +19,21 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
+
+
+# User Login
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to movielist after login is completed
+            return redirect('movies:movie_list')
+        else:
+            messages.error(request, 'Incorrect username or  password.')
+    return render(request, 'movies/login.html')
 
 
 # Display of all movies
