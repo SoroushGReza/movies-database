@@ -77,7 +77,7 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'image')
+        fields = ('username', 'email')
 
 
 # Display of all movies
