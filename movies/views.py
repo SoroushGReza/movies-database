@@ -4,10 +4,12 @@ from .forms import MovieForm
 from .tmdb import get_movies_from_tmdb
 from .env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 # Registration for Users
@@ -51,13 +53,31 @@ def user_logout(request):
 @login_required
 def user_profile(request):
     if request.method == 'POST':
-        form = UserChangeForm(request.POST, instance=request.user)
-        if form.is_valid():
+        form = CustomUserChangeForm(request.POST, instance=request.user)
+        password_form = PasswordChangeForm(request.user, request.POST)
+
+        if form.is_valid() and password_form.is_valid():
             form.save()
+            user = password_form.save()
+            update_session_auth_hash(request, user)
             return redirect('user_profile')
     else:
-        form = UserChangeForm(instance=request.user)
-    return render(request, 'profile/user_profile.html', {'form': form})
+        form = CustomUserChangeForm(instance=request.user)
+        password_form = PasswordChangeForm(request.user)
+    return render(
+        request,
+        'profile/user_profile.html',
+        {'form': form, 'password_form': password_form}
+    )
+
+
+# User Change Form
+class CustomUserChangeForm(UserChangeForm):
+    password = None  # To not shoe password
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'image')
 
 
 # Display of all movies

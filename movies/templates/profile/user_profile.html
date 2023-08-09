@@ -7,5 +7,12 @@
     <p><strong>Name: </strong>{{ user.username }}</p>
     <p><strong>E-mail: </strong>{{ user.email }}</p>
     <a href="{% url 'movies:user_profile' %}" class="btn btn-primary">Edit Profile</a>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <h3>Change Password</h3>
+        {{ password_form.as_p }}
+        <button type="submit">Update Profile</button>
+    </form>
 </div>
 {% endblock %}
