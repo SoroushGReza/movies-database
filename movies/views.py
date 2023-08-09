@@ -6,6 +6,7 @@ from .env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 # Registration for Users
@@ -43,6 +44,12 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('movies:movie_list')
+
+
+# User Profile
+@login_required
+def user_profile(request):
+    return render(request, 'movies/user_profile.html', {'user': request.user})
 
 
 # Display of all movies
