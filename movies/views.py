@@ -4,6 +4,7 @@ from .forms import MovieForm
 from .tmdb import get_movies_from_tmdb
 from .env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -49,7 +50,14 @@ def user_logout(request):
 # User Profile
 @login_required
 def user_profile(request):
-    return render(request, 'movies/user_profile.html', {'user': request.user})
+    if request.method == 'POST':
+        form = UserChangeForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('user_profile')
+    else:
+        form = UserChangeForm(instance=request.user)
+    return render(request, 'movies/edit_user_profile.html', {'form': form})
 
 
 # Display of all movies
