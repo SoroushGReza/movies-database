@@ -1,3 +1,16 @@
+/*   Centered Elements   */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*   Login Form   */
+#login-form{
+    padding-top: 10%;
+}
+
 
 
 /*   Footer   */

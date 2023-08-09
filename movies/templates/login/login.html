@@ -3,11 +3,17 @@
 
 {% block content %}
 
-<h2>Login</h2>
-<form action="/movies/login/" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
+<div id="login-form" class="centered">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Login</h2>
+            <form action="/movies/login/" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
