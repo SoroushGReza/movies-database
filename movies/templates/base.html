@@ -25,11 +25,19 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {% url 'movies:movie_list' %}">Movies List</a>
+                        </li>
+                        {% if user.is_authenticated %}
                         <li id="login-logout" class="nav-item">
-                            {% if user.is_authenticated %}
-                            <a class="button" href="{% url 'movies:user_logout' %}">Logout</a>
-                            {% else %}
-                            <a href="{% url 'movies:user_login' %}">Login</a>
+                            <a class="nav-link" href="{% url 'movies:user_profile' %}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'movies:user_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'movies:user_login' %}">Login</a>
                             {% endif %}
                         </li>
                     </ul>
