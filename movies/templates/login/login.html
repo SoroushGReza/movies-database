@@ -6,11 +6,11 @@
 <div id="login-form" class="centered">
     <div class="card">
         <div class="card-body">
-            <h2 class="card-title">Login</h2>
-            <form action="/movies/login/" method="post">
+            <h2 class="card-title text-light">Login</h2>
+            <form class="text-light" action="/movies/login/" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary login-button">Login</button>
             </form>
         </div>
     </div>
