@@ -6,6 +6,6 @@
     <h2>User Profile</h2>
     <p><strong>Name: </strong>{{ user.username }}</p>
     <p><strong>E-mail: </strong>{{ user.email }}</p>
-    <a href="{% url 'edit_user_profile' %}" class="btn btn-primary">Edit Profile</a>
+    <a href="{% url 'movies:user_profile' %}" class="btn btn-primary">Edit Profile</a>
 </div>
 {% endblock %}

@@ -57,7 +57,7 @@ def user_profile(request):
             return redirect('user_profile')
     else:
         form = UserChangeForm(instance=request.user)
-    return render(request, 'movies/user_profile.html', {'form': form})
+    return render(request, 'profile/user_profile.html', {'form': form})
 
 
 # Display of all movies
