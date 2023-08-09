@@ -26,3 +26,7 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.btn-primary {
+    color: aqua;
+}
