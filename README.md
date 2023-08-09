@@ -24,7 +24,6 @@ To install and run this project, follow these steps:
 ### The following user stories is left Todo / Under Progress:
 
 
-- As a **User** I can **Log in to my account**, so that **I can access my personal settings and features**.
 - As a **User** I can **View and Edit my Profile**, so that **I can manage my personal information**.
 - As a **User** I can **search for movie titles**, so that **I can quickly find the movies I'm looking for**.
 - As a **User** I can **Sort movies by different criteria**, so that **I can view the movies in the order best suited for me**.
@@ -37,6 +36,7 @@ To install and run this project, follow these steps:
 
 ### The following user stories is done:
 
+- As a **User** I can **Log in to my account**, so that **I can access my personal features**.
 - As a **Developer** I can **set up the project environment**, so that **I have a structured workspace to start developing**.
 - As a **Developer** I can **Create basic Models for Movie and Genre**, so that **I can store and manage movie and genre data in database**.
 - As a **Developer** I can **Create basic Views and Templates for movie list and movie detail, so that users can view a list of movies and the details of  movie**.
