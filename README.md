@@ -19,7 +19,7 @@ To install and run this project, follow these steps:
 - **Movie Detail**: Users can click on a movie to see more detailed information.
 - **Add Movie**: Users can add a new movie to the database.
 
-## User Stories
+## &#x1F4CB; User Stories
 &#x1f7e2; As a **User**, I can **View and Edit my Profile**, so that **I can manage my personal information**.
 ### &#x2699; Tasks:  
 
@@ -69,8 +69,6 @@ To install and run this project, follow these steps:
 ### &#x2699; Tasks: 
 <input type="checkbox"/> - As a User, I can share my favorite movie list, so that I can share it with others. <br>
 <input type="checkbox"/> - Implement functionality to share the movie list via Facebook, copy link, email, etc. <br><br>
-
-
 
 
 ## Future Improvements
