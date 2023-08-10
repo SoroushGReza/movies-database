@@ -20,6 +20,19 @@ To install and run this project, follow these steps:
 - **Add Movie**: Users can add a new movie to the database.
 
 ## &#x1F4CB; User Stories
+
+&#x1f7e2; As a **Developer**, I can **set up the workspace**, so that I can **start writing the code**.
+### &#x2699; Tasks:
+<input type="checkbox" checked="checked" /> - Set up workspace with [Code-Institute-template](https://github.com/Code-Institute-Org/gitpod-full-template). <br>
+<input type="checkbox" checked="checked" /> - Install required packages.<br>
+<input type="checkbox" checked="checked" /> - Add the workspace structure.<br><br>
+
+&#x1f7e2; As a **User**, I can **Register, Login and Logout**, so that I can **access my personal info and manage my account**.
+### &#x2699; Tasks:
+<input type="checkbox" checked="checked" /> - Implement user login functionality. <br>
+<input type="checkbox" checked="checked" /> - Implement user registration functionality.<br>
+<input type="checkbox" checked="checked" /> - Implement user logout functionality.<br><br>
+
 &#x1f7e2; As a **User**, I can **View and Edit my Profile**, so that **I can manage my personal information**.
 ### &#x2699; Tasks:  
 
