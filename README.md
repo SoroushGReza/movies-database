@@ -20,30 +20,55 @@ To install and run this project, follow these steps:
 - **Add Movie**: Users can add a new movie to the database.
 
 ## User Stories
+&#x1f7e2; As a **User**, I can **View and Edit my Profile**, so that **I can manage my personal information**.
+### &#x2699; Tasks:  
 
-### The following user stories is left Todo / Under Progress:
+<input type="checkbox" checked="checked" /> - Create a profile view page. <br>
+<input type="checkbox" checked="checked" /> - Display user's current information on the profile page. <br>
+<input type="checkbox" checked="checked" /> - Implement edit button on the profile page. <br>
+<input type="checkbox" checked="checked" /> - Create a form for editing user profile information. <br>
+<input type="checkbox" checked="checked" /> - Add validation to ensure proper data input. <br>
+<input type="checkbox" checked="checked" /> - Provide feedback to the user after successful editing. <br> <br>
+
+&#x1f7e0; As a **User**, I can **search for movie titles**, so that **I can quickly find the movies I'm looking for**.
+### &#x2699; Tasks:  
+
+<input type="checkbox" checked="checked"/> - Implement search functionality in the movie list. <br>
+<input type="checkbox"/> - Provide auto-suggestions based on the search query. <br>
+<input type="checkbox" checked="checked" /> - Display search results in a user-friendly manner. <br>
+<input type="checkbox"/> - Highlight the searched term in the results.<br>
+<input type="checkbox"/> - Provide an option to clear the search. <br>
+<br>
+
+&#x1f7e0; - As an **Admin**, I can **Add, Edit, and Delete movies**, so that **I can manage the movie database**.
+### &#x2699; Tasks:  
 
 
-- As a **User** I can **View and Edit my Profile**, so that **I can manage my personal information**.
-- As a **User** I can **search for movie titles**, so that **I can quickly find the movies I'm looking for**.
-- As a **User** I can **Sort movies by different criteria**, so that **I can view the movies in the order best suited for me**.
-- As a **User** I can **Write reviews for movies**, so that **I can share my thoughts and opinions about the movie**.
-- As a **User** I can **Rate movies**, so that **I can express my level of enjoyment or dissapointment**.
-- As an **Admin** I can **Add, Edit, and Delete movies**, so that **I can manage the movie database**.
-- As an **Admin** I can **Manage User Accounts**, so that **I can ensure the integrity and safety of the users**.
-- As a **Developer** I can **Make a README.md file**, so that **I can gradually add content to it during development**.
+<input type="checkbox"/> - Create admin views for managing movies.<br>
+<input type="checkbox"/> - Implement add functionality with a form to input movie details.<br>
+<input type="checkbox"/> - Implement edit functionality with a pre-filled form based on the selected movie.<br>
+<input type="checkbox"/> - Implement delete functionality with a confirmation prompt.<br>
+<input type="checkbox"/> - Add validation to ensure proper data input for adding and editing movies.<br>
+<input type="checkbox"/> - Provide feedback to the admin after successful addition, editing, or deletion. <br><br>
+
+&#x1f7e0; - As a **User**, I can **view movie information and trailers**, so that **I can learn more about the movies**.
+### &#x2699; Tasks: 
 
 
-### The following user stories is done:
+<input type="checkbox"/> - Display information about the film and an image of the film's cover. <br>
+<input type="checkbox"/> - Implement a link to click to see a trailer. <br> <br>
 
-- As a **User** I can **Log in to my account**, so that **I can access my personal features**.
-- As a **Developer** I can **set up the project environment**, so that **I have a structured workspace to start developing**.
-- As a **Developer** I can **Create basic Models for Movie and Genre**, so that **I can store and manage movie and genre data in database**.
-- As a **Developer** I can **Create basic Views and Templates for movie list and movie detail, so that users can view a list of movies and the details of  movie**.
-- As a **Developer** I can **Implement URL routing, so that users can navigate by using URLs**.
-- As a **Developer** I can *Create a form for adding a new movie, so that movie data can be collected and save to database**.
-- As a **Developer** I can **Create a GIF-logo**, so that **I can use it in my README.md**
-- As a **User** I can **Register for an account**, so that I can **have a personlized experience and access to features for members**.
+&#x1f7e0; - As a **User**, I can **receive email confirmations**, so that I **can be notified of important account activities**.
+### &#x2699; Tasks: 
+
+<input type="checkbox"/> - Send a welcome email when registering. <br>
+<input type="checkbox"/> - Send confirmation when the password has been changed. <br>
+<input type="checkbox"/> - Send confirmation when the account has been deleted. <br> <br>
+
+&#x1f7e0; - As a **User**, I can **receive email confirmations**, so that I **can be notified of important account activities**.
+### &#x2699; Tasks: 
+<input type="checkbox"/> - As a User, I can share my favorite movie list, so that I can share it with others. <br>
+<input type="checkbox"/> - Implement functionality to share the movie list via Facebook, copy link, email, etc. <br><br>
 
 
 
