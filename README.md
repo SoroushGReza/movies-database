@@ -46,9 +46,9 @@ To install and run this project, follow these steps:
 &#x1f7e0; As a **User**, I can **search for movie titles**, so that **I can quickly find the movies I'm looking for**.
 ### &#x2699; Tasks:  
 
-<input type="checkbox" checked="checked"/> - Implement search functionality in the movie list. <br>
+<input type="checkbox"/> - Implement search functionality in the movie list. <br>
 <input type="checkbox"/> - Provide auto-suggestions based on the search query. <br>
-<input type="checkbox" checked="checked" /> - Display search results in a user-friendly manner. <br>
+<input type="checkbox"/> - Display search results in a user-friendly manner. <br>
 <input type="checkbox"/> - Highlight the searched term in the results.<br>
 <input type="checkbox"/> - Provide an option to clear the search. <br>
 <br>

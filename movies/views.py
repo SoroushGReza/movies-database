@@ -10,6 +10,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+import requests
 
 
 # Registration for Users
@@ -70,6 +71,15 @@ def user_profile(request):
         'profile/user_profile.html',
         {'form': form, 'password_form': password_form}
     )
+
+
+# Searching for movie
+def search_movies(request):
+    query = request.GET.get('query', '')
+    url = f"https://api.themoviedb.org/3/search/movie?api_key=TMDB_API_KEY&query={query}"
+    response = requests.get(url)
+    movies = response.json().get('results', [])
+    return render(request, 'search_results.html', {'movies': movies})
 
 
 # User Change Form
