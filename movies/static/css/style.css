@@ -85,16 +85,39 @@
 .movie img{
     width: 200px;
     height: auto;
+    display: block;
+    margin-right: 20px;
+    display: inline-block;
 }
 
 .movie {
-    display: flex;
     align-items: center;
     margin-bottom: 20px;
+    display: flex;
 }
 
 .movie h3 {
-    margin-right: 20px;
+    margin: 10px 0;
+}
+
+.movie h4 {
+    margin: 10px 0;
+}
+
+.movie-details {
+    text-align: left;
+}
+
+.movie-details h3 {
+    margin: 10px 0;
+}
+
+.movie-details h4 {
+    margin: 10px 0;
+}
+
+#movie-title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 

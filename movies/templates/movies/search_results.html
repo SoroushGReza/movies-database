@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-    <h2>Search Results</h2>
+    <h1>Search Results</h1> <br><br>
     {% for movie in movies %}
+    <div class="row">
+        <h1 id="movie-title"><strong>{{ movie.title }}</strong></h1>
+    </div>
     <div class="movie">
-        <h3>{{ movie.title }}</h3>
         <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }} poster">
-        <p>{{ movie.overview }}</p>
+        <div class="movie-details">
+            <h4><strong>Movie Review</strong></h4>
+            <p>{{ movie.overview }}</p>
+        </div>
     </div>
     {% endfor %}
 </div>
