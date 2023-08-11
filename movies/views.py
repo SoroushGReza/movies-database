@@ -79,7 +79,7 @@ def search_movies(request):
     url = f"https://api.themoviedb.org/3/search/movie?api_key=TMDB_API_KEY&query={query}"
     response = requests.get(url)
     movies = response.json().get('results', [])
-    return render(request, 'search_results.html', {'movies': movies})
+    return render(request, 'movies/search_results.html', {'movies': movies})
 
 
 # User Change Form
