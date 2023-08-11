@@ -29,8 +29,13 @@
 <script>
     // Hide messages after 5 seconds
     setTimeout(function() {
-        document.getElementsById('danger').style.display = 'none';
+        document.getElementById('danger').style.display = 'none';
     }, 5000);
+
+    // Function to manually close the message
+    function closeMessage() {
+        document.getElementById('danger').style.display = 'none';
+    }
 </script>
 
 {% endblock %}
