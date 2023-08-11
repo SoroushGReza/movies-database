@@ -60,7 +60,7 @@ def user_profile(request):
             form.save()
             user = password_form.save()
             update_session_auth_hash(request, user)
-            return redirect('user_profile')
+            return redirect('movies:user_profile')
     else:
         form = CustomUserChangeForm(instance=request.user)
         password_form = PasswordChangeForm(request.user)

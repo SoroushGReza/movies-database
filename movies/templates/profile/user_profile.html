@@ -12,12 +12,11 @@
             {% csrf_token %}
             {{ form.as_p }}
             {% if form.errors %}
-            <div class="errorlist">
-                {{ form.errors }}
-            </div>
             {% endif %}
             <h3>Change Password</h3>
-            {{ password_form.as_p }}
+            <div class="errorlist">
+                {{ password_form.as_p }}
+            </div>
             <button type="submit">Update Profile</button>
         </form>
     </div>
