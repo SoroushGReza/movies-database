@@ -32,3 +32,13 @@
 .content {
     flex: 1;
 }
+
+#edit-profile-form .errorlist {
+    display: none;
+}
+
+#edit-profile-form.show-message .errorlist {
+    display: block;
+}
+
+

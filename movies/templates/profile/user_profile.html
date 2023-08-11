@@ -7,8 +7,8 @@
     <p><strong>Name: </strong>{{ user.username }}</p>
     <p><strong>E-mail: </strong>{{ user.email }}</p>
     <a href="#" class="btn btn-primary" id="edit-profile-button">Edit Profile</a>
-    <div style="display: none;" {% if form.errors or password_form.errors %} class="show-message" {% endif %}>
-        <form id="edit-profile-form" method="post">
+    <div id="edit-profile-form" style="display: none;">
+        <form method="post"{% if form.errors or password_form.errors %}{% endif %}>
             {% csrf_token %}
             {{ form.as_p }}
             <h3>Change Password</h3>

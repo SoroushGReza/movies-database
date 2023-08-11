@@ -1,8 +1,6 @@
-document.getElementById('edit-profile-button').addEventListener('click', function() {
-    var formDiv = this.nextElementSibling;
-    if (formDiv.style.display === 'none') {
-        formDiv.style.display = 'block';
-    } else {
-        formDiv.style.display = 'none';
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('edit-profile-button').addEventListener('click', function() {
+        var form = document.getElementById('edit-profile-form');
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    });
 });
