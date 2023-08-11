@@ -33,12 +33,8 @@
     flex: 1;
 }
 
-#edit-profile-form .errorlist {
-    display: none;
+ul.errorlist {
+    background-color: grey;
+    font-size: 12px;
 }
-
-#edit-profile-form.show-message .errorlist {
-    display: block;
-}
-
 
