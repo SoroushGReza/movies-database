@@ -76,7 +76,7 @@ def user_profile(request):
 # Searching for movie
 def search_movies(request):
     query = request.GET.get('query', '')
-    url = f"https://api.themoviedb.org/3/search/movie?api_key=TMDB_API_KEY&query={query}"
+    url = f"https://api.themoviedb.org/3/search/movie?api_key={TMDB_API_KEY}&query={query}"
     response = requests.get(url)
     movies = response.json().get('results', [])
     return render(request, 'movies/search_results.html', {'movies': movies})
