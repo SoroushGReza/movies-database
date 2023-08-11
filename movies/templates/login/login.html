@@ -5,8 +5,11 @@
 
 {% if messages %}
     {% for message in messages %}
-        <div class="alert alert-danger" role="alert">
+        <div id="danger" class="alert alert-danger" role="alert">
             {{ message }}
+            <button type="button" class="close" onclick="closeMessage()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
     {% endfor %}
 {% endif %}
@@ -23,5 +26,11 @@
         </div>
     </div>
 </div>
+<script>
+    // Hide messages after 5 seconds
+    setTimeout(function() {
+        document.getElementsById('danger').style.display = 'none';
+    }, 5000);
+</script>
 
 {% endblock %}
