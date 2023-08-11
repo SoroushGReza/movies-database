@@ -1,0 +1,7 @@
+#edit-profile-form .errorlist {
+    display: none;
+}
+
+#edit-profile-form.show-messages .errorlist {
+    display: block;
+}
