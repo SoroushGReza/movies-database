@@ -9,12 +9,19 @@
 
 /*   Login Form   */
 
+.login-background {
+    background: url('/static/images/movie-base.gif') no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    inset: 0;
+}
+
 #login-form{
-    padding-top: 10%;
+    padding-top: 20%;
 }
 
 .card {
-    background-color: rgba(0, 0, 255, 0.664);
+    background-color: rgba(255, 0, 0, 0.406);
 }
 
 .login-button {

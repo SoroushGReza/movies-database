@@ -3,32 +3,35 @@
 
 {% block content %}
 
-{% if messages %}
+<div class="login-background">
+    {% if messages %}
     {% for message in messages %}
-        <div id="danger" class="alert alert-danger" role="alert">
-            {{ message }}
-            <button type="button" class="close" onclick="closeMessage()" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+    <div id="danger" class="alert alert-danger" role="alert">
+        {{ message }}
+        <button type="button" class="close" onclick="closeMessage()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
     {% endfor %}
-{% endif %}
+    {% endif %}
 
-<div id="login-form" class="centered">
-    <div class="card">
-        <div class="card-body">
-            <h2 class="card-title text-light">Login</h2>
-            <form class="text-light" action="/movies/login/" method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="btn btn-primary login-button">Login</button>
-            </form>
+    <div id="login-form" class="centered">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-light">Login</h2>
+                <form class="text-light" action="/movies/login/" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary login-button">Login</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
+
 <script>
     // Hide messages after 5 seconds
-    setTimeout(function() {
+    setTimeout(function () {
         document.getElementById('danger').style.display = 'none';
     }, 5000);
 
