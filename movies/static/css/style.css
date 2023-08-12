@@ -10,7 +10,7 @@
 /*   Login Form   */
 
 .login-background {
-    background: url('/static/images/movie-base.gif') no-repeat center center fixed;
+    background: url('../media/movie-base.gif') no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     inset: 0;
