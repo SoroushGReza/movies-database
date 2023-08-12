@@ -3,27 +3,36 @@
 
 {% block content %}
 
-<div class="login-background">
-    {% if messages %}
-    {% for message in messages %}
-    <div id="danger" class="alert alert-danger" role="alert">
-        {{ message }}
-        <button type="button" class="close" onclick="closeMessage()" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endfor %}
-    {% endif %}
-
-    <div id="login-form" class="centered">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title text-light">Login</h2>
-                <form class="text-light" action="/movies/login/" method="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="btn btn-primary login-button">Login</button>
-                </form>
+<div class="callout-container container-fluid">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="nav-alert-container col-12 col-md-8 col-lg-6">
+                {% if messages %}
+                {% for message in messages %}
+                <div id="danger" class="alert alert-danger" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" onclick="closeMessage()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div id="login-form" class="centered">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title text-light">Login</h2>
+                            <form class="text-light" action="/movies/login/" method="post">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button type="submit" class="btn btn-primary login-button">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

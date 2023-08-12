@@ -9,9 +9,19 @@
 
 /*   Login Form   */
 
-.login-background {
-    background: url('../media/PNG.png') no-repeat center center;
+/* Background Image */
+.callout-container {
+    min-height: 100vh;
+    background: url(../media/PNG.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 #login-form{
@@ -140,4 +150,9 @@
 
 .errorlist {
     font-size: 12px;
+}
+
+
+/*   Messages   */
+.alert-danger {
 }
