@@ -10,14 +10,13 @@
 /*   Login Form   */
 
 .login-background {
-    background: url('../media/movie-base.gif') no-repeat center center fixed;
+    background: url('../media/PNG.png') no-repeat center center;
     background-size: cover;
-    inset: 0;
 }
 
 #login-form{
     padding-top: 18%;
-    padding-bottom: 5%;
+    padding-bottom: 7%;
 }
 
 .card {
