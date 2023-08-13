@@ -61,7 +61,10 @@ def user_profile(request):
             form.save()
             user = password_form.save()
             update_session_auth_hash(request, user)
-            messages.success(request, 'Profile information updated succesfully!')
+            messages.success(
+                request,
+                'Profile information updated succesfully!'
+            )
             return redirect('movies:user_profile')
     else:
         form = CustomUserChangeForm(instance=request.user)

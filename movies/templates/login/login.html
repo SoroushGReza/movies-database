@@ -25,10 +25,14 @@
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title text-light">Login</h2>
-                            <form class="text-light" action="/movies/login/" method="post">
+                            <form class="text-light just" action="/movies/login/" method="post">
                                 {% csrf_token %}
-                                {{ form.as_p }}
-                                <button type="submit" class="btn btn-primary login-button">Login</button>
+                                {{ form.as_p }} 
+                                <br>
+                                <button id="login-button" type="submit" class="btn btn-success btn-lg">Login</button> <br>
+                                <p id="not-a-member">Not a member? Press Register to Signup.</p>
+                                <p id="not-a-member">Press Register to Signup.</p>
+                                <a id="register" href="{% url 'movies:register' %}" class="btn btn-primary btn-lg">Register</a>
                             </form>
                         </div>
                     </div>

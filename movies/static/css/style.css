@@ -29,14 +29,31 @@
     padding-bottom: 7%;
 }
 
+#register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#not-a-member {
+    font-size: 14px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+
+}
+
 .card {
     background-color: rgba(255, 0, 0, 0.406);
 }
 
-.login-button {
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
+#login-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
+
 
 
 /* Edit Profile forms */
@@ -150,9 +167,4 @@
 
 .errorlist {
     font-size: 12px;
-}
-
-
-/*   Messages   */
-.alert-danger {
 }
