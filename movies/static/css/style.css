@@ -223,10 +223,9 @@ h1.text-center strong {
 
 
 /*    NEWS PAGE    */
-/* Background Image News */
 
 .news-container {
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 /* News header */
@@ -244,6 +243,7 @@ h1.news strong {
         0 0 150px #b5afaf91;
 }
 
+/* Background Image News */
 .bg-image {
     position: absolute;
     top: 0;
@@ -265,6 +265,13 @@ h1.news strong {
 .container-fluid {
     position: relative;
     overflow-x: hidden;
+}
+
+.news-block {
+    width: 50%;
+    height: 8px;
+    background-color: #a5487d9d;
+    margin: 0 auto;
 }
 
 
