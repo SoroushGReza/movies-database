@@ -68,6 +68,7 @@ h1.text-center strong {
     background-color: rgba(255, 0, 0, 0.406);
 }
 
+
 #login-button {
     display: block;
     margin-left: auto;
@@ -165,21 +166,6 @@ h1.text-center strong {
     border-radius: 50%;
 }
 
-/* Movie Not Found */
-#movie-not-found {
-    font-size: 4.5rem;
-    color: #c20505dc;
-    text-shadow:
-        0 0 5px #740202dc,
-        0 0 10px #740202dc,
-        0 0 20px #740202dc,
-        0 0 40px #740202dc,
-        0 0 80px #740202dc,
-        0 0 90px #740202dc,
-        0 0 100px #740202dc,
-        0 0 150px #740202dc;
-}
-
 #search-movie-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 60px;
@@ -233,6 +219,52 @@ h1.text-center strong {
     height: 8px;
     background-color: #00fbff5f;
     margin: 0 auto;
+}
+
+
+/*    NEWS PAGE    */
+/* Background Image News */
+
+.news-container {
+    padding-top: 10%;
+}
+
+/* News header */
+h1.news strong {
+    font-size: 4.5rem;
+    color: #a5487c;
+    text-shadow:
+        0 0 5px #b5afaf91,
+        0 0 10px #b5afaf91,
+        0 0 20px #b5afaf91,
+        0 0 40px #b5afaf91,
+        0 0 80px #b5afaf91,
+        0 0 90px #b5afaf91,
+        0 0 100px #b5afaf91,
+        0 0 150px #b5afaf91;
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url(../media/news-bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    z-index: -1;
+    filter: blur(4px);
+}
+
+
+.container-fluid {
+    position: relative;
+    overflow-x: hidden;
 }
 
 
