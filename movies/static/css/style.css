@@ -151,7 +151,7 @@ h1.text-center strong {
     position: relative;
 }
 
-
+/* Cover Image */
 .image-movie {
     width: 60%;
     height: auto;
@@ -160,8 +160,24 @@ h1.text-center strong {
     display: inline-block;
 }
 
+/* Fallback Image */
 .fallback-image {
     border-radius: 50%;
+}
+
+/* Movie Not Found */
+#movie-not-found {
+    font-size: 4.5rem;
+    color: #c20505dc;
+    text-shadow:
+        0 0 5px #740202dc,
+        0 0 10px #740202dc,
+        0 0 20px #740202dc,
+        0 0 40px #740202dc,
+        0 0 80px #740202dc,
+        0 0 90px #740202dc,
+        0 0 100px #740202dc,
+        0 0 150px #740202dc;
 }
 
 #search-movie-title {
