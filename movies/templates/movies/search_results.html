@@ -5,9 +5,9 @@
 <div id="search-results-bg" class="container-fluid">
     <div class="container">
         {% if movies %}
-        <h1 class="text-center"><strong>Search Results</strong></h1>
+        <h1 class="text-center search-results-not-found"><strong>Search Results</strong></h1>
         {% else %}
-        <h1 class="text-center"><strong>No Results Found</strong></h1>
+        <h1 class="text-center search-results-not-found"><strong>No Results Found</strong></h1>
         {% endif %}
         <br><br>
         {% for movie in movies %}
@@ -25,12 +25,10 @@
                 <p id="search-movie-overview">{{ movie.overview }}</p>
                 <br>
                 <h5>
-                    <strong class="blue">Release date: </strong><span class="release-vote">{{ movie.release_date
-                        }}</span>
+                    <strong class="blue">Release date: </strong><span class="release-vote">{{ movie.release_date }}</span>
                 </h5>
                 <h5>
-                    <strong class="yellow">Rating: </strong><span class="release-vote">{{ movie.vote_average }}
-                    </span><strong class="yellow"> /10</strong>
+                    <strong class="yellow">Rating: </strong><span class="release-vote">{{ movie.vote_average }}</span><strong class="yellow"> /10</strong>
                 </h5>
             </div>
         </div>
