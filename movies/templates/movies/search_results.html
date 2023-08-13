@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <h1 class="text-center"><strong>Search Results</strong></h1>
-    <br><br>
-    {% for movie in movies %}
-    <div class="row mb-4">
-        <div class="col-md-4">
-            <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }} poster" class="img-fluid">
+<div id="search-results-bg" class="container-fluid">
+    <div class="container">
+        <h1 class="text-center"><strong>Search Results</strong></h1>
+        <br><br>
+        {% for movie in movies %}
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }} poster"
+                    class="img-fluid image-movie">
+            </div>
+            <div class="col-md-6">
+                <h1 id="search-movie-title"><strong>{{ movie.title }}</strong></h1>
+                <h4 id="search-movie-review"><strong>Movie Review</strong></h4>
+                <p id="search-movie-overview">{{ movie.overview }}</p>
+            </div>
         </div>
-        <div class="col-md-8">
-            <h2><strong>{{ movie.title }}</strong></h2>
-            <h4><strong>Movie Review</strong></h4>
-            <p>{{ movie.overview }}</p>
-        </div>
+        <br>
+        <hr class="block-divider">
+        <br>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 {% endblock %}
