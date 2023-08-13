@@ -79,6 +79,14 @@
         integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
         crossorigin="anonymous"></script>
     <script src="{% static 'js/profile.js' %}"></script>
+    <script>
+        function handleImageError(imageElement) {
+            imageElement.onerror = null;
+            imageElement.src = '{% static "media/image404.png" %}';
+            imageElement.classList.add('fallback-image');
+        }
+    </script>
+    
 </body>
 
 </html>
