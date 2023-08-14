@@ -1,14 +1,50 @@
 /*   Centered Elements   */
 
-.container-fluid .base {
+.container .base {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
+.navbar-item {
+    margin-right: auto;
+}
+
+
+/*   Navbar   */
+.navbar {
+    font-family: 'Lato', sans-serif; 
+}
+
+.navbar-brand {
+    color: #00bbc8dc;
+}
+
+.nav-link {
+    color: #fff; 
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #00bbc8dc;
+}
+
+/* Centrera logotypen */
 .brand-logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    font-size: 34px;
+}
+
+/* Search button */
+.btn-outline-light {
+    border-color: #00bbc8dc; 
+    color: #00bbc8dc;
+}
+
+.btn-outline-light:hover {
+    background-color: #00bbc8dc; 
+    color: #fff; 
 }
 
 

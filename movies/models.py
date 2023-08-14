@@ -57,3 +57,16 @@ class Genre(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# Search History model
+class SearchHistory(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # User Reference
+    query = models.CharField(max_length=200)  # Search query
+    timestamp = models.DateTimeField(auto_now_add=True)  # Timestamp of search
+
+    def __str__(self):
+        return f'{self.user.username}: {self.query}'
+
+    class Meta:
+        ordering = ['-timestamp']  # Order by most recent search
