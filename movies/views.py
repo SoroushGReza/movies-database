@@ -10,6 +10,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.http import JsonResponse
 import requests
 
 
@@ -101,7 +102,7 @@ def search_movies(request):
 def clear_search_history(request):
     if 'recent_searches' in request.session:
         del request.session['recent_searches']
-    return redirect('movies:movie_list')  # Redirecting to movie list
+    return JsonResponse({'status': 'success'})
 
 
 # User Change Form

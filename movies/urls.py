@@ -26,7 +26,7 @@ urlpatterns = [
     # Path to Clear search history
     path(
         'clear_search_history/',
-        clear_search_history,
+        views.clear_search_history,
         name='clear_search_history'
     ),
 ]

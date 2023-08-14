@@ -28,14 +28,13 @@ function displayRecentSearches() {
 // Clear recent searches
 function clearRecentSearches(event) {
     event.preventDefault();
-    sessionStorage.removeItem('recent_searches');
-    displayRecentSearches();
-
-    // Add later: 
     // Send request to server to clear recent searches
+    fetch('/movies/clear_search_history/')
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                sessionStorage.removeItem('recent_searches');
+                displayRecentSearches();
+            }
+        });
 }
-
-// Event listener to handle recent searches
-document.getElementById('search-input').addEventListener('focus', displayRecentSearches);
-
-displayRecentSearches();
