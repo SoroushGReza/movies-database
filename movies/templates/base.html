@@ -52,10 +52,12 @@
                             <input class="form-control me-2" type="text" name="query" placeholder="Search for movies"
                                 aria-label="Search" autocomplete="off" id="search-input">
                             <button class="btn btn-outline-light" type="submit">Search</button>
+                            <div class="dropdown">
+                                <div class="dropdown-menu" id="recent-searches">
+                                    <!--  Recent searches her  -->
+                                </div>
+                            </div>
                         </form>
-                        <div id="recent-searches" style="display: none;">
-                            <!--    Recent searches here    -->
-                        </div>
                     </div>
                     <!--  Search Form  /-->
                 </div>
@@ -88,20 +90,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-        crossorigin="anonymous"></script>
     <script src="{% static 'js/profile.js' %}"></script>
-    <script>
-        function handleImageError(imageElement) {
-            imageElement.onerror = null;
-            imageElement.src = '{% static "media/image404.png" %}';
-            imageElement.classList.add('fallback-image');
-        }
-    </script>
+    <script src="{% static 'js/search.js' %}"></script>
+    <script src="{% static 'js/imageHandler.js' %}"></script>
     <!-- Scripts /-->
 </body>
 
