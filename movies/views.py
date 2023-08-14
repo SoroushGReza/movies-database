@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Movie, Genre, Review
+from .models import Movie, Genre, Review, SearchHistory
 from .forms import MovieForm
 from .tmdb import get_movies_from_tmdb
 from .env import TMDB_API_KEY
@@ -82,7 +82,19 @@ def search_movies(request):
     url = f"https://api.themoviedb.org/3/search/movie?api_key={TMDB_API_KEY}&query={query}"
     response = requests.get(url)
     movies = response.json().get('results', [])
-    return render(request, 'movies/search_results.html', {'movies': movies})
+
+    # Store last 5 searches query
+    recent_searches = request.session.get('recent_searches', [])
+    if query:
+        recent_searches.append(query)
+        recent_searches = recent_searches[-5:]  # Keep only the last 5 searches
+        request.session['recent_searches'] = recent_searches
+
+    return render(
+        request,
+        'movies/search_results.html',
+        {'movies': movies, 'recent_searches': recent_searches}
+    )
 
 
 # User Change Form

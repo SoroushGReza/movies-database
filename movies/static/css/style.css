@@ -216,7 +216,7 @@ h1.text-center strong {
 
 #search-movie-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 60px;
+    font-size: 40px;
 
     @supports (background-clip: text) or (-webkit-background-clip: text) {
         background-image:

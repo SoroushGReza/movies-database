@@ -47,11 +47,16 @@
                     </ul>
 
                     <!--  Search Form  -->
-                    <form class="d-flex" action="{% url 'movies:search_movies' %}" method="get" autocomplete="off">
-                        <input class="form-control me-2" type="text" name="query" placeholder="Search for movies"
-                            aria-label="Search" autocomplete="off">
-                        <button class="btn btn-outline-light" type="submit">Search</button>
-                    </form>
+                    <div class="search-container">
+                        <form class="d-flex" action="{% url 'movies:search_movies' %}" method="get" autocomplete="off">
+                            <input class="form-control me-2" type="text" name="query" placeholder="Search for movies"
+                                aria-label="Search" autocomplete="off" id="search-input">
+                            <button class="btn btn-outline-light" type="submit">Search</button>
+                        </form>
+                        <div id="recent-searches" style="display: none;">
+                            <!--    Recent searches here    -->
+                        </div>
+                    </div>
                     <!--  Search Form  /-->
                 </div>
             </div>
@@ -68,7 +73,7 @@
                 {% endblock %}
             </main>
         </div>
-    <!--  Main content from extended templates  /-->
+        <!--  Main content from extended templates  /-->
 
         <!--  Footer  -->
         <footer class="text-center text-light bg-dark">
