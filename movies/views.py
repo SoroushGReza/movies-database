@@ -97,6 +97,13 @@ def search_movies(request):
     )
 
 
+# Clear Search History
+def clear_search_history(request):
+    if 'recent_searches' in request.session:
+        del request.session['recent_searches']
+    return redirect('movies:movie_list')  # Redirecting to movie list
+
+
 # User Change Form
 class CustomUserChangeForm(UserChangeForm):
     password = None  # To not shoe password

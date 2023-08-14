@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import movie_list, movie_detail, movie_create
+from .views import movie_list, movie_detail, movie_create, clear_search_history
 from . import views
 
 
@@ -23,4 +23,10 @@ urlpatterns = [
     path('user_profile/', views.user_profile, name='user_profile'),
     # Path to Movie Search
     path('search/', views.search_movies, name='search_movies'),
+    # Path to Clear search history
+    path(
+        'clear_search_history/',
+        clear_search_history,
+        name='clear_search_history'
+    ),
 ]

@@ -55,6 +55,10 @@
                             <div class="dropdown">
                                 <div class="dropdown-menu" id="recent-searches">
                                     <!--  Recent searches her  -->
+                                    {% for search in recent_searches %}
+                                    <a class="dropdown-item" href="{% url 'movies:search_movies' %}?query={{ search}}">{{ search }}</a>
+                                    {% endfor %}
+                                    <a href="{% url 'movies:clear_search_history' %}" class="dropdown-item">Clear</a>
                                 </div>
                             </div>
                         </form>
