@@ -1,5 +1,17 @@
 /*   Centered Elements   */
 
+.container-fluid .base {
+    display: flex;
+    justify-content: center;
+}
+
+.brand-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 .centered {
     display: flex;
     justify-content: center;
