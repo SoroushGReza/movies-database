@@ -79,23 +79,32 @@ def user_profile(request):
 
 # Searching for movie
 def search_movies(request):
-    query = request.GET.get('query', '')
+    query = request.GET.get('query')
+    if query:
+        # Save search history
+        if request.user.is_authenticated:
+            search_history = SearchHistory(user=request.user, query=query)
+            search_history.save()
+
     url = f"https://api.themoviedb.org/3/search/movie?api_key={TMDB_API_KEY}&query={query}"
     response = requests.get(url)
     movies = response.json().get('results', [])
 
-    # Store last 5 searches query
-    recent_searches = request.session.get('recent_searches', [])
-    if query:
-        recent_searches.append(query)
-        recent_searches = recent_searches[-5:]  # Keep only the last 5 searches
-        request.session['recent_searches'] = recent_searches
+    # Get 5 last searches from database
+    recent_searches = SearchHistory.objects.all().order_by('-timestamp')[:5]
 
     return render(
         request,
         'movies/search_results.html',
         {'movies': movies, 'recent_searches': recent_searches}
     )
+
+
+# Get recent seaarches
+def get_recent_searches(request):
+    recent_searches = SearchHistory.objects.all().order_by('-timestamp')[:5]
+    recent_searches_list = [search.query for search in recent_searches]
+    return JsonResponse(recent_searches_list, safe=False)
 
 
 # Clear Search History

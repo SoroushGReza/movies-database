@@ -1,6 +1,9 @@
 from django.urls import path
-from .views import movie_list, movie_detail, movie_create, clear_search_history
+from .views import movie_list, movie_detail, movie_create
+from .views import get_recent_searches, clear_search_history
 from . import views
+
+
 
 
 app_name = 'movies'
@@ -29,4 +32,6 @@ urlpatterns = [
         views.clear_search_history,
         name='clear_search_history'
     ),
+    # Path to get recent searches
+    path('get_recent_searches/', get_recent_searches, name='get_recent_searches'),
 ]
