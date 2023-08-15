@@ -21,14 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%$@r2k_w0tpa)%zp)ddrk-)vkkc=#tbv2wd@&k30xen=vo_oz('
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-soroushgrez-moviesdatab-21but2m2le2.ws-us103.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-soroushgrez-moviesdatab-21but2m2le2.ws-us103.gitpod.io']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-soroushgrez-moviesdatab-21but2m2le2.ws-us103.gitpod.io'
+]
 
 # Application definition
 
