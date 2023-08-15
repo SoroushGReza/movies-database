@@ -50,7 +50,9 @@
                     <div class="search-container">
                         <form class="d-flex" action="{% url 'movies:search_movies' %}" method="get" autocomplete="off">
                             <input class="form-control me-2" type="text" name="query" placeholder="Search for movies"
-                                aria-label="Search" autocomplete="off" id="search-input">
+                                aria-label="Search" autocomplete="off" id="search-input" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+
                             <button class="btn btn-outline-light" type="submit">Search</button>
                             <div class="dropdown">
                                 <div class="dropdown-menu" id="recent-searches">

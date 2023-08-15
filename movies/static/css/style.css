@@ -47,6 +47,10 @@
     color: #fff; 
 }
 
+.dropdown-menu {
+    position: absolute;
+    width: 100%;
+}
 
 .centered {
     display: flex;

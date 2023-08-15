@@ -42,3 +42,8 @@ function clearRecentSearches(event) {
             }
         });
     }
+
+// Call the displayRecentSearches function when page loads
+window.onload = function() {
+    displayRecentSearches();
+}
