@@ -204,6 +204,27 @@ h1.text-center strong {
     position: relative;
 }
 
+
+/*  Search history drop-down  */
+#recent-searches {
+    position: absolute;
+    background-color: rgba(24,156,167, 0.7); 
+    border: none;
+    align-items: center;
+  }
+
+
+#search-input {
+    margin-left: -3%;
+}
+
+#search-input:focus {
+    border-color: #00bbc8dc !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 187, 200, 0.25) !important;
+}
+
+  
+
 /* Cover Image */
 .image-movie {
     width: 60%;
