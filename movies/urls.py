@@ -31,5 +31,9 @@ urlpatterns = [
         name='clear_search_history'
     ),
     # Path to get recent searches
-    path('get_recent_searches/', get_recent_searches, name='get_recent_searches'),
+    path(
+        'get_recent_searches/',
+        get_recent_searches,
+        name='get_recent_searches',
+    ),
 ]

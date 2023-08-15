@@ -104,7 +104,9 @@ def search_movies(request):
 @login_required
 def get_recent_searches(request):
     # Get the 5 last searches from loged in user
-    recent_searches = SearchHistory.objects.filter(user=request.user).order_by('-timestamp')[:5]
+    recent_searches = SearchHistory.objects.filter(
+        user=request.user
+    ).order_by('-timestamp')[:5]
     # Make a search list
     search_queries = [search.query for search in recent_searches]
     # Return as JSON
