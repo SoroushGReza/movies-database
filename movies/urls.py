@@ -4,8 +4,6 @@ from .views import get_recent_searches, clear_search_history
 from . import views
 
 
-
-
 app_name = 'movies'
 
 # defining URL patterns for **MOVIES** app

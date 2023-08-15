@@ -1,16 +1,9 @@
 // Display recent searches
 function displayRecentSearches() {
-    var recentSearches = sessionStorage.getItem('recent_searches') || "[]";
-    recentSearches = JSON.parse(recentSearches);
-    var dropdownMenu = document.getElementById('recent-searches');
-    dropdownMenu.innerHTML = "";
-
-// Display recent searches
-function displayRecentSearches() {
-    // Get the recent searches from server
     fetch('/movies/get_recent_searches/')
         .then(response => response.json())
-        .then(recentSearches => {
+        .then(data => {
+            var recentSearches = data.recent_searches;
             var dropdownMenu = document.getElementById('recent-searches');
             dropdownMenu.innerHTML = "";
 
@@ -18,12 +11,12 @@ function displayRecentSearches() {
             recentSearches.forEach(function (searchQuery) {
                 var searchItem = document.createElement('a');
                 searchItem.className = 'dropdown-item';
-                searchItem.href = `/movies/search_movies?query=${searchQuery}`;
+                searchItem.href = `/movies/search/?query=${searchQuery}`;
                 searchItem.textContent = searchQuery;
                 dropdownMenu.appendChild(searchItem);
             });
 
-            // Add clear link if there are recent searches
+            // Add clear link if there is recent searches
             if (recentSearches.length > 0) {
                 var clearLink = document.createElement('a');
                 clearLink.className = 'dropdown-item clear-link';
@@ -49,4 +42,3 @@ function clearRecentSearches(event) {
             }
         });
     }
-}
