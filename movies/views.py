@@ -101,10 +101,14 @@ def search_movies(request):
 
 
 # Get recent seaarches
+@login_required
 def get_recent_searches(request):
-    recent_searches = SearchHistory.objects.all().order_by('-timestamp')[:5]
-    recent_searches_list = [search.query for search in recent_searches]
-    return JsonResponse(recent_searches_list, safe=False)
+    # Get the 5 last searches from loged in user
+    recent_searches = SearchHistory.objects.filter(user=request.user).order_by('-timestamp')[:5]
+    # Make a search list
+    search_queries = [search.query for search in recent_searches]
+    # Return as JSON
+    return JsonResponse({'recent_searches': search_queries})
 
 
 # Clear Search History
