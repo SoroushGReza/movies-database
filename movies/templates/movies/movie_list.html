@@ -18,8 +18,9 @@
             <div class="col-md-4">
                 <br>
                 <!-- Cover-Image  &  Fallback Cover-Image -->
-                <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }} poster"
-                    onerror="handleImageError(this);" class="img-fluid image-movie">
+                <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" onerror="handleImageError(this);"
+                    data-fallback-image="{% static 'media/image404.png' %}" class="img-fluid image-movie">
+
             </div>
             <div class="col-md-6">
                 <h1 id="search-movie-title"><strong>{{ movie.title }}</strong></h1>
@@ -29,7 +30,9 @@
                     <strong class="blue">Release date: </strong><span class="release-vote">{{ movie.release_date }}</span>
                 </h5>
                 <h5>
-                    <strong class="yellow">Rating: </strong><span class="release-vote">{{ movie.vote_average }}</span><strong class="yellow"> /10</strong>
+                    <strong class="yellow">Rating: </strong>
+                    <span class="release-vote">{{ movie.vote_average }}</span>
+                    <strong class="yellow"> /10</strong>
                 </h5>
             </div>
         </div>

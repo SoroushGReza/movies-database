@@ -1,6 +1,6 @@
 // Image error handler
 function handleImageError(imageElement) {
     imageElement.onerror = null;
-    imageElement.src = '{% static "media/image404.png" %}';
+    imageElement.src = imageElement.getAttribute('data-fallback-image');
     imageElement.classList.add('fallback-image');
 }
