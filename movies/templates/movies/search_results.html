@@ -16,7 +16,9 @@
                 <br>
                 <!-- Cover-Image  &  Fallback Cover-Image -->
                 <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }} poster"
-                    onerror="handleImageError(this);" class="img-fluid image-movie">
+                    onerror="handleImageError(this);" data-fallback-image="{% static 'media/image404.png' %}"
+                    class="img-fluid image-movie">
+
 
 
             </div>
