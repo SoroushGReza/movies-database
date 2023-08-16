@@ -2,9 +2,13 @@ from django.urls import path
 from .views import movie_list, movie_detail, movie_create
 from .views import get_recent_searches, clear_search_history
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 app_name = 'movies'
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 # defining URL patterns for **MOVIES** app
 urlpatterns = [
