@@ -43,14 +43,12 @@ To install and run this project, follow these steps:
 <input type="checkbox" checked="checked" /> - Add validation to ensure proper data input. <br>
 <input type="checkbox" checked="checked"/> - Provide feedback to the user after successful editing. <br> <br>
 
-&#x1f7e0; As a **User**, I can **search for movie titles**, so that **I can quickly find the movies I'm looking for**.
+&#x1f7e2; As a **User**, I can **search for movie titles**, so that **I can quickly find the movies I'm looking for**.
 ### &#x2699; Tasks:  
 
 <input type="checkbox" checked="checked"/> - Implement search functionality in the movie list. <br>
-<input type="checkbox"/> - Provide auto-suggestions based on the search query. <br>
 <input type="checkbox" checked="checked"/> - Display search results in a user-friendly manner. <br>
-<input type="checkbox"/> - Highlight the searched term in the results.<br>
-<input type="checkbox"/> - Provide an option to clear the search. <br>
+<input type="checkbox" checked="checked"/> - Provide an option to clear the search. <br>
 <br>
 
 &#x1f7e0; - As an **Admin**, I can **Add, Edit, and Delete movies**, so that **I can manage the movie database**.
