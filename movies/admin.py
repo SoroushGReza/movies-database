@@ -5,7 +5,7 @@ from .forms import MovieForm
 
 class MovieAdmin(admin.ModelAdmin):
     form = MovieForm
-    list_display = ('title', 'genre', 'release_date', 'rating')
+    list_display = ('title', 'genre', 'release_date', 'rating', 'cover_image')
     list_filter = ('release_date',)  # Fields you want to filter by
 
 
