@@ -85,10 +85,15 @@ def search_movies(request):
         if request.user.is_authenticated:
             search_history = SearchHistory(user=request.user, query=query)
             search_history.save()
+    # Search in own database
+    local_movies = Movie.objects.filter(title__icontains=query)
 
     url = f"https://api.themoviedb.org/3/search/movie?api_key={TMDB_API_KEY}&query={query}"
     response = requests.get(url)
-    movies = response.json().get('results', [])
+    external_movies = response.json().get('results', [])
+
+    # Combine the results
+    movies = list(local_movies) + external_movies
 
     # Get 5 last searches from database
     recent_searches = SearchHistory.objects.all().order_by('-timestamp')[:5]
