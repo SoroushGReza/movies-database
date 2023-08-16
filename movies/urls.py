@@ -7,7 +7,6 @@ from django.conf.urls.static import static
 
 
 app_name = 'movies'
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 # defining URL patterns for **MOVIES** app
@@ -41,3 +40,9 @@ urlpatterns = [
         name='get_recent_searches',
     ),
 ]
+
+# Add media files during developing 
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+    )
