@@ -1,5 +1,7 @@
 from django import forms
 from .models import Movie
+from django.forms import ModelForm
+from .models import Movie
 
 
 class MovieForm(forms.ModelForm):
