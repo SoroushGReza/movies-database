@@ -1,5 +1,6 @@
 // Display recent searches
 function displayRecentSearches() {
+    console.log("Displaying recent searches");
     fetch('/movies/get_recent_searches/')
         .then(response => response.json())
         .then(data => {
@@ -31,17 +32,19 @@ function displayRecentSearches() {
 
 // Clear recent searches
 function clearRecentSearches(event) {
+    console.log("Clear recent searches clicked"); // Log message
     event.preventDefault();
     // Send request to server to clear recent searches
     fetch('/movies/clear_search_history/')
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                sessionStorage.removeItem('recent_searches');
-                displayRecentSearches();
+                var dropdownMenu = document.getElementById('recent-searches');
+                dropdownMenu.innerHTML = ""; // Clear the dropdown menu
             }
         });
-    }
+}
+
 
 // Call the displayRecentSearches function when page loads
 window.onload = function() {
