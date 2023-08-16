@@ -114,9 +114,10 @@ def get_recent_searches(request):
 
 
 # Clear Search History
+@login_required
 def clear_search_history(request):
-    if 'recent_searches' in request.session:
-        del request.session['recent_searches']
+    # Delete search history for the logged-in user from the database
+    SearchHistory.objects.filter(user=request.user).delete()
     return JsonResponse({'status': 'success'})
 
 
