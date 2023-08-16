@@ -10,7 +10,9 @@ class Movie(models.Model):
     release_date = models.DateField()  # Movie Release date
     rating = models.DecimalField(max_digits=5, decimal_places=1)  # Rating
     description = models.TextField()  # Movie Description
-    cover_image = models.ImageField(upload_to='movie_covers/', null=True, blank=True)
+    cover_image = models.ImageField(
+        upload_to='movie_covers/', null=True, blank=True
+    )
 
 
 # Review Model
