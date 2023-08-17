@@ -153,7 +153,7 @@ def movie_detail(request, pk):
 # Creation of a new movie
 def movie_create(request):
     if request.method == 'POST':
-        form = MovieForm(request.POST)
+        form = MovieForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('movie_list')
