@@ -26,10 +26,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-soroushgrez-moviesdatab-21but2m2le2.ws-us103.gitpod.io']
+ALLOWED_HOSTS = ['8000-soroushgrez-moviesdatab-21but2m2le2.ws-us104.gitpod.io']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-soroushgrez-moviesdatab-21but2m2le2.ws-us103.gitpod.io'
+    'https://8000-soroushgrez-moviesdatab-21but2m2le2.ws-us104.gitpod.io'
 ]
 
 # Application definition
