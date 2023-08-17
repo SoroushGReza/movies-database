@@ -5,8 +5,10 @@
 
 {% if movie.cover_image %}
     <img src="{{ movie.cover_image.url }}" alt="{{ movie.title }} cover">
-{% else %}
+{% elif movie.poster_path %}
     <img src="{{ movie.poster_path }}" alt="{{ movie.title }} cover">
+{% else %}
+<img src="{% static 'media/image404.png' %}" alt="Cover not available">
 {% endif %}
 
 <p>{{ movie.description }}</p>
