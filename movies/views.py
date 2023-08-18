@@ -100,6 +100,13 @@ def search_movies(request):
     )
 
 
+# Get movie by ID
+def get_movie_by_id(movie_id):
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={TMDB_API_KEY}"
+    response = requests.get(url)
+    return response.json()
+
+
 # Get recent seaarches
 @login_required
 def get_recent_searches(request):
@@ -143,3 +150,9 @@ def movie_list(request):
 def movie_detail(request, pk):
     movie = get_object_or_404(Movie, pk=pk)
     return render(request, 'movies/movies_detail.html', {'movie': movie})
+
+
+# Movie Overview
+def movie_overview(request, movie_id):
+    movie = get_movie_by_id(movie_id)
+    return render(request, 'movies/movie_overview.html', {'movie': movie})
