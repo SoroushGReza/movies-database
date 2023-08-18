@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import movie_list, movie_detail, movie_create
+from .views import movie_list, movie_detail
 from .views import get_recent_searches, clear_search_history
 from . import views
 from django.conf import settings
@@ -11,12 +11,10 @@ app_name = 'movies'
 
 # defining URL patterns for **MOVIES** app
 urlpatterns = [
-    # Path for list of movies
+    # Path for list of "News"  in movie_list.html
     path('', movie_list, name='movie_list'),
     # Path for details of a SINGLE movie
     path('<int:pk>/', movie_detail, name='movie_detail'),
-    # Path for creating a new movie
-    path('new/', views.movie_create, name='movie_create'),
     # Path for Registration
     path('register/', views.register, name='register'),
     # Path for Login
@@ -40,9 +38,3 @@ urlpatterns = [
         name='get_recent_searches',
     ),
 ]
-
-# Add media files during developing
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
-    )

@@ -85,15 +85,9 @@ def search_movies(request):
         if request.user.is_authenticated:
             search_history = SearchHistory(user=request.user, query=query)
             search_history.save()
-    # Search in own database
-    local_movies = Movie.objects.filter(title__icontains=query)
 
     url = f"https://api.themoviedb.org/3/search/movie?api_key={TMDB_API_KEY}&query={query}"
     response = requests.get(url)
-    external_movies = response.json().get('results', [])
-
-    # Combine the results
-    movies = list(local_movies) + external_movies
 
     # Get 5 last searches from database
     recent_searches = SearchHistory.objects.all().order_by('-timestamp')[:5]
@@ -148,17 +142,3 @@ def movie_list(request):
 def movie_detail(request, pk):
     movie = get_object_or_404(Movie, pk=pk)
     return render(request, 'movies/movies_detail.html', {'movie': movie})
-
-
-# Creation of a new movie
-def movie_create(request):
-    if request.method == 'POST':
-        form = MovieForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('movie_list')
-    # If request is nt POST, form is being displayed for 1st time
-    else:
-        # Create a empty form
-        form = MovieForm()
-    return render(request, 'movies/movie_form.html', {'form': form})

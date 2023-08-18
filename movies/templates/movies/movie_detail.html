@@ -8,7 +8,7 @@
 {% elif movie.poster_path %}
     <img src="{{ movie.poster_path }}" alt="{{ movie.title }} cover">
 {% else %}
-<img src="{% static 'media/image404.png' %}" alt="Cover not available">
+    <img src="{% static 'media/image404.png' %}" alt="Cover not available">
 {% endif %}
 
 <p>{{ movie.description }}</p>
