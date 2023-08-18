@@ -15,6 +15,12 @@ urlpatterns = [
     path('', movie_list, name='movie_list'),
     # Path for details of a SINGLE movie
     path('<int:pk>/', movie_detail, name='movie_detail'),
+    # path for movie overview
+    path(
+        'overview/<int:movie_id>/',
+        views.movie_overview,
+        name='movie_overview',
+    ),
     # Path for Registration
     path('register/', views.register, name='register'),
     # Path for Login
