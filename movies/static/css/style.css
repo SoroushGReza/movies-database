@@ -25,8 +25,27 @@
 }
 
 .nav-link:hover {
-    color: #00bbc8dc;
+    color: #ffffffdc;
 }
+
+.news-nav-movielist{
+    color: #a6477c;
+}
+
+.news-nav-movielist:hover {
+    color: red;
+}
+
+/* Login / Register in navbar */
+.custom-slash {
+    color: #003e40;
+}
+
+.login-register {
+    color: #00acb56f;
+}
+
+
 
 /* Centrera logotypen */
 .brand-logo {
@@ -127,6 +146,8 @@ h1.text-center strong {
     margin-right: auto;
     width: 100%;
 }
+
+
 
 
 
@@ -360,6 +381,13 @@ h1.news strong {
     width: 50%;
     height: 8px;
     background-color: #a5487d9d;
+    margin: 0 auto;
+}
+
+.overview-block {
+    width: 50%;
+    height: 8px;
+    background-color: #a548489d;
     margin: 0 auto;
 }
 
