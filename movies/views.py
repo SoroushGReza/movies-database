@@ -88,6 +88,7 @@ def search_movies(request):
 
     url = f"https://api.themoviedb.org/3/search/movie?api_key={TMDB_API_KEY}&query={query}"
     response = requests.get(url)
+    movies = response.json()['results']
 
     # Get 5 last searches from database
     recent_searches = SearchHistory.objects.all().order_by('-timestamp')[:5]
