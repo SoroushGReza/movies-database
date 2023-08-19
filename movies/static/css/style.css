@@ -84,6 +84,8 @@
 }
 
 h1.text-center strong {
+    font-family: fantasy;
+    font-weight: 100;
     font-size: 4.5rem;
     color: #00bbc8dc;
     text-shadow:
@@ -290,17 +292,8 @@ h1.text-center strong {
 
 #search-movie-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
-
-    @supports (background-clip: text) or (-webkit-background-clip: text) {
-        background-image:
-            url("../media/text.png");
-        background-size: 110% auto;
-        background-position: center;
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
+    font-size:30px;
+    color: #108b94;
 }
 
 
@@ -325,7 +318,7 @@ h1.text-center strong {
 /* release-date */
 .blue {
     font-family: 'Lato', sans-serif;
-    color: #ff000088;
+    color: #001aff9c;
     font-size: 21px;
 }
 
@@ -381,6 +374,17 @@ h1.news strong {
 
     z-index: -1;
     filter: blur(4px);
+}
+
+.news-bg-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)); /* halvgenomskinlig svart färg */
+    z-index: 1; 
 }
 
 
