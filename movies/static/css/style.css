@@ -231,6 +231,18 @@ h1.text-center strong {
     align-items: center;
     justify-content: center;
     position: relative;
+    
+}
+
+#search-results-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)); /* halvgenomskinlig svart färg */
+    z-index: 1; 
 }
 
 
@@ -259,7 +271,7 @@ h1.text-center strong {
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)); /* halvgenomskinlig svart färg */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)); /* halvgenomskinlig svart färg */
     z-index: 1; 
 }
 
