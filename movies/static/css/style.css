@@ -102,23 +102,31 @@ h1.text-center strong {
 /*   Login Form   */
 
 /* Background Image */
-.callout-container {
-    min-height: 100vh;
-    background: url(../media/PNG.png) no-repeat center center fixed;
+.bg-login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url(../media/login-2.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    z-index: -1;
+    filter: blur(4px);
+}
+
+#login-register-form {
+    z-index: 1;
 }
 
 #login-form {
     padding-top: 18%;
     padding-bottom: 7%;
+    z-index: 1;
 }
 
 #register {
@@ -135,8 +143,10 @@ h1.text-center strong {
 
 }
 
+/* Login Card */
 .card {
-    background-color: rgba(255, 0, 0, 0.406);
+    background-color: #005a5fe4;
+    margin: 0 auto;
 }
 
 
@@ -146,10 +156,6 @@ h1.text-center strong {
     margin-right: auto;
     width: 100%;
 }
-
-
-
-
 
 /* Edit Profile forms */
 
@@ -227,18 +233,25 @@ h1.text-center strong {
 
 
 /*   Movie Overview   */
-#movie_overview {
-    min-height: 100vh;
-    background: url(../media/3.png) no-repeat center center fixed;
+#movie-overview {
+    position: absolute;
+    top: 8%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url(../media/overview-bg.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    z-index: -2;
+}
+
+.overview-container {
+    padding-top: 10%;
+    min-height: 100vh;
 }
 
 
@@ -260,7 +273,6 @@ h1.text-center strong {
     box-shadow: 0 0 0 0.25rem rgba(0, 187, 200, 0.25) !important;
 }
 
-  
 
 /* Cover Image */
 .image-movie {
@@ -282,7 +294,7 @@ h1.text-center strong {
 
     @supports (background-clip: text) or (-webkit-background-clip: text) {
         background-image:
-            url("../media/text-bg-search.png");
+            url("../media/text.png");
         background-size: 110% auto;
         background-position: center;
         color: transparent;
@@ -335,26 +347,26 @@ h1.text-center strong {
 /*    NEWS PAGE    */
 
 .news-container {
-    padding-top: 5%;
+    padding-top: 8%;
 }
 
 /* News header */
 h1.news strong {
-    font-size: 4.5rem;
-    color: #a5487c;
+    font-size: 4.0rem;
+    color: #810049b1;
     text-shadow:
-        0 0 5px #b5afaf91,
-        0 0 10px #b5afaf91,
-        0 0 20px #b5afaf91,
-        0 0 40px #b5afaf91,
-        0 0 80px #b5afaf91,
-        0 0 90px #b5afaf91,
-        0 0 100px #b5afaf91,
-        0 0 150px #b5afaf91;
+        0 0 5px #10a5b0b5,
+        0 0 10px #10a5b0b5,
+        0 0 20px #10a5b0b5,
+        0 0 40px #10a5b0b5,
+        0 0 80px #10a5b0b5,
+        0 0 90px #10a5b0b5,
+        0 0 100px #10a5b0b5,
+        0 0 150px #10a5b0b5;
 }
 
 /* Background Image News */
-.bg-image {
+.news-bg-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -419,9 +431,6 @@ h1.news strong {
 }
 
 
-
-
-
 /*   Footer   */
 .main-content {
     display: flex;
@@ -431,6 +440,7 @@ h1.news strong {
 
 .content {
     flex: 1;
+    min-height: 100vh;
 }
 
 .errorlist {

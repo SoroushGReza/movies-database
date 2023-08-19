@@ -3,7 +3,10 @@
 
 {% block content %}
 
-<div class="callout-container container-fluid">
+<div class="container-fluid">
+    <!-- Login Background Image -->
+    <div class="bg-login"></div>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="nav-alert-container col-12 col-md-8 col-lg-6">
@@ -27,29 +30,19 @@
                             <h2 class="card-title text-light">Login</h2>
                             <form class="text-light justify-content-center" action="/movies/login/" method="post">
                                 {% csrf_token %}
-                                {{ form.as_p }} 
+                                {{ form.as_p }}
                                 <br>
-                                <button id="login-button" type="submit" class="btn btn-success btn-lg">Login</button> <br>
+                                <button id="login-button" type="submit" class="btn btn-success btn-lg">Login</button>
+                                <br>
                                 <p id="not-a-member">Not a member? Press Register to Signup.</p>
                                 <p id="not-a-member">Press Register to Signup.</p>
-                                <a id="register" href="{% url 'movies:register' %}" class="btn btn-primary btn-lg">Register</a>
+                                <a id="register" href="{% url 'movies:register' %}"
+                                    class="btn btn-primary btn-lg">Register</a>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-md-8">
-            <!-- Add upcoming movies here later -->
-            <h1>Upcoming Movie Suggestions: </h1>
-
-        </div>
-        <div class="col-12 col-md-8">
-            <h3>Connect to API to gather data from TMDB</h3>
         </div>
     </div>
 </div>
