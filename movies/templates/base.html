@@ -26,22 +26,22 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor01">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
+                    <ul class="navbar-nav me-auto mb-1 mb-lg-0">
+                        <li class="nav-item m-1">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item m-1">
                             <a class="nav-link news-nav-movielist" href=" {% url 'movies:movie_list' %}">NEWS</a>
                         </li>
                         {% if user.is_authenticated %}
-                        <li id="login-logout" class="nav-item">
+                        <li id="login-logout" class="nav-item m-1">
                             <a class="nav-link" href="{% url 'movies:user_profile' %}">Profile</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item m-1">
                             <a class="nav-link" href="{% url 'movies:user_logout' %}">Logout</a>
                         </li>
                         {% else %}
-                        <li class="nav-item">
+                        <li class="nav-item m-1">
                             <a class="nav-link login-register" href="{% url 'movies:user_login' %}">Login<strong class="custom-slash"> / </strong>Register</a>
                             {% endif %}
                         </li>
