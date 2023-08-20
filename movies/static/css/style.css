@@ -347,17 +347,29 @@ h1.text-center strong {
 }
 
 /* release-date */
-.blue {
+.release-date-color {
     font-family: 'Lato', sans-serif;
-    color: #001aff9c;
+    color: #0dff0074;
     font-size: 21px;
 }
 
 /* rating */
-.yellow {
+.rating-color {
     font-family: 'Lato', sans-serif;
     color: #fff7006d;
     font-size: 21px;
+}
+
+/* overview link */
+.overview-link {
+    padding: 8px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 21px;
+    border: 1px solid rgba(255, 0, 0, 0.524);
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.524);
+    color: #ffffff94;
 }
 
 .block-divider {
