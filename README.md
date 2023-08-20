@@ -4,7 +4,7 @@
 
 
 ## Project Overview
-This project is a simple movie database web application that is built using Django. It allows users to signup and view a list of movies, see detailed information about each movie, and add new movies to the database. Users can also rate movies and leave comments.
+This project is a simple movie database web application that is built using Django. It allows users to signup and view a list of movies, see detailed information about each movie, and access to trailers. Users can also leave reviews about movies, and also make own movie listes of their favorite movies to share with others on social media or email. <br><br>
 
 ## Installation
 To install and run this project, follow these steps:
@@ -12,12 +12,11 @@ To install and run this project, follow these steps:
 1. Clone the repository: `git clone https://github.com/SoroushGReza/movies-database.git`
 2. Navigate to the project directory: `cd movies-database`
 3. Install the required packages: `pip3 install -r requirements.txt`
-4. Run the server: `python3 manage.py runserver`
+4. Run the server: `python3 manage.py runserver` <br><br>
 
 ## Features
 - **Movie List**: Users can view a list of all movies in the database.
-- **Movie Detail**: Users can click on a movie to see more detailed information.
-- **Add Movie**: Users can add a new movie to the database.
+- **Movie Detail**: Users can click on a movie to see more detailed information.<br><br>
 
 ## &#x1F4CB; User Stories
 
@@ -51,23 +50,13 @@ To install and run this project, follow these steps:
 <input type="checkbox" checked="checked"/> - Provide an option to clear the search. <br>
 <br>
 
-&#x1f7e0; - As an **Admin**, I can **Add, Edit, and Delete movies**, so that **I can manage the movie database**.
-### &#x2699; Tasks:  
-
-
-<input type="checkbox"/> - Create admin views for managing movies.<br>
-<input type="checkbox"/> - Implement add functionality with a form to input movie details.<br>
-<input type="checkbox"/> - Implement edit functionality with a pre-filled form based on the selected movie.<br>
-<input type="checkbox"/> - Implement delete functionality with a confirmation prompt.<br>
-<input type="checkbox"/> - Add validation to ensure proper data input for adding and editing movies.<br>
-<input type="checkbox"/> - Provide feedback to the admin after successful addition, editing, or deletion. <br><br>
-
 &#x1f7e0; - As a **User**, I can **view movie information and trailers**, so that **I can learn more about the movies**.
 ### &#x2699; Tasks: 
 
 
-<input type="checkbox"/> - Display information about the film and an image of the film's cover. <br>
+<input type="checkbox" checked="checked"/> - Display information about the film and an image of the film's cover. <br>
 <input type="checkbox"/> - Implement a link to click to see a trailer. <br> <br>
+
 
 &#x1f7e0; - As a **User**, I can **receive email confirmations**, so that I **can be notified of important account activities**.
 ### &#x2699; Tasks: 
@@ -78,13 +67,29 @@ To install and run this project, follow these steps:
 
 &#x1f7e0; - As a **User**, I can **receive email confirmations**, so that I **can be notified of important account activities**.
 ### &#x2699; Tasks: 
-<input type="checkbox"/> - As a User, I can share my favorite movie list, so that I can share it with others. <br>
+<input type="checkbox"/> - Implement functionality to make a list of favorite movies. <br>
 <input type="checkbox"/> - Implement functionality to share the movie list via Facebook, copy link, email, etc. <br><br>
+
+## Testing User stories <br>
+
+
+&#x1f7e0; - As a **Developer**, I want to **test the movie model** to **make users can interact with movie data**.
+### &#x2699; Tasks: 
+<input type="checkbox"/> - Write tests to check movie title, genre, release date, cover image and rating. <br>
+<input type="checkbox"/> - Write tests to check cover image. <br>
+<br><br>
+
+&#x1f7e0; - As a **Developer**, I want to **test the movie views** to **make sure they return the correct status codes and content**.<br><br>
+
+&#x1f7e0; - As a **Developer**, I want to **test the movie and login forms** to **make sure they handle and validate data correctly**.<br><br>
 
 
 ## Future Improvements
-Future improvements for this project include:
-
+### Suggestions for future improvements include: <br>
+<input type="checkbox"/> - Implement auto suggestions when searching, based on search query in a user frinedly dropdown layout. <br>
+<input type="checkbox"/> - Implement friend system, to send / get friend requests to connect with others. <br>
+<input type="checkbox"/> - Implement posibility for users to accpet / ignore friend requests sent by others. <br>
+<input type="checkbox"/> - Implement DM future for registered users (after accepted friend request)<br>
 
 
 ## Credits
