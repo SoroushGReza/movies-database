@@ -219,7 +219,7 @@ h1.text-center strong {
 
 /*   Movie Search   */
 
-#search-results-bg {
+.search-results-bg {
     min-height: 100vh;
     background: url(../media/space1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -231,21 +231,24 @@ h1.text-center strong {
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 1;
     
 }
 
-#search-results-bg::before {
+.search-results-bg-overlay {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)); /* halvgenomskinlig svart färg */
-    z-index: 1; 
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)); /* halvgenomskinlig svart färg */
+    z-index: 2; 
 }
 
-
+.search-content-details {
+    z-index: 10;
+}
 /*   Movie Overview   */
 #movie-overview {
     position: absolute;
