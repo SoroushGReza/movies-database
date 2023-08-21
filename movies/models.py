@@ -31,3 +31,20 @@ class SearchHistory(models.Model):
 
     class Meta:
         ordering = ['-timestamp']  # Order by most recent search
+
+
+# User Review 
+class Review(models.Model):
+    movie = models.ForeignKey(
+        Movie, on_delete=models.CASCADE, related_name='reviews'
+    )
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='reviews'
+    )
+    review_text = models.TextField(
+        max_length=1000, help_text="Enter your review here."
+    )
+    date = models.DateField(auto_now_add=True)
+    approved = models.BooleanField(
+        default=False
+    )  # Approved or Denied by admin
