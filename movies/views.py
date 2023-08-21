@@ -20,7 +20,9 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)  # Login after registration
-            return redirect('profile:user_profile')  # Redirect to movie list after Login
+            return redirect(
+                'movies:user_profile'
+            )  # Redirect to profile after Login
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
