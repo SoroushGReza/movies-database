@@ -21,7 +21,9 @@ class ReviewModelTest(TestCase):
 class ReviewFormTest(TestCase):
     def test_review_form_in_movie_overview(self):
         movie_id = 12345
-        response = self.client.get(reverse('movie_overview', args=[movie_id]))
+        response = self.client.get(
+            reverse('movies:movie_overview', args=[movie_id])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Submit Review')
         self.assertTemplateUsed(response, 'movies/movie_overview.html')
