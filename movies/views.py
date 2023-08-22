@@ -87,7 +87,10 @@ def search_movies(request):
             search_history = SearchHistory(user=request.user, query=query)
             search_history.save()
 
-    url = f"https://api.themoviedb.org/3/search/movie?api_key={TMDB_API_KEY}&query={query}"
+    url = (
+        f"https://api.themoviedb.org/3/search/movie?api_key={TMDB_API_KEY}"
+        f"&query={query}"
+    )
     response = requests.get(url)
     movies = response.json()['results']
 
@@ -103,7 +106,10 @@ def search_movies(request):
 
 # Get movie by ID
 def get_movie_by_id(movie_id):
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={TMDB_API_KEY}"
+    url = (
+        f"https://api.themoviedb.org/3/movie/{movie_id}"
+        "?api_key={TMDB_API_KEY}"
+    )
     response = requests.get(url)
     return response.json()
 
