@@ -27,3 +27,25 @@ class ReviewFormTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Submit Review')
         self.assertTemplateUsed(response, 'movies/movie_overview.html')
+
+
+# Review Submission Test
+class ReviewSubmissionTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='testuser', password='12345'
+        )
+        self.client.login(username='testuser', password='12345')
+        self.movie_id = 12345
+
+    def test_review_submission_and_approval(self):
+        review_text = "Amazing movie!"
+        response = self.client.post(
+            reverse(
+                'movies:movie_overview', args=[self.movie_id]
+            ), {'text': review_text}
+        )
+
+        review = Review.objects.get(user=self.user, movie_id=self.movie_id)
+        self.assertEqual(review.text, review_text)
+        self.assertFalse(review.approved)  # Not geting approved initially

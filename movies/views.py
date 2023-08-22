@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Genre, SearchHistory
+from .models import Genre, SearchHistory, Review
 from .tmdb import get_movies_from_tmdb
 from .env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 import requests
+from .forms import ReviewForm
 
 
 # Registration for Users
@@ -162,4 +163,13 @@ def movie_detail(request, pk):
 # Movie Overview
 def movie_overview(request, movie_id):
     movie = get_movie_by_id(movie_id)
-    return render(request, 'movies/movie_overview.html', {'movie': movie})
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.movie_id = movie_id
+            review.save()
+    else:
+        form = ReviewForm()
+    return render(request, 'movies/movie_overview.html', {'movie': movie, 'form': form})
