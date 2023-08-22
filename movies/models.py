@@ -3,15 +3,6 @@ from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
-# Movie model
-class Movie(models.Model):
-    title = models.CharField(max_length=200)  # Movie title
-    genre = models.CharField(max_length=100)  # Movie Genre
-    release_date = models.DateField()  # Movie Release date
-    rating = models.DecimalField(max_digits=5, decimal_places=1)  # Rating
-    description = models.TextField()  # Movie Description
-
-
 # Movie Genre
 class Genre(models.Model):
     name = models.CharField(max_length=100)
@@ -33,11 +24,11 @@ class SearchHistory(models.Model):
         ordering = ['-timestamp']  # Order by most recent search
 
 
-# User Review 
+# User Review
 class Review(models.Model):
-    movie = models.ForeignKey(
-        Movie, on_delete=models.CASCADE, related_name='reviews'
-    )
+    # movie = models.ForeignKey(
+    #     Movie, on_delete=models.CASCADE, related_name='reviews'
+    # )
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='reviews'
     )
