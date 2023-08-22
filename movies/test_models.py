@@ -50,3 +50,36 @@ class ReviewSubmissionTest(TestCase):
         review = Review.objects.get(user=self.user, movie_id=self.movie_id)
         self.assertEqual(review.text, review_text)
         self.assertEqual(review.rating, review_rating)
+
+
+# Admin Approval Test
+class AdminReviewApprovalTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='testuser', password='12345'
+        )
+        self.admin_user = User.objects.create_superuser(
+            username='admin', password='adminpass'
+        )
+        self.movie_id = 12345
+        self.review = Review.objects.create(
+            user=self.user,
+            movie_id=self.movie_id,
+            text="Great movie!",
+            rating=4.5
+        )
+
+    def test_admin_approves_review(self):
+        # Admin user logs in
+        self.client.login(username='admin', password='adminpass')
+
+        # Send request to approve the review
+        response = self.client.post(
+            reverse('movies:approve_review', args=[self.review.id])
+        )
+
+        # Refresh the review object from the database
+        self.review.refresh_from_db()
+
+        # Check that view is  approved
+        self.assertTrue(self.review.approved)

@@ -30,6 +30,7 @@ class Review(models.Model):
     movie_id = models.IntegerField(default=0)
     text = models.TextField()
     rating = models.FloatField(default=0.0)
+    approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.text[:50]

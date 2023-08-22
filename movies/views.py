@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 import requests
@@ -175,3 +176,12 @@ def movie_overview(request, movie_id):
     return render(
         request, 'movies/movie_overview.html', {'movie': movie, 'form': form}
     )
+
+
+# Review approval
+@user_passes_test(lambda user: user.is_staff)
+def approve_review(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+    review.approved = True
+    review.save()
+    return redirect('movies:movie_overview', movie_id=review.movie_id)
