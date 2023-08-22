@@ -108,7 +108,7 @@ def search_movies(request):
 def get_movie_by_id(movie_id):
     url = (
         f"https://api.themoviedb.org/3/movie/{movie_id}"
-        "?api_key={TMDB_API_KEY}"
+        f"?api_key={TMDB_API_KEY}"
     )
     response = requests.get(url)
     return response.json()
