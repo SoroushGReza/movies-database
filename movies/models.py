@@ -24,13 +24,26 @@ class SearchHistory(models.Model):
         ordering = ['-timestamp']  # Order by most recent search
 
 
-# Reviews & User Rating
+# User Reviews & User Rating
+
+STATUS_CHOICES = [
+    ('pending', 'Pending'),
+    ('approved', 'Approved'),
+    ('rejected', 'Rejected'),
+]
+
+
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie_id = models.IntegerField(default=0)
     text = models.TextField()
     rating = models.FloatField(default=0.0)
     approved = models.BooleanField(default=False)
+    status = models.CharField(
+        max_length=10,
+        choices=STATUS_CHOICES,
+        default='pending',
+    )
 
     def __str__(self):
         return self.text[:50]
