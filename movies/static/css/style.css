@@ -321,6 +321,50 @@ h1.text-center strong {
 }
 
 
+/*  User Reviews  */
+.review-form {
+    background-color: rgba(255, 255, 255, 0.3); 
+    border-radius: 6px;
+}
+
+.review-form textarea,
+.review-form input {
+    background-color: rgba(255, 255, 255, 0.3); 
+}
+
+.review-form button {
+    background-color: #108b94;
+}
+
+.transparent-input {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.transparent-input:focus {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    box-shadow: none;
+    outline: none;
+}
+
+.transparent-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+}
+
+.transparent-button:hover {
+    background-color: rgba(0, 0, 0, 0.466);
+    border: none;
+}
+
+.user-review-label {
+    color: white;
+}
+
+
+
 /*  Search history drop-down  */
 #recent-searches {
     position: absolute;
