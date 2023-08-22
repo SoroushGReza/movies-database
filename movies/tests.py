@@ -92,6 +92,6 @@ class AdminReviewApprovalTest(TestCase):
             text='Great Movie!',
             status='approved',
         )
-        url = reverse('movies/movie_overview', args=[1])
+        url = reverse('movies:movie_overview', args=[1])
         response = self.client.get(url)
         self.assertContains(response, "Great Movie!")
