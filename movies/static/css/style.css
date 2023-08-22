@@ -282,7 +282,10 @@ h1.text-center strong {
 .search-content-details {
     z-index: 10;
 }
+
+
 /*   Movie Overview   */
+
 #movie-overview {
     position: absolute;
     top: 0;
@@ -322,9 +325,11 @@ h1.text-center strong {
 
 
 /*  User Reviews  */
+
 .review-form {
     background-color: rgba(255, 255, 255, 0.3); 
     border-radius: 6px;
+    margin-top: 8%;
 }
 
 .review-form textarea,
