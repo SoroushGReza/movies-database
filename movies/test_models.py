@@ -11,7 +11,10 @@ class MovieModelTest(TestCase):
             genre="Action, Drama",
             release_date="2006-06-23",
             rating=5.9,
-            description="An ex-convict (Tyrese Gibson) gets tangled up with a gang after his car is hijacked with his son inside."
+            description=(
+                "An ex-convict (Tyrese Gibson) gets tangled up with a "
+                "gang after his car is hijacked with his son inside."
+            )
         )
         self.assertEqual(movie.title, "Waist Deep")
         self.assertEqual(movie.genre, "Action, Drama")
