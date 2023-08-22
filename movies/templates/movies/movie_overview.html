@@ -26,9 +26,17 @@
                 <h5>
                     <strong class="rating-color">Rating: </strong><span class="release-vote">{{ movie.vote_average }}</span><strong class="rating-color"> /10</strong>
                 </h5>
+                <form class="review-form transparent-bg">
+                    <div class="form-group">
+                        <label for="reviewText" class="transparent-text user-review-label">Write your review:</label>
+                        <textarea class="form-control transparent-input" id="reviewText" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary transparent-button">Submit Review</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}
