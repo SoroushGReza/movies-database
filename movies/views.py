@@ -174,7 +174,7 @@ def movie_overview(request, movie_id):
     else:
         form = ReviewForm()
     return render(
-        request, 'movies/movie_overview.html', {'movie': movie, 'form': form}
+        request, 'movies:movie_overview.html', {'movie': movie, 'form': form}
     )
 
 
