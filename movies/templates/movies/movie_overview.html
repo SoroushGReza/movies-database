@@ -26,6 +26,11 @@
                 <h5>
                     <strong class="rating-color">Rating: </strong><span class="release-vote">{{ movie.vote_average }}</span><strong class="rating-color"> /10</strong>
                 </h5>
+                <div class="reviews">
+                    {% for review in reviews %}
+                    <div class="review">{{ review.text }}</div>
+                    {% endfor %}
+                </div>
                 <form class="review-form transparent-bg">
                     <div class="form-group">
                         <label for="reviewText" class="transparent-text user-review-label">Write your review:</label>
