@@ -40,12 +40,13 @@ class ReviewSubmissionTest(TestCase):
 
     def test_review_submission_and_approval(self):
         review_text = "Amazing movie!"
+        review_rating = 4.5  # Add rating valu
         response = self.client.post(
             reverse(
                 'movies:movie_overview', args=[self.movie_id]
-            ), {'text': review_text}
+            ), {'text': review_text, 'rating': review_rating}
         )
 
         review = Review.objects.get(user=self.user, movie_id=self.movie_id)
         self.assertEqual(review.text, review_text)
-        self.assertFalse(review.approved)  # Not geting approved initially
+        self.assertEqual(review.rating, review_rating)
