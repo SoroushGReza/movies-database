@@ -4,10 +4,6 @@ from .models import Review
 from django.urls import reverse
 
 
-"""
-    MODEL TESTS BELOW
-"""
-
 # Review Model Test
 class ReviewModelTest(TestCase):
     def setUp(self):
@@ -20,10 +16,6 @@ class ReviewModelTest(TestCase):
         self.assertEqual(review.text, "Great movie!")
         self.assertEqual(review.rating, 4.5)
 
-
-"""
-    FORM TESTS
-"""
 
 # Review Form Test
 class ReviewFormTest(TestCase):
@@ -91,3 +83,15 @@ class AdminReviewApprovalTest(TestCase):
 
         # Check that view is  approved
         self.assertTrue(self.review.approved)
+
+    def test_approved_reviews_displayed(self):
+        # Creating a approved review
+        review = Review.objects.create(
+            user=self.user,
+            movie_id=1,
+            text='Great Movie!',
+            status='approved',
+        )
+        url = reverse('movies/movie_overview', args=[1])
+        response = self.client.get(url)
+        self.assertContains(response, "Great Movie!")
