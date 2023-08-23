@@ -164,6 +164,11 @@ def movie_detail(request, pk):
 # Movie Overview
 def movie_overview(request, movie_id):
     movie = get_movie_by_id(movie_id)
+
+    # Get approved reviews for movie
+    reviews = Review.objects.filter(
+        movie_id=movie_id, status='approved'
+    )
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -171,12 +176,16 @@ def movie_overview(request, movie_id):
             review.user = request.user
             review.movie_id = movie_id
             review.save()
+
             return redirect('movies:movie_overview', movie_id=movie_id)
     else:
         form = ReviewForm()
-    return render(
-        request, 'movies/movie_overview.html', {'movie': movie, 'form': form}
-    )
+    context = {
+        'movie': movie,
+        'form': form,
+        'reviews': reviews  # Include approved reviews
+    }
+    return render(request, 'movies/movie_overview.html', context)
 
 
 # Review approval
