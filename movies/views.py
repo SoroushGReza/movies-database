@@ -171,6 +171,7 @@ def movie_overview(request, movie_id):
             review.user = request.user
             review.movie_id = movie_id
             review.save()
+            return redirect('movies:movie_overview', movie_id=movie_id)
     else:
         form = ReviewForm()
     return render(
