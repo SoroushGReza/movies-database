@@ -26,10 +26,14 @@
                 <h5>
                     <strong class="rating-color">Rating: </strong><span class="release-vote">{{ movie.vote_average }}</span><strong class="rating-color"> /10</strong>
                 </h5>
-                <div class="reviews">
-                    {% for review in reviews %}
-                    <div class="review">{{ review.text }}</div>
-                    {% endfor %}
+                <div class="review-container">
+                    <div class="reviews">
+                        {% for review in reviews %}
+                        <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
+                        <div class="review-text">{{ review.text }}</div>
+                        <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
+                        {% endfor %}
+                    </div>
                 </div>
                 <form class="review-form transparent-bg" method="POST" action="{% url 'movies:movie_overview' movie_id=movie.id %}">
                     {% csrf_token %}
