@@ -71,7 +71,7 @@ class AdminReviewApprovalTest(TestCase):
 
     def test_admin_approves_review(self):
         # Admin user logs in
-        self.client.login(username='admin', password='adminpass')
+        self.client.force_login(self.admin_user)
 
         # Send request to approve the review
         response = self.client.post(
