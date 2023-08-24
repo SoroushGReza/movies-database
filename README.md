@@ -65,24 +65,10 @@ To install and run this project, follow these steps:
 <input type="checkbox"/> - Send confirmation when the password has been changed. <br>
 <input type="checkbox"/> - Send confirmation when the account has been deleted. <br> <br>
 
-&#x1f7e0; - As a **User**, I can **receive email confirmations**, so that I **can be notified of important account activities**.
+&#x1f7e0; - As a **User**, I can **make a list of my favorite movies**, so that I can **share my list with others**.
 ### &#x2699; Tasks: 
 <input type="checkbox"/> - Implement functionality to make a list of favorite movies. <br>
-<input type="checkbox"/> - Implement functionality to share the movie list via Facebook, copy link, email, etc. <br><br>
-
-## Testing User stories <br>
-
-
-&#x1f7e0; - As a **Developer**, I want to **test the movie model** to **make users can interact with movie data**.
-### &#x2699; Tasks: 
-<input type="checkbox"/> - Write tests to check movie title, genre, release date, cover image and rating. <br>
-<input type="checkbox"/> - Write tests to check cover image. <br>
-<br><br>
-
-&#x1f7e0; - As a **Developer**, I want to **test the movie views** to **make sure they return the correct status codes and content**.<br><br>
-
-&#x1f7e0; - As a **Developer**, I want to **test the movie and login forms** to **make sure they handle and validate data correctly**.<br><br>
-
+<input type="checkbox"/> - Implement functionality to share the movie list social media, copy link, email, etc. <br><br>
 
 ## Future Improvements
 ### Suggestions for future improvements include: <br>
