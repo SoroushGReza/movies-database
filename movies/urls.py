@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import movie_list, movie_detail
+from .views import movie_list, movie_detail, approve_review
 from .views import get_recent_searches, clear_search_history
 from . import views
 from django.conf import settings
@@ -56,7 +56,8 @@ urlpatterns = [
     # Approving review
     path(
         'approve_review/<int:review_id>/',
-        views.approve_review, name='approve_review',
+        approve_review,
+        name='approve_review',
     ),
 
 ]
