@@ -190,12 +190,32 @@ def movie_overview(request, movie_id):
     return render(request, 'movies/movie_overview.html', context)
 
 
+# Managing Reviews
+@user_passes_test(lambda user: user.is_staff)
+def manage_reviews(request):
+    # Get all reviews that is pending
+    pending_reviews = Review.objects.filter(status='pending')
+
+    return render(request, 'movies/manage')
+
+
 # Review approval
 @user_passes_test(lambda user: user.is_staff)
 def approve_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     review.approved = True
     review.status = 'approved'
+    review.save()
+    return HttpResponseRedirect(
+        reverse('movies:movie_overview', args=[review.movie_id])
+    )
+
+
+# Reject Review
+@user_passes_test(lambda user: user.is_staff)
+def reject_review(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+    review.status = 'rejected'
     review.save()
     return HttpResponseRedirect(
         reverse('movies:movie_overview', args=[review.movie_id])
