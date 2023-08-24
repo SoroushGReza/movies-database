@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.utils import timezone
 
 
 # Movie Genre
@@ -38,6 +39,7 @@ class Review(models.Model):
     movie_id = models.IntegerField(default=0)
     text = models.TextField()
     rating = models.FloatField(default=0.0)
+    date_created = models.DateTimeField(default=timezone.now)
     approved = models.BooleanField(default=False)
     status = models.CharField(
         max_length=10,
