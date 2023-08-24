@@ -326,6 +326,45 @@ h1.text-center strong {
 
 
 /*  User Reviews  */
+.review-container {
+    padding-top: 5%;
+}
+
+.reviews {
+    border: 1px solid #108b9444;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.review-user {
+    padding-top: 5px;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+    font-size: 19px;
+    background-color: #108b9444;
+    color: #007bff;
+    border-radius: 5px 5px 0 0;
+}
+
+#review-user {
+    color: rgba(215, 211, 0, 0.689);
+}
+
+.review-text {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5px;
+    font-size: 16px;
+    color: #ffffffdb;
+}
+
+.date-created {
+    font-size: 12px;
+    color: rgba(255, 251, 0, 0.315);
+    text-align: center;
+    padding-bottom: 5px;
+}
 
 .review-form {
     background-color: rgba(255, 255, 255, 0.3); 
