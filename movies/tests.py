@@ -21,7 +21,7 @@ class ReviewModelTest(TestCase):
 # Review Form Test
 class ReviewFormTest(TestCase):
     def test_review_form_in_movie_overview(self):
-        movie_id = 12345
+        movie_id = 4133
         response = self.client.get(
             reverse('movies:movie_overview', args=[movie_id])
         )
@@ -89,11 +89,11 @@ class AdminReviewApprovalTest(TestCase):
         # Creating a approved review
         review = Review.objects.create(
             user=self.user,
-            movie_id=1,
+            movie_id=4133,
             text='Great Movie!',
             status='approved',
         )
-        url = reverse('movies:movie_overview', args=[1])
+        url = reverse('movies:movie_overview', args=[4133])
         response = self.client.get(url)
         self.assertContains(response, "Great Movie!")
 
