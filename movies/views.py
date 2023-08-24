@@ -13,6 +13,8 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 import requests
 from .forms import ReviewForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 
 # Registration for Users
@@ -193,5 +195,8 @@ def movie_overview(request, movie_id):
 def approve_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     review.approved = True
+    review.status = 'approved'
     review.save()
-    return redirect('movies:movie_overview', movie_id=review.movie_id)
+    return HttpResponseRedirect(
+        reverse('movies:movie_overview', args=[review.movie_id])
+    )
