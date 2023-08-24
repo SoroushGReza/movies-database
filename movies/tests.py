@@ -108,13 +108,14 @@ class AdminReviewApprovalTest(TestCase):
         self.assertContains(response, "Great movie!")
         self.assertContains(response, "pending")
 
-    def test_admin_rejects_review(self):
+    def test_admin_reject_review(self):
         # Admin user logs in
         self.client.force_login(self.admin_user)
         # Send request to reject review
-        response = self.client.post(reverse('movies:reject_review', args=[self.review.id]))
+        response = self.client.post(
+            reverse('movies:reject_review', args=[self.review.id])
+        )
         # Refresh the review object from database
         self.review.refresh_from_db()
         # Check taht review is rejected
         self.assertEqual(self.review.status, "rejected")
-
