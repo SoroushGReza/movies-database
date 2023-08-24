@@ -37,6 +37,10 @@
                         <label for="reviewText" class="transparent-text user-review-label">Write your review:</label>
                         <textarea class="form-control transparent-input" id="reviewText" rows="2" name="text"></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="reviewRating" class="transparent-text user-review-label">Rate the movie (1-10):</label>
+                        <input type="number" class="form-control transparent-input" id="reviewRating" name="rating" min="1" max="10" step="0.1" required>
+                    </div>
                     <button type="submit" class="btn btn-primary transparent-button">Submit Review</button>
                 </form>
             </div>
