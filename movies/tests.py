@@ -8,6 +8,7 @@ from django.urls import reverse
 class ReviewModelTest(TestCase):
     def setUp(self):
         self.user = User.objects.create(username='testuser', password='12345')
+        self.movie_id = 4133  # Movie Blow
 
     def test_review_creation(self):
         review = Review.objects.create(
@@ -36,7 +37,7 @@ class ReviewSubmissionTest(TestCase):
             username='testuser', password='12345'
         )
         self.client.login(username='testuser', password='12345')
-        self.movie_id = 12345
+        self.movie_id = 4133  # Movie Blow
 
     def test_review_submission_and_approval(self):
         review_text = "Amazing movie!"
@@ -61,7 +62,7 @@ class AdminReviewApprovalTest(TestCase):
         self.admin_user = User.objects.create_superuser(
             username='moviebaseadmin', password='adminpass23'
         )
-        self.movie_id = 12345
+        self.movie_id = 4133  # Movie Blow
         self.review = Review.objects.create(
             user=self.user,
             movie_id=self.movie_id,
