@@ -59,7 +59,7 @@ class AdminReviewApprovalTest(TestCase):
             username='testuser', password='12345'
         )
         self.admin_user = User.objects.create_superuser(
-            username='admin', password='adminpass'
+            username='moviebaseadmin', password='adminpass23'
         )
         self.movie_id = 12345
         self.review = Review.objects.create(
@@ -98,11 +98,11 @@ class AdminReviewApprovalTest(TestCase):
 
     def test_review_pending_in_admin(self):
         # Admin UUser Login
-        self.client.login(username='moviebaseadmin', password='adminpass23')
+        self.client.force_login(self.admin_user)
 
         # Check Pending Review in Admin Panel
         response = self.client.get(
-            reverse('moviebaseadmin:movies_review_changelist')
+            reverse('admin:movies_review_changelist')
         )
         self.assertContains(response, "Great movie!")
         self.assertContains(response, "pending")
