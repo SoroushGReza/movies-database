@@ -59,5 +59,11 @@ urlpatterns = [
         approve_review,
         name='approve_review',
     ),
+    # Reject Review
+    path(
+        'reject_review/<int:review_id>/',
+        views.reject_review,
+        name='reject_review',
+    ),
 
 ]
