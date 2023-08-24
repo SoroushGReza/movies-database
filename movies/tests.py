@@ -95,3 +95,14 @@ class AdminReviewApprovalTest(TestCase):
         url = reverse('movies:movie_overview', args=[1])
         response = self.client.get(url)
         self.assertContains(response, "Great Movie!")
+
+    def test_review_pending_in_admin(self):
+        # Admin UUser Login
+        self.client.login(username='moviebaseadmin', password='adminpass23')
+
+        # Check Pending Review in Admin Panel
+        response = self.client.get(
+            reverse('moviebaseadmin:movies_review_changelist')
+        )
+        self.assertContains(response, "Great movie!")
+        self.assertContains(response, "pending")
