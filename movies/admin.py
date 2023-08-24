@@ -14,7 +14,7 @@ class ReviewAdmin(admin.ModelAdmin):
 
     # Rejecting reviews
     def reject_reviews(self, request, queryset):
-        queryset.update(status='approved', approved=False)
+        queryset.update(status='rejected', approved=False)
 
     approve_reviews.short_description = "Approve selected reviews"
     reject_reviews.short_description = "Reject selected reviews"
