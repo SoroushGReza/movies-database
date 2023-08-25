@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Genre, SearchHistory, Review
-from .tmdb import get_movies_from_tmdb
+from .tmdb import get_movies_from_tmdb, get_movie_trailer
 from .env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
@@ -166,6 +166,7 @@ def movie_detail(request, pk):
 # Movie Overview
 def movie_overview(request, movie_id):
     movie = get_movie_by_id(movie_id)
+    trailer_key = get_movie_trailer(movie_id)
 
     # Get approved reviews for movie
     reviews = Review.objects.filter(
@@ -185,7 +186,8 @@ def movie_overview(request, movie_id):
     context = {
         'movie': movie,
         'form': form,
-        'reviews': reviews  # Include approved reviews
+        'reviews': reviews,  # Include approved reviews
+        'trailer_key': trailer_key,  # Include Trailer
     }
     return render(request, 'movies/movie_overview.html', context)
 
