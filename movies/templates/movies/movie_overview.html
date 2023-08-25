@@ -15,6 +15,14 @@
                 <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }} poster"
                     onerror="handleImageError(this);" data-fallback-image="{% static 'media/image404.png' %}"
                     class="img-fluid image-movie">
+                <!-- Release date -->
+                <h5 class="release-date-overview">
+                    <strong class="release-date-color">Release date: </strong><span class="release-vote">{{ movie.release_date }}</span>
+                </h5>
+                <!-- Rating -->
+                <h5>
+                    <strong class="rating-color">Rating: </strong><span class="release-vote">{{ movie.vote_average }}</span><strong class="rating-color"> /10</strong>
+                </h5>
             </div>
             <div class="col-md-6">
                 <!-- Movie title -->
@@ -27,28 +35,21 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ trailer_key }}" frameborder="0"
                     allowfullscreen></iframe>
                 {% else %}
-                <div class="trailer-404">
-                    <div class="trailer-404-overlay"></div>
-                </div>
+                <div class="trailer-404"></div>
                 {% endif %}
-                <!-- Release date -->
-                <h5>
-                    <strong class="release-date-color">Release date: </strong><span class="release-vote">{{ movie.release_date }}</span>
-                </h5>
-                <!-- Rating -->
-                <h5>
-                    <strong class="rating-color">Rating: </strong><span class="release-vote">{{ movie.vote_average }}</span><strong class="rating-color"> /10</strong>
-                </h5>
+                <hr class="block-divider overview-block">
                 <!-- User Reviews -->
-                <div class="review-container">
-                    <div class="reviews">
-                        {% for review in reviews %}
-                        <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
-                        <div class="review-text">{{ review.text }}</div>
-                        <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
-                        {% endfor %}
+                {% if has_reviews %}
+                    <div class="review-container">
+                        <div class="reviews">
+                            {% for review in reviews %}
+                            <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
+                            <div class="review-text">{{ review.text }}</div>
+                            <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
+                {% endif %}
                 <!-- Review and Rating form -->
                 <form class="review-form transparent-bg" method="POST"
                     action="{% url 'movies:movie_overview' movie_id=movie.id %}">
