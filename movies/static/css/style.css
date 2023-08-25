@@ -285,7 +285,7 @@ h1.text-center strong {
 }
 
 
-/*   Movie Overview   */
+/*     Movie Overview Page     */
 
 #movie-overview {
     position: absolute;
@@ -324,6 +324,35 @@ h1.text-center strong {
     min-height: 100vh;
 }
 
+/*    Trailer    */
+iframe {
+    margin-bottom: 8%;
+    padding-top: 5%;
+    border: none;
+    padding: 15px;
+    background-color: #04858eae;
+    border-radius: 10px;
+}
+
+/*  Trailer Fallback Image  */
+.trailer-404 {
+    width: 350px;
+    height: 350px;
+
+    background: url('../media/trailer-404.gif');
+    position: relative;
+    z-index: -1;
+    border-radius: 50%;
+    
+    justify-content: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
 
 /*  User Reviews  */
 .review-container {
@@ -333,7 +362,7 @@ h1.text-center strong {
 .reviews {
     border: 1px solid #108b9444;
     border-radius: 5px;
-    width: 30%;
+    width: 50%;
 }
 
 .review-user {
@@ -460,25 +489,6 @@ h1.text-center strong {
     padding-top: 15px;
 }
 
-/* Trailer */
-.trailer-404 {
-    margin-top: 5%;
-    margin-bottom: 8%;
-    width: 560px;
-    height: 315px;
-    background: url('../media/trailer-404.png');
-    position: relative;
-    z-index: -1;
-    border-radius: 50%;
-}
-
-.trailer-404-overlay {
-    
-    position: absolute;
-    z-index: 1;
-}
-
-
 
 .release-vote {
     font-family: 'Lato', sans-serif;
@@ -489,6 +499,11 @@ h1.text-center strong {
 }
 
 /* release-date */
+
+.release-date-overview {
+    margin-top: 8%;
+}
+
 .release-date-color {
     font-family: 'Lato', sans-serif;
     color: #0dff0074;
@@ -584,14 +599,6 @@ h1.news strong {
     background-color: #a5487d9d;
     margin: 0 auto;
 }
-
-.overview-block {
-    width: 50%;
-    height: 8px;
-    background-color: #a548489d;
-    margin: 0 auto;
-}
-
 
 .movie {
     align-items: center;
