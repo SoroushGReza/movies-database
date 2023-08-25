@@ -276,7 +276,7 @@ h1.text-center strong {
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)); /* halvgenomskinlig svart färg */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
     z-index: 2; 
 }
 
@@ -459,6 +459,26 @@ h1.text-center strong {
     font-size: 20px;
     padding-top: 15px;
 }
+
+/* Trailer */
+.trailer-404 {
+    margin-top: 5%;
+    margin-bottom: 8%;
+    width: 560px;
+    height: 315px;
+    background: url('../media/trailer-404.png');
+    position: relative;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.trailer-404-overlay {
+    
+    position: absolute;
+    z-index: 1;
+}
+
+
 
 .release-vote {
     font-family: 'Lato', sans-serif;
