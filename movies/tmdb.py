@@ -7,3 +7,12 @@ def get_movies_from_tmdb():
     querystring = {"api_key": TMDB_API_KEY, "language": "en-US", "page": "1"}
     response = requests.request("GET", url, params=querystring)
     return response.json()
+
+
+def get_movie_trailer(movie_id):
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}/videos"
+    querystring = {"api_key": TMDB_API_KEY, "language": "en-US"}
+    response = requests.request("GET", url, params=querystring)
+    trailers = response.json().get('results', [])
+    # Return the first trailer if available
+    return trailers[0]['key'] if trailers else None
