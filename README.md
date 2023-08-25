@@ -50,12 +50,12 @@ To install and run this project, follow these steps:
 <input type="checkbox" checked="checked"/> - Provide an option to clear the search. <br>
 <br>
 
-&#x1f7e0; - As a **User**, I can **view movie information and trailers**, so that **I can learn more about the movies**.
+&#x1f7e2; - As a **User**, I can **view movie information and trailers**, so that **I can learn more about the movies**.
 ### &#x2699; Tasks: 
 
 
 <input type="checkbox" checked="checked"/> - Display information about the film and an image of the film's cover. <br>
-<input type="checkbox"/> - Implement a link to click to see a trailer. <br> <br>
+<input type="checkbox" checked="checked"/> - Implement a link to click to see a trailer. <br> <br>
 
 
 &#x1f7e0; - As a **User**, I can **receive email confirmations**, so that I **can be notified of important account activities**.
