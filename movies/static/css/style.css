@@ -468,7 +468,7 @@ iframe {
 	transform: rotateX(15deg);
 }
 
-input { display: none; }
+input.star-label { display: none; }
 
 .star-label {
 	width: 10vmin;
