@@ -41,15 +41,17 @@
                 {% endif %}
                 <hr class="block-divider overview-block">
                 <!-- User Reviews -->
-                    <div class="review-container">
-                        <div class="reviews">
-                            {% for review in reviews %}
-                            <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
-                            <div class="review-text">{{ review.text }}</div>
-                            <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
-                            {% endfor %}
+                    {% if reviews %}
+                        <div class="review-container">
+                            <div class="reviews">
+                                {% for review in reviews %}
+                                <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
+                                <div class="review-text">{{ review.text }}</div>
+                                <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
+                                {% endfor %}
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
                 <!-- Review and Rating form -->
                 {% if user.is_authenticated %}
                     <form class="review-form transparent-bg" method="POST"
