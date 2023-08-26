@@ -32,8 +32,10 @@
                 <br>
                 <!-- Trailer -->
                 {% if trailer_key %}
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ trailer_key }}" frameborder="0"
-                    allowfullscreen></iframe>
+                <div class="col-md-12">
+                    <iframe width="100%" height="350" src="https://www.youtube.com/embed/{{ trailer_key }}" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
                 {% else %}
                 <div class="trailer-404"></div>
                 {% endif %}
@@ -65,6 +67,15 @@
                                 min="1" max="10" step="0.1" required>
                         </div>
                         <button type="submit" class="btn btn-primary transparent-button">Submit Review</button>
+                        <div class="rating-stars">
+                            <input type="radio" name="rating" id="rs0"><label class="star-label" for="rs0"></label>
+                            <input type="radio" name="rating" id="rs1"><label class="star-label" for="rs1"></label>
+                            <input type="radio" name="rating" id="rs2"><label class="star-label" for="rs2"></label>
+                            <input type="radio" name="rating" id="rs3" checked><label class="star-label" for="rs3"></label>
+                            <input type="radio" name="rating" id="rs4"><label class="star-label" for="rs4"></label>
+                            <input type="radio" name="rating" id="rs5"><label class="star-label" for="rs5"></label>
+                            <span class="number"></span>
+                        </div>
                     </form>
                 {% endif %}
             </div>
