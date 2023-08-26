@@ -358,7 +358,9 @@ iframe {
     align-items: center;
 }
 
-/*  User Reviews  */
+
+/*    User Reviews    */
+
 .review-container {
     padding-top: 5%;
 }
@@ -399,6 +401,8 @@ iframe {
     padding-bottom: 5px;
 }
 
+
+/*    Review Form    */
 .review-form {
     background-color: rgba(255, 255, 255, 0.3); 
     border-radius: 6px;
@@ -442,8 +446,8 @@ iframe {
 }
 
 
-
 /*  Search history drop-down  */
+
 #recent-searches {
     position: absolute;
     background-color: rgba(24,156,167, 0.6); 
@@ -462,7 +466,8 @@ iframe {
 }
 
 
-/* Cover Image */
+/*  Cover Image  */
+
 .image-movie {
     width: 60%;
     height: auto;
@@ -471,10 +476,14 @@ iframe {
     display: inline-block;
 }
 
+
 /* Fallback Image */
+
 .fallback-image {
     border-radius: 50%;
 }
+
+
 
 #search-movie-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -515,6 +524,7 @@ iframe {
 }
 
 /* rating */
+
 .rating-color {
     font-family: 'Lato', sans-serif;
     color: #fff7006d;
