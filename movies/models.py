@@ -38,7 +38,9 @@ class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie_id = models.IntegerField(default=0)
     text = models.TextField()
-    rating = models.FloatField(default=0.0)
+    rating = models.IntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)]
+    )
     date_created = models.DateTimeField(default=timezone.now)
     approved = models.BooleanField(default=False)
     status = models.CharField(
