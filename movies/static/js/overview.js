@@ -6,10 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add click event listener to each star
     stars.forEach(function(star) {
         star.addEventListener('click', function() {
+            // Log when a star is clicked
+            console.log("Star clicked: ", this.value);
+
             // Get the rating value
-            const ratingValue = this.getAttribute('data-value');
+            const ratingValue = this.value;
             
         });
     });
 });
-
