@@ -79,3 +79,6 @@ To install and run this project, follow these steps:
 
 
 ## Credits
+
+Rating stars:
+https://freefrontend.com/css-star-ratings/
