@@ -252,7 +252,11 @@ h1.text-center strong {
 }
 
 
-/*   Movie Search   */
+/*     Movie Search Page    */
+
+.search-page-container{
+    --bs-gutter-x: 0;
+}
 
 .search-results-bg {
     min-height: 100vh;
@@ -596,6 +600,7 @@ h1.news strong {
 
 .container-fluid {
     overflow-x: hidden;
+    position: relative;
 }
 
 .news-block {
