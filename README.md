@@ -32,7 +32,7 @@ To install and run this project, follow these steps:
 <input type="checkbox" checked="checked" /> - Implement user registration functionality.<br>
 <input type="checkbox" checked="checked" /> - Implement user logout functionality.<br><br>
 
-&#x1f7e2; As a **User**, I can **View and Edit my Profile**, so that **I can manage my personal information**.
+&#x1f7e0; As a **User**, I can **View and Edit my Profile**, so that **I can manage my personal information**.
 ### &#x2699; Tasks:  
 
 <input type="checkbox" checked="checked" /> - Create a profile view page. <br>
@@ -40,7 +40,10 @@ To install and run this project, follow these steps:
 <input type="checkbox" checked="checked" /> - Implement edit button on the profile page. <br>
 <input type="checkbox" checked="checked" /> - Create a form for editing user profile information. <br>
 <input type="checkbox" checked="checked" /> - Add validation to ensure proper data input. <br>
-<input type="checkbox" checked="checked"/> - Provide feedback to the user after successful editing. <br> <br>
+<input type="checkbox" checked="checked"/> - Provide feedback to the user after successful editing. <br>
+ <input type="checkbox"/>- Implement functionality for user to upload / change / delete profile image. <br>
+ <input type="checkbox"/>- Add default profile image as a dark shadow image to be shown if user doesnt have a profile image.
+<br> <br>
 
 &#x1f7e2; As a **User**, I can **search for movie titles**, so that **I can quickly find the movies I'm looking for**.
 ### &#x2699; Tasks:  
