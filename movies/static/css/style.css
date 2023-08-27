@@ -361,7 +361,12 @@ iframe {
     align-items: center;
 }
 
-
+hr.overview-block {
+    width: 60%;
+    height: 8px;
+    background-color: #00fbff5f;
+    margin-bottom: 10%;
+}
 /*    User Reviews    */
 
 .review-container {
@@ -386,14 +391,14 @@ iframe {
 }
 
 #review-user {
-    color: rgba(215, 211, 0, 0.689);
+    color: rgba(0, 255, 68, 0.689);
 }
 
 .review-text {
     padding-top: 3%;
     padding-bottom: 3%;
     padding-left: 5px;
-    font-size: 16px;
+    font-size: 19px;
     color: #ffffffdb;
 }
 
@@ -401,9 +406,11 @@ iframe {
     padding-top: 3%;
     padding-bottom: 3%;
     padding-left: 5px;
-    font-size: 16px;
+    
+    font-size: 21px;
     color: #eeff00b9;
     max-width: 100%;
+    text-align: center;
 }
 
 .date-created {
@@ -427,15 +434,24 @@ iframe {
     background-color: rgba(255, 255, 255, 0.3); 
     border-radius: 6px;
     margin-top: 8%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.review-input::placeholder {
+    font-size: 12px;
+    color: rgba(81, 81, 81, 0.753);
 }
 
 .review-form textarea,
 .review-form input {
-    background-color: rgba(255, 255, 255, 0.3); 
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .review-form button {
-    background-color: #108b94;
+    background-color: #10a3ade5;
+    margin-top: 4vmin;
+    margin-bottom: 6px;
 }
 
 .transparent-input {
@@ -462,7 +478,18 @@ iframe {
 }
 
 .user-review-label {
-    color: white;
+    color: rgba(62, 213, 255, 0.686);
+    margin-left: 3px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+
+.rate-movie-p {
+    color: rgba(62, 213, 255, 0.686);
+    margin-left: 3px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    text-align: center;
 }
 
 
@@ -475,15 +502,16 @@ iframe {
 
 
 .rating-stars {
-	display: block;
-	width: 35vmin;
-	padding: 3vmin;
-	border-radius: 5vmin;
-	position: relative;
-	display: flex;
-	justify-content: center;
+    display: block;
+    width: 30vmin;
+    padding-bottom: 1vmin;
+    border-radius: 5vmin;
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
-	transform: rotateX(15deg);
+    transform: rotateX(15deg);
+    height: 20px;
 }
 
 input.star-label { display: none; }
