@@ -15,18 +15,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
-// Rating stars presented as users rating in review
-document.addEventListener('DOMContentLoaded', function() {
-    const reviewItems = document.querySelectorAll('.review-item');
-    reviewItems.forEach(item => {
-        const ratingStars = item.querySelector('.star-rating');
-        const rating = parseInt(ratingStars.getAttribute('data-rating'));
-
-        // Fill stars based on user rating
-        for (let i = 1; i <= rating; i++) {
-            ratingStars.querySelector(`.star${i}`).classList.add('filled');
-        }
-
-    });
-});

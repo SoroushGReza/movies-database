@@ -397,6 +397,10 @@ iframe {
     color: #ffffffdb;
 }
 
+.star-rating {
+    color: #007bff;
+}
+
 .date-created {
     font-size: 12px;
     color: rgba(255, 251, 0, 0.315);

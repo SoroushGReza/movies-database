@@ -45,16 +45,12 @@
                         <div class="review-container">
                             <div class="reviews">
                                 {% for review in reviews %}
-                                <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
-                                <div class="review-text">{{ review.text }}</div>
-                                <div class="star-rating" data-rating="{{ review.rating }}">
-                                    <span class="star1"></span>
-                                    <span class="star2"></span>
-                                    <span class="star3"></span>
-                                    <span class="star4"></span>
-                                    <span class="star5"></span>
+                                <div class="review-item">
+                                    <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
+                                    <div class="review-text">{{ review.text }}</div>
+                                    <div class="star-rating">="{{ review.rating }}</div>
+                                    <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
                                 </div>
-                                <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
                                 {% endfor %}
                             </div>
                         </div>
