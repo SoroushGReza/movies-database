@@ -43,18 +43,19 @@
                 
                 <!-- User Reviews -->
                     {% if reviews %}
-                        <div class="review-container">
-                            <div class="reviews">
-                                {% for review in reviews %}
+                        <div class="review-container row">
+                            {% for review in reviews %}
+                            <div class="col-md-6">
                                 <div class="review-item">
                                     <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
                                     <div class="review-text">{{ review.text }}</div>
                                     <div class="rating-user">{{ review.rating_as_stars }}</div>
                                     <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
                                 </div>
-                                {% endfor %}
                             </div>
+                            {% endfor %}
                         </div>
+                    
                     {% endif %}
                 
                 {% if not user.is_authenticated %}
@@ -68,7 +69,7 @@
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="reviewText" class="transparent-text user-review-label">Write your review here:</label>
-                            <textarea class="form-control transparent-input review-input" id="reviewText" placeholder="Maximum 1000-letters" rows="2" name="text"
+                            <textarea class="form-control transparent-input text-light review-input" id="reviewText" placeholder="Maximum 1000-letters" rows="2" name="text"
                                 maxlength="1000" required></textarea>
                         </div>
                         <!--    Star Rating    -->
