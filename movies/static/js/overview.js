@@ -15,3 +15,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// Show full review 
+document.addEventListener("DOMContentLoaded", function() {
+    const reviewLinks = document.querySelectorAll('.show-full-review');
+
+    reviewLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const reviewTextElement = e.target.parentElement;
+            const fullText = reviewTextElement.getAttribute('data-full-text');
+            reviewTextElement.innerHTML = fullText;
+        });
+    });
+});
