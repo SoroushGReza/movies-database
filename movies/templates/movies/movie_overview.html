@@ -30,6 +30,7 @@
                 <!-- Movie Overview -->
                 <p id="search-movie-overview" class="movie-details">{{ movie.overview }}</p>
                 <br>
+                <hr class="block-divider overview-block">
                 <!-- Trailer -->
                 {% if trailer_key %}
                 <div class="col-md-12">
@@ -39,7 +40,7 @@
                 {% else %}
                 <div class="trailer-404"></div>
                 {% endif %}
-                <hr class="block-divider overview-block">
+                
                 <!-- User Reviews -->
                     {% if reviews %}
                         <div class="review-container">
@@ -66,18 +67,21 @@
                         action="{% url 'movies:movie_overview' movie_id=movie.id %}">
                         {% csrf_token %}
                         <div class="form-group">
-                            <label for="reviewText" class="transparent-text user-review-label">Write your review:</label>
-                            <textarea class="form-control transparent-input" id="reviewText" rows="2" name="text"
-                                required></textarea>
+                            <label for="reviewText" class="transparent-text user-review-label">Write your review here:</label>
+                            <textarea class="form-control transparent-input review-input" id="reviewText" placeholder="Maximum 1000-letters" rows="2" name="text"
+                                maxlength="1000" required></textarea>
                         </div>
                         <!--    Star Rating    -->
-                        <div class="rating-stars">
-                            <input class="star-label rating-star" value="1" type="radio" name="rating" id="rs1"><label class="star-label" for="rs1"></label>
-                            <input class="star-label rating-star" value="2" type="radio" name="rating" id="rs2"><label class="star-label" for="rs2"></label>
-                            <input class="star-label rating-star" value="3" type="radio" name="rating" id="rs3" checked><label class="star-label" for="rs3"></label>
-                            <input class="star-label rating-star" value="4" type="radio" name="rating" id="rs4"><label class="star-label" for="rs4"></label>
-                            <input class="star-label rating-star" value="5" type="radio" name="rating" id="rs5"><label class="star-label" for="rs5"></label>
-                            <span class="number"></span>
+                        <div class="row col-12 justify-content-center">
+                            <p class="rate-movie-p">Rate Movie</p>
+                            <div class="rating-stars">
+                                <input class="star-label rating-star" value="1" type="radio" name="rating" id="rs1"><label class="star-label" for="rs1"></label>
+                                <input class="star-label rating-star" value="2" type="radio" name="rating" id="rs2"><label class="star-label" for="rs2"></label>
+                                <input class="star-label rating-star" value="3" type="radio" name="rating" id="rs3" checked><label class="star-label" for="rs3"></label>
+                                <input class="star-label rating-star" value="4" type="radio" name="rating" id="rs4"><label class="star-label" for="rs4"></label>
+                                <input class="star-label rating-star" value="5" type="radio" name="rating" id="rs5"><label class="star-label" for="rs5"></label>
+                                <span class="number"></span>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary transparent-button">Submit Review</button>
                     </form>
