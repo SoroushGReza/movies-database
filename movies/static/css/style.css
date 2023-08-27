@@ -373,6 +373,12 @@ hr.overview-block {
     padding-top: 5%;
 }
 
+.review-item {
+    border: 1px solid rgba(0, 255, 68, 0.689);
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+
 .reviews {
     border: 1px solid #108b9444;
     border-radius: 5px;
