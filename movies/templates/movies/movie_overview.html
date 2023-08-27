@@ -48,7 +48,12 @@
                             <div class="col-md-6">
                                 <div class="review-item">
                                     <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
-                                    <div class="review-text">{{ review.text }}</div>
+                                    <div class="review-text" data-full-text="{{ review.text }}">
+                                        {{ review.text|slice:":100" }}
+                                        {% if review.text|length > 100 %}
+                                        ... <a href="#" class="show-full-review">Show full review</a>
+                                        {% endif %}
+                                    </div>
                                     <div class="rating-user">{{ review.rating_as_stars }}</div>
                                     <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
                                 </div>
