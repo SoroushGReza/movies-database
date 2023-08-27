@@ -51,3 +51,7 @@ class Review(models.Model):
 
     def __str__(self):
         return self.text[:50]
+
+    def rating_as_stars(self):
+        rating_int = int(round(self.rating))
+        return '★' * rating_int
