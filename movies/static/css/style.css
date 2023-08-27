@@ -397,8 +397,13 @@ iframe {
     color: #ffffffdb;
 }
 
-.star-rating {
-    color: #007bff;
+.rating-user {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5px;
+    font-size: 16px;
+    color: #eeff00b9;
+    max-width: 100%;
 }
 
 .date-created {
@@ -406,6 +411,14 @@ iframe {
     color: rgba(255, 251, 0, 0.315);
     text-align: center;
     padding-bottom: 5px;
+}
+
+.signin-4-review {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#f2ff00b5; 
+    padding-top: 9%;
+    font-size: 22px;
+    text-align: center;
 }
 
 
@@ -463,12 +476,13 @@ iframe {
 
 .rating-stars {
 	display: block;
-	width: 65vmin;
+	width: 35vmin;
 	padding: 3vmin;
 	border-radius: 5vmin;
 	position: relative;
 	display: flex;
 	justify-content: center;
+    align-items: center;
 	transform: rotateX(15deg);
 }
 
@@ -490,7 +504,7 @@ input.star-label { display: none; }
 	height: 100%;
 	content: "\2605";
 	z-index: 2;
-	font-size: 11vmin;
+	font-size: 5.5vmin;
 	line-height: 11vmin;
 	color: #b1ddff;
 	text-align: center;
@@ -667,8 +681,8 @@ input:checked + .star-label ~ .star-label:hover:before,
     --ar: #18242f;
 	content: "";
     position: absolute;
-    width: 12vmin;
-    height: 12vmin;
+    width: 6vmin;
+    height: 6vmin;
     border-radius: 100%;
 	transform: rotate(0deg);
     background: 
@@ -694,55 +708,6 @@ input:checked + .star-label ~ .star-label:hover:before,
 		drop-shadow(0px 5px 30px #b1ddff);
 }
 
-
-/*** Number ***/
-.number {
-    position: absolute;
-    margin-top: 20.9vmin;
-    font-size: 3vmin;
-    font-family: Arial, serif;
-    color: #b1ddff;
-    z-index: -1;
-    filter: 
-		drop-shadow(1px 1px 1px #000) 
-		drop-shadow(-1px -1px 1px #fff4) 
-		drop-shadow(0px 0px 5px #008dff) 
-		drop-shadow(0px 0px 10px #008dff) 
-		drop-shadow(0px 0px 15px #008dff);
-}
-
-#rs0:checked ~ .number {
-    color: #18242f;
-    font-weight: bold;
-    filter: 
-		drop-shadow(1px 1px 1px #000) 
-		drop-shadow(-1px -1px 1px #fff4);
-    text-shadow: none;
-}
-
-.number:after {
-	content: "0";
-}
-
-#rs1:checked ~ .number:after {
-	content: "1";
-}
-
-#rs2:checked ~ .number:after {
-	content: "2";
-}
-
-#rs3:checked ~ .number:after {
-	content: "3";
-}
-
-#rs4:checked ~ .number:after {
-	content: "4";
-}
-
-#rs5:checked ~ .number:after {
-	content: "5";
-}
 
 /*  Search history drop-down  */
 

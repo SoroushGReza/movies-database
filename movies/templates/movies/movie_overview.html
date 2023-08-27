@@ -48,13 +48,18 @@
                                 <div class="review-item">
                                     <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
                                     <div class="review-text">{{ review.text }}</div>
-                                    <div class="star-rating">="{{ review.rating }}</div>
+                                    <div class="rating-user">{{ review.rating_as_stars }}</div>
                                     <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
                                 </div>
                                 {% endfor %}
                             </div>
                         </div>
                     {% endif %}
+                
+                {% if not user.is_authenticated %}
+                <h5 class="signin-4-review">You must be signed in to post reviews and rate movies!</h5>
+                {% endif %}
+                
                 <!-- Review and Rating form -->
                 {% if user.is_authenticated %}
                     <form class="review-form transparent-bg" method="POST"
