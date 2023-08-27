@@ -816,7 +816,7 @@ input:checked + .star-label ~ .star-label:hover:before,
 
 .release-date-color {
     font-family: 'Lato', sans-serif;
-    color: #0dff0074;
+    color: rgb(0 255 68 / 54%);
     font-size: 21px;
 }
 
@@ -824,7 +824,7 @@ input:checked + .star-label ~ .star-label:hover:before,
 
 .rating-color {
     font-family: 'Lato', sans-serif;
-    color: #fff7006d;
+    color: #fff70091;
     font-size: 21px;
 }
 
