@@ -385,6 +385,16 @@ hr.overview-block {
     width: 50%;
 }
 
+/* Hide review */
+.hidden-review {
+    display: none;
+}
+
+/* Show review */
+.show-review {
+    display: block;
+}
+
 .review-user {
     padding-top: 5px;
     text-align: center;
