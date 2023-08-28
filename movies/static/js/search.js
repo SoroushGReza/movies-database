@@ -32,7 +32,6 @@ function displayRecentSearches() {
 
 // Clear recent searches
 function clearRecentSearches(event) {
-    console.log("Clear recent searches clicked"); // Log message
     event.preventDefault();
     // Send request to server to clear recent searches
     fetch('/movies/clear_search_history/')
