@@ -29,3 +29,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// Toggle to show / hide all reviews
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle-reviews');
+    if (toggleButton) {
+        toggleButton.addEventListener('click', function() {
+            const hiddenReviews = document.querySelectorAll('.hidden-review');
+            hiddenReviews.forEach(review => {
+                review.classList.toggle('show-review');
+            });
+            toggleButton.textContent = toggleButton.textContent === 'Show all reviews' ? 'Hide Reviews' : 'Show All Reviews';
+        });
+    }
+});
