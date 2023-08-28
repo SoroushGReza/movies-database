@@ -171,7 +171,7 @@ def movie_overview(request, movie_id):
     # Get approved reviews for movie
     reviews = Review.objects.filter(
         movie_id=movie_id, status='approved'
-    )[:4]
+    )
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
