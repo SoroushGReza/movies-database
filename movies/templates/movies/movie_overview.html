@@ -45,7 +45,7 @@
                     {% if reviews %}
                         <div class="review-container row">
                             {% for review in reviews %}
-                            <div class="col-md-6">
+                            <div class="col-md-6 {% if forloop.counter > 4 %}hidden-review{% endif %}">
                                 <div class="review-item">
                                     <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
                                     <div class="review-text" data-full-text="{{ review.text }}">
@@ -59,6 +59,9 @@
                                 </div>
                             </div>
                             {% endfor %}
+                            {% if reviews|length > 4 %}
+                                <button id="toggle-reviews">Show All Reviews</button>
+                            {% endif %}
                         </div>
                     
                     {% endif %}
