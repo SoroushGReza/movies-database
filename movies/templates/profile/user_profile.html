@@ -20,10 +20,10 @@
         <div id="user-profile-bg-overlay"></div>
 
         <div class="row">
-            <div class="col">
+            <div class="col-md-8 col-lg-8 user-profile-div">
                 <h2 id="user-profile-header">User Profile</h2>
-                <p><strong>Name: </strong>{{ user.username }}</p>
-                <p><strong>E-mail: </strong>{{ user.email }}</p>
+                <p class="user-info"><strong>Name: </strong>{{ user.username }}</p>
+                <p class="user-info"><strong>E-mail: </strong>{{ user.email }}</p>
                 <a href="#" class="btn btn-primary" id="edit-profile-button">Edit Profile</a>
                 <div id="edit-profile-form" style="display: none;">
                     <form method="post" {% if form.errors or password_form.errors %}{% endif %}>
