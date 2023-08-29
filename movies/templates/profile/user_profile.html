@@ -29,8 +29,10 @@
                     <form method="post" {% if form.errors or password_form.errors %}{% endif %}>
                         {% csrf_token %}
                         {{ form.as_p }}
-                        {% if form.errors %}
-                        {% endif %}
+                        <!-- Upload profile image -->
+                        <h3>Upload Profile Image</h3>
+                        {{ profile_form.as_p }}
+                        
                         <h3>Change Password</h3>
                         <div class="errorlist">
                             {{ password_form.as_p }}
