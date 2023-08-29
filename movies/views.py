@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Genre, SearchHistory, Review
+from .models import Genre, SearchHistory, Review, UserProfile
 from .tmdb import get_movies_from_tmdb, get_movie_trailer
 from .env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 import requests
-from .forms import ReviewForm
+from .forms import ReviewForm, UserProfileForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -59,27 +59,26 @@ def user_logout(request):
 # User Profile
 @login_required
 def user_profile(request):
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+
     if request.method == 'POST':
         form = CustomUserChangeForm(request.POST, instance=request.user)
+        profile_form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         password_form = PasswordChangeForm(request.user, request.POST)
 
-        if form.is_valid() and password_form.is_valid():
+        if form.is_valid() and profile_form.is_valid() and password_form.is_valid():
             form.save()
+            profile_form.save()
             user = password_form.save()
             update_session_auth_hash(request, user)
-            messages.success(
-                request,
-                'Profile information updated succesfully!'
-            )
+            messages.success(request, 'Profile information updated succesfully!')
             return redirect('movies:user_profile')
     else:
         form = CustomUserChangeForm(instance=request.user)
+        profile_form = UserProfileForm(instance=user_profile)
         password_form = PasswordChangeForm(request.user)
-    return render(
-        request,
-        'profile/user_profile.html',
-        {'form': form, 'password_form': password_form}
-    )
+
+    return render(request, 'profile/user_profile.html', {'form': form, 'profile_form': profile_form, 'password_form': password_form})
 
 
 # Searching for movie
