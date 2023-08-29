@@ -1,12 +1,20 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Review
+from .models import Review, UserProfile
 
 
 # Login Form
 class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
+
+# User Profile Form
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['profile_image']
+
 
 
 # Review Form
