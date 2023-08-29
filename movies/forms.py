@@ -16,7 +16,6 @@ class UserProfileForm(forms.ModelForm):
         fields = ['profile_image']
 
 
-
 # Review Form
 class ReviewForm(forms.ModelForm):
     class Meta:
