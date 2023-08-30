@@ -26,12 +26,18 @@
                 <p class="user-info"><strong>E-mail: </strong>{{ user.email }}</p>
                 <a href="#" class="btn btn-primary" id="edit-profile-button">Edit Profile</a>
                 <div id="edit-profile-form" style="display: none;">
-                    <form method="post" {% if form.errors or password_form.errors %}{% endif %}>
+                    <form method="post" enctype="multipart/form-data" {% if form.errors or password_form.errors %}{% endif %}>
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <!-- Upload profile image -->
+                         <!-- Upload profile image -->
                         <h3>Upload Profile Image</h3>
                         {{ profile_form.as_p }}
+        
+                        <!-- Displaying the profile image inside the form -->
+                        <img src="{{ user_profile.profile_image.url|default:'/media/profile_images/default.jpg' }}" alt="Profile Image">
+
+
+
                         
                         <h3>Change Password</h3>
                         <div class="errorlist">
