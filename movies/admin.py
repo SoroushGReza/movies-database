@@ -22,7 +22,7 @@ class ReviewAdmin(admin.ModelAdmin):
 
 # Register UserProfile for admin panel
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'profile_image')
+    list_display = ('user',)
 
 
 admin.site.register(UserProfile, UserProfileAdmin)
