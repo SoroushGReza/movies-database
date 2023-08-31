@@ -224,10 +224,6 @@ h1.text-center strong {
     margin-top: 13%;
 }
 
-#errorlist {
-    color: red;
-    font-size: 14px;
-}
 
 #edit-profile-form {
     background-color: #f5f5f5;
@@ -236,10 +232,6 @@ h1.text-center strong {
     margin-left: 5%;
 }
 
-ul li {
-    color: #007bff;
-    font-size: 7px;
-}
 
 #edit-profile-form button {
     background-color: #007bff;
