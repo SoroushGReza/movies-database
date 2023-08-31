@@ -34,11 +34,9 @@
                         {{ profile_form.as_p }}
         
                         <!-- Displaying the profile image inside the form -->
-                        <img src="{{ user_profile.profile_image.url|default:'/media/profile_images/default.jpg' }}" alt="Profile Image">
+                        <img width="150px" height="150px" src="{{ user_profile.profile_image.url|default:'/media/profile_images/default.jpg' }}" alt="Profile Image">
 
 
-
-                        
                         <h3>Change Password</h3>
                         <div class="errorlist">
                             {{ password_form.as_p }}
