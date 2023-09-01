@@ -16,3 +16,12 @@ def get_movie_trailer(movie_id):
     trailers = response.json().get('results', [])
     # Return the first trailer if available
     return trailers[0]['key'] if trailers else None
+
+
+# Get movie title (User Reviews in Profile page)
+def get_movie_title(movie_id):
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}"
+    querystring = {"api_key": TMDB_API_KEY, "language": "en-US"}
+    response = requests.request("GET", url, params=querystring)
+    data = response.json()
+    return data.get("title", "Unknown")
