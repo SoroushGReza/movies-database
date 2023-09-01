@@ -102,14 +102,13 @@ def user_profile(request):
 def user_reviews(request):
     user = request.user
     reviews = Review.objects.filter(
-        user=user, approved=True
-    )
+        user=request.user, approved=True
+    ).order_by('-date_created')
+
     # Fetch movie titles
     movie_titles = {}
     for review in reviews:
-        movie_id = review.movie_id
-        movie_title = get_movie_title(movie_id)
-        movie_titles[review.id] = movie_title
+        movie_titles[review.id] = get_movie_title(review.movie_id)
 
     return render(
         request,
