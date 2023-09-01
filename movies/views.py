@@ -100,12 +100,10 @@ def user_profile(request):
 # User reviews
 @login_required
 def user_reviews(request):
-    print("Current user:", request.user)
     user = request.user
     reviews = Review.objects.filter(
         user=user, approved=True
     )
-    print("reviews", reviews)
     return render(
         request,
         'profile/user_profile.html',
