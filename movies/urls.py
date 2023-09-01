@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import movie_list, movie_detail, approve_review
-from .views import get_recent_searches, clear_search_history
+from .views import movie_list, movie_detail, approve_review, user_reviews
+from .views import get_recent_searches, clear_search_history, delete_review
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -34,7 +34,17 @@ urlpatterns = [
     path('logout/', views.user_logout, name='user_logout'),
 
     # Path to User Profile
-    path('user_profile/', views.user_profile, name='user_profile'),
+    path('user_profile/', views.user_reviews, name='user_profile'),
+
+    # User reviews
+    path('user_reviews/', user_reviews, name='user_reviews'),
+
+    # Delete user review ( As User )
+    path(
+        'delete_review/<int:review_id>/',
+        views.delete_review, name='delete_review'
+    ),
+
 
     # Path to Movie Search
     path('search/', views.search_movies, name='search_movies'),
