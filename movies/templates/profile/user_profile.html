@@ -56,8 +56,8 @@
 
                     <!-- Button to trigger the modal -->
                     <button type="button" class="btn btn-danger" data-toggle="modal"
-                        data-target="#deleteModal{{ review.id }}">Delete
-                    </button>
+                        data-target="#deleteModal{{ review.id }}" data-review-id="{{ review.id }}">Delete</button>
+
 
                     <!-- Delete Confirmation Modal -->
                     <div class="modal fade" id="deleteModal{{ review.id }}" tabindex="-1" role="dialog"
