@@ -183,6 +183,8 @@ h1.text-center strong {
 #user-profile-header {
     margin-left: 5%;
     color: white;
+    font-size: 34px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .user-info {
@@ -240,6 +242,16 @@ h1.text-center strong {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+
+/*   User Profile reviews   */
+#my-reviews-header {
+    margin-left: 5%;
+    margin-top: 15%;
+    color: white;
+    font-size: 34px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
