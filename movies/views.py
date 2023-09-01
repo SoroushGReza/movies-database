@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Genre, SearchHistory, Review, UserProfile
-from .tmdb import get_movies_from_tmdb, get_movie_trailer
+from .tmdb import get_movies_from_tmdb, get_movie_trailer, get_movie_title
 from .env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
@@ -104,10 +104,17 @@ def user_reviews(request):
     reviews = Review.objects.filter(
         user=user, approved=True
     )
+    # Fetch movie titles
+    movie_titles = {}
+    for review in reviews:
+        movie_id = review.movie_id
+        movie_title = get_movie_title(movie_id)
+        movie_titles[review.id] = movie_title
+
     return render(
         request,
         'profile/user_profile.html',
-        {'reviews': reviews}
+        {'reviews': reviews, 'movie_titles': movie_titles}
     )
 
 
