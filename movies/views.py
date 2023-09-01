@@ -59,11 +59,17 @@ def user_logout(request):
 # User Profile
 @login_required
 def user_profile(request):
-    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+    user_profile, created = UserProfile.objects.get_or_create(
+        user=request.user
+    )
 
     if request.method == 'POST':
         form = CustomUserChangeForm(request.POST, instance=request.user)
-        profile_form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        profile_form = UserProfileForm(
+            request.POST,
+            request.FILES,
+            instance=user_profile
+        )
         password_form = PasswordChangeForm(request.user, request.POST)
 
         if form.is_valid() and profile_form.is_valid() and password_form.is_valid():
@@ -71,14 +77,46 @@ def user_profile(request):
             profile_form.save()
             user = password_form.save()
             update_session_auth_hash(request, user)
-            messages.success(request, 'Profile information updated succesfully!')
+            messages.success(
+                request, 'Profile information updated succesfully!'
+            )
             return redirect('movies:user_profile')
     else:
         form = CustomUserChangeForm(instance=request.user)
         profile_form = UserProfileForm(instance=user_profile)
         password_form = PasswordChangeForm(request.user)
 
-    return render(request, 'profile/user_profile.html', {'form': form, 'profile_form': profile_form, 'password_form': password_form})
+    return render(
+        request,
+        'profile/user_profile.html',
+        {
+            'form': form,
+            'profile_form': profile_form,
+            'password_form': password_form
+        }
+    )
+
+
+# User reviews
+@login_required
+def user_reviews(request):
+    print("Current user:", request.user)
+    user = request.user
+    reviews = Review.objects.filter(user=user, approved=True)
+    print("reviews", reviews)
+    return render(
+        request,
+        'profile/user_profile.html',
+        {'reviews': reviews}
+    )
+
+
+# Delete reviews ( As User )
+@login_required
+def delete_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id, user=request.user)
+    review.delete()
+    return redirect('movies:user_profile')
 
 
 # Searching for movie
