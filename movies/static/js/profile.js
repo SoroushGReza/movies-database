@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault(); // Prevent default
             const confirmation = window.confirm('Are you sure you want to delete this review?');
             if (confirmation) {
-                const reviewId = event.target.getAttribute('data-review-id');
+                const reviewId = event.currentTarget.getAttribute('data-review-id');
                 const url = `/movies/delete_review/${reviewId}/`;
                 fetch(url, {
                         method: 'POST',
