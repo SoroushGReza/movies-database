@@ -416,6 +416,16 @@ hr.overview-block {
     display: block;
 }
 
+/*   Toggle reviews button   */
+#toggle-reviews {
+    width: 300px;
+    margin-left: 25%;
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    color: greenyellow;
+}
+
 .review-user {
     padding-top: 5px;
     text-align: center;
