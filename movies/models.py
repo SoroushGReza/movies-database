@@ -45,7 +45,6 @@ STATUS_CHOICES = [
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie_id = models.IntegerField(default=0)
-    movie_title = models.CharField(max_length=255, null=True, blank=True)
     text = models.TextField()
     rating = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)]
