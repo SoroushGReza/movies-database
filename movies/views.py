@@ -121,7 +121,7 @@ def user_reviews(request):
 @login_required
 def delete_review(request, review_id):
     review = get_object_or_404(Review, id=review_id, user=request.user)
-    if request.is_ajax():
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
         review.delete()
         return JsonResponse({'status': 'success'})
     else:
