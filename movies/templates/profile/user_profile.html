@@ -26,7 +26,7 @@
                 <p class="user-info"><strong>E-mail: </strong>{{ user.email }}</p>
                 <a href="#" class="btn btn-primary" id="edit-profile-button">Edit Profile</a>
                 <div id="edit-profile-form" style="display: none;">
-                    <form method="post" enctype="multipart/form-data" {% if form.errors or password_form.errors %}{% endif %}>
+                    <form method="post" enctype="multipart/form-data" {% if form.errors or password_form.errors %}{%endif %}>
                         {% csrf_token %}
                         {{ form.as_p }}
                         <h3>Change Password</h3>
@@ -43,29 +43,59 @@
             <div class="col-md-8 col-lg-8">
                 <h2>My Reviews</h2>
                 {% for review in reviews %}
-                    <div class="review-item">
-                        <div class="review-user"><strong id="review-user">{{ movie_titles.values|join:", " }}</strong></div>
-                        <div class="review-text" data-full-text="{{ review.text }}">
-                            {{ review.text|slice:":100" }}
-                            {% if review.text|length > 100 %}
-                            ... <a href="#" class="show-full-review">Show full review</a>
-                            {% endif %}
-                        </div>
-                        <div class="rating-user">{{ review.rating_as_stars }}</div>
-                        <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
-                        <a href="{% url 'movies:delete_review' review.id %}">Delete</a>
+                <div class="review-item">
+                    <div class="review-user"><strong id="review-user">{{ movie_titles.values|join:", " }}</strong></div>
+                    <div class="review-text" data-full-text="{{ review.text }}">
+                        {{ review.text|slice:":100" }}
+                        {% if review.text|length > 100 %}
+                        ... <a href="#" class="show-full-review">Show full review</a>
+                        {% endif %}
                     </div>
+                    <div class="rating-user">{{ review.rating_as_stars }}</div>
+                    <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
+
+                    <!-- Button to trigger the modal -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                        data-target="#deleteModal{{ review.id }}">Delete
+                    </button>
+
+                    <!-- Delete Confirmation Modal -->
+                    <div class="modal fade" id="deleteModal{{ review.id }}" tabindex="-1" role="dialog"
+                        aria-labelledby="deleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete this review?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <a href="{% url 'movies:delete_review' review.id %}"
+                                        class="btn btn-danger">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
             </div>
         </div>
-        
+
     </div>
 </div>
 
 <script>
     // Hide messages after 5 seconds
     setTimeout(function () {
-        document.getElementById('success-message').style.display = 'none';
+        const successMessageElement = document.getElementById('success-message');
+        if (successMessageElement) {
+            successMessageElement.style.display = 'none';
+        }
     }, 5000);
 </script>
 {% endblock %}
