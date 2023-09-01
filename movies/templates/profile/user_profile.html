@@ -43,11 +43,22 @@
             <div class="col-md-8 col-lg-8">
                 <h2>My Reviews</h2>
                 {% for review in reviews %}
-                    <p>{{ review.text }}</p>
-                    <a href="{% url 'movies:delete_review' review.id %}">Delete</a>
+                    <div class="review-item">
+                        <div class="review-user"><strong id="review-user">{{ review.movie.title }}</strong></div>
+                        <div class="review-text" data-full-text="{{ review.text }}">
+                            {{ review.text|slice:":100" }}
+                            {% if review.text|length > 100 %}
+                            ... <a href="#" class="show-full-review">Show full review</a>
+                            {% endif %}
+                        </div>
+                        <div class="rating-user">{{ review.rating_as_stars }}</div>
+                        <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
+                        <a href="{% url 'movies:delete_review' review.id %}">Delete</a>
+                    </div>
                 {% endfor %}
             </div>
         </div>
+        
     </div>
 </div>
 
