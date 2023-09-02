@@ -1,0 +1,128 @@
+/*     Profile side navbar     */
+#sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-btn {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.side-btn:hover,
+.side-btn.active {
+    background-color: #f1f1f1;
+}
+
+.user-profile-div,
+.review-item {
+    display: none;
+}
+
+
+/* Edit Profile forms */
+
+.profile-container {
+    --bs-gutter-x: 0;
+}
+
+.col {
+    margin-top: 10%;
+}
+
+#user-profile-header {
+    margin-left: 5%;
+    color: white;
+    font-size: 34px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*  username and email  */
+.user-info {
+    margin-left: 5%;
+    color: rgba(255, 255, 255, 0.849);
+}
+
+/*  User Profile Page Background  */
+#user-profile-bg {
+    min-height: 100vh;
+    background: url(../media/user-profile-bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#edit-profile-button {
+    margin-bottom: 20px;
+    margin-left: 5%;
+}
+
+.user-profile-div {
+    margin-top: 13%;
+}
+
+
+#edit-profile-form {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 5%;
+}
+
+
+#edit-profile-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+/*   User Profile reviews   */
+#my-reviews-header {
+    margin-left: 5%;
+    margin-top: 15%;
+    color: white;
+    font-size: 34px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* Close success message */
+
+.close {
+    color: black;
+    float: right;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.close:hover {
+    color: white;
+    background-color: black;
+}
