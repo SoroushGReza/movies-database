@@ -44,7 +44,7 @@
                 <h2 id="my-reviews-header">My Reviews</h2>
                 {% for review in reviews %}
                 <div class="review-item">
-                    <div class="review-user"><strong id="review-user">{{ movie_titles.values|join:", " }}</strong></div>
+                    <div class="review-user"><strong id="review-user">{{ review.movie_title }}</strong></div>
                     <div class="review-text" data-full-text="{{ review.text }}">
                         {{ review.text|slice:":100" }}
                         {% if review.text|length > 100 %}

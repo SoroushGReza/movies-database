@@ -106,14 +106,13 @@ def user_reviews(request):
     ).order_by('-date_created')
 
     # Fetch movie titles
-    movie_titles = {}
     for review in reviews:
-        movie_titles[review.id] = get_movie_title(review.movie_id)
+        review.movie_title = get_movie_title(review.movie_id)
 
     return render(
         request,
         'profile/user_profile.html',
-        {'reviews': reviews, 'movie_titles': movie_titles}
+        {'reviews': reviews}
     )
 
 
