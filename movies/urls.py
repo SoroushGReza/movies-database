@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import movie_list, movie_detail, approve_review, user_reviews
+from .views import movie_list, approve_review, user_reviews
 from .views import get_recent_searches, clear_search_history, delete_review
 from . import views
 from django.conf import settings
@@ -13,9 +13,6 @@ app_name = 'movies'
 urlpatterns = [
     # Path for list of "News"  in movie_list.html
     path('', movie_list, name='movie_list'),
-
-    # Path for details of a SINGLE movie
-    path('<int:pk>/', movie_detail, name='movie_detail'),
 
     # path for movie overview
     path(
@@ -38,6 +35,9 @@ urlpatterns = [
 
     # User reviews
     path('user_reviews/', user_reviews, name='user_reviews'),
+
+    # My reviews
+    path('user_profile/my_reviews/', views.my_reviews, name='my_reviews'),
 
     # Delete user review ( As User )
     path(
