@@ -43,19 +43,19 @@
                 
                 <!-- User Reviews -->
                     {% if reviews %}
-                        <div class="review-container row">
+                        <div class="review-container-overview row">
                             {% for review in reviews %}
                             <div class="col-md-6 {% if forloop.counter > 4 %}hidden-review{% endif %}">
-                                <div class="review-item">
-                                    <div class="review-user"><strong id="review-user">{{ review.user.username }}</strong></div>
-                                    <div class="review-text" data-full-text="{{ review.text }}">
+                                <div class="review-item-overview">
+                                    <div class="review-user-overview"><strong id="review-user-overview">{{ review.user.username }}</strong></div>
+                                    <div class="review-text-overview" data-full-text="{{ review.text }}">
                                         {{ review.text|slice:":100" }}
                                         {% if review.text|length > 100 %}
                                         ... <a href="#" class="show-full-review">Show full review</a>
                                         {% endif %}
                                     </div>
                                     <div class="rating-user">{{ review.rating_as_stars }}</div>
-                                    <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
+                                    <div class="date-created-overview">{{ review.date_created|date:"Y-m-d"}}</div>
                                 </div>
                             </div>
                             {% endfor %}

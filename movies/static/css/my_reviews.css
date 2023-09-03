@@ -1,15 +1,24 @@
 /*      My Reviews Template page      */
+
+.my-reviews-container {
+    --bs-gutter-x: 0;
+}
+
+
+/*  My reviews Header  */
+
 #my-reviews-header {
-    margin-left: 5%;
-    margin-top: 15%;
-    color: white;
-    font-size: 34px;
+    text-align: center;
+    color: #ffa100b0;
+    font-size: 54px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 3%;
 }
 
 
 /*  My Reviews Page Background  */
-#user-profile-bg {
+
+#my-reviews-bg {
     min-height: 100vh;
     background: url(../media/user-profile-bg.png) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -23,6 +32,8 @@
     position: relative;
     z-index: 2;
 }
+
+
 
 .container h2 {
     font-size: 24px;
@@ -39,9 +50,13 @@
     padding-left: 0;
 }
 
-review-item {
+.review-item-my-reviews {
     width: 60vw;
     margin: auto;
+    border: 3px solid rgb(162 0 0 / 12%);
+    border-radius: 5px;
+    margin-bottom: 5%;
+    background-color: #3903009e;
 }
 
 .user-profile-div {
@@ -56,14 +71,14 @@ review-item {
     --bs-gutter-x: 0;
 }
 
-.review-user {
+.review-movie-title {
     padding-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
     font-family:Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 3px;
-    font-size: 19px;
-    background-color: #ffd50044;
-    color: #007bff;
+    font-size: 21px;
+    background-color: #7f000044;
     border-radius: 5px 5px 0 0;
 }
 

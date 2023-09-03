@@ -3,14 +3,14 @@
 
 {% block content %}
 
-<div class="container-fluid profile-container">
-    <div id="user-profile-bg">
-        <div id="user-profile-bg-overlay"></div>
-        <div class=" row col-6 col-lg-6  col-sm-12 my-reviews-div">
+<div class="container-fluid my-reviews-container">
+    <div id="my-reviews-bg">
+        <div id="my-reviews-bg-overlay"></div>
+        <div class=" row col-6 col-lg-6  col-sm-10 my-reviews-div">
             <h2 id="my-reviews-header">My Reviews</h2>
             {% for review in reviews %}
-            <div class="review-item">
-                <div class="review-user"><strong id="review-user">{{ review.movie_title }}</strong></div>
+            <div class="review-item-my-reviews">
+                <div class="review-movie-title"><strong id="review-user">{{ review.movie_title }}</strong></div>
                 <div class="review-text" data-full-text="{{ review.text }}">
                     {{ review.text|slice:":100" }}
                     {% if review.text|length > 100 %}

@@ -88,14 +88,15 @@ hr.overview-block {
 
 /*    User Reviews    */
 
-.review-container {
+.review-container-overview {
     padding-top: 5%;
 }
 
-.review-item {
+.review-item-overview {
     border: 1px solid rgba(0, 255, 68, 0.689);
     border-radius: 5px;
     margin-bottom: 5%;
+	margin-right: 8px;
 }
 
 .reviews {
@@ -124,7 +125,7 @@ hr.overview-block {
     color: greenyellow;
 }
 
-.review-user {
+.review-user-overview {
     padding-top: 5px;
     text-align: center;
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -139,7 +140,7 @@ hr.overview-block {
     color: rgba(0, 255, 68, 0.689);
 }
 
-.review-text {
+.review-text-overview {
     padding-top: 3%;
     padding-bottom: 3%;
     padding-left: 5px;
@@ -147,7 +148,7 @@ hr.overview-block {
     color: #ffffffdb;
 }
 
-.rating-user {
+.rating-user-overview {
     padding-top: 3%;
     padding-bottom: 3%;
     padding-left: 5px;
@@ -158,7 +159,7 @@ hr.overview-block {
     text-align: center;
 }
 
-.date-created {
+.date-created-overview {
     font-size: 12px;
     color: rgba(255, 251, 0, 0.315);
     text-align: center;
