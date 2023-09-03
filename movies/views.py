@@ -97,7 +97,26 @@ def user_profile(request):
     )
 
 
-# User reviews
+# My Reviews
+@login_required
+def my_reviews(request):
+    user = request.user
+    reviews = Review.objects.filter(
+        user=request.user, approved=True
+    ).order_by('-date_created')
+
+    # Fetch movie titles
+    for review in reviews:
+        review.movie_title = get_movie_title(review.movie_id)
+
+    return render(
+        request,
+        'profile/my_reviews.html',
+        {'reviews': reviews}
+    )
+
+
+# User reviews ( As User )
 @login_required
 def user_reviews(request):
     user = request.user
@@ -201,12 +220,6 @@ def movie_list(request):
     return render(
         request, 'movies/movie_list.html', {'movies': movies['results']}
     )
-
-
-# Display of a SINGLE movie detail
-def movie_detail(request, pk):
-    movie = get_object_or_404(Movie, pk=pk)
-    return render(request, 'movies/movies_detail.html', {'movie': movie})
 
 
 # Movie Overview
