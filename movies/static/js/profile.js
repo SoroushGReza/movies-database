@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Detele user reviews confirmation
 document.addEventListener("DOMContentLoaded", function () {
-    const deleteButtons = document.querySelectorAll('.btn-danger');
+    const deleteButtons = document.querySelectorAll('#delete-my-review');
     deleteButtons.forEach(function (button) {
         button.addEventListener('click', function (event) {
             event.preventDefault(); // Prevent default
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === 'success') {
-                            event.target.closest('.review-item').remove();
+                            event.target.closest('.review-item-my-reviews').remove();
                         }
                     });
                 // Perform delete operation
