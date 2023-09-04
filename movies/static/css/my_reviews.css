@@ -59,6 +59,17 @@
     background-color: #3903009e;
 }
 
+#delete-my-review {
+    float: right;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: #870000;
+    border: 2px solid #ffa5002b;
+    width: 120px;
+    color: orange;
+    font-size: 20px;
+}
+
 .user-profile-div {
     margin-top: 13%;
 }
