@@ -96,13 +96,14 @@ p.user-info strong {
 
 
 #edit-profile-form {
-    background-color: #0236776e;
+    /* background-color: #0236776e; */
+    background-image: url(../media/profile-form.png);
     padding: 20px;
     border-radius: 5px;
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 3%;
-    border: 2px double #00bfff54;
+    /* border: 2px double #00bfff54; */
 
 }
 
@@ -173,6 +174,16 @@ input#id_email.form-control-profile::placeholder {
     color: white;
     border: 2px double rgb(0, 197, 215);
 }
+
+
+/* Success message */
+body .alert-success {
+    color: black !important;
+    z-index: 10000 !important;
+    margin-top: 70px;
+    position: fixed;
+}
+
 
 
 /* Close success message */
