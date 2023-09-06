@@ -1,21 +1,3 @@
-/*     Profile side navbar     */
-#sidebar {
-    display: flex;
-    flex-direction: column;
-}
-
-.side-btn {
-    width: 300px;
-    height: 300px;
-    margin-bottom: 20px;
-}
-
-.side-btn:hover,
-.side-btn.active {
-    background-color: #f1f1f1;
-}
-
-
 /* Edit Profile forms */
 
 .profile-container {
@@ -24,14 +6,20 @@
 
 #user-profile-header {
     margin-left: 5%;
-    color: white;
+    margin-top: 3%;
+    color: rgba(255, 140, 0, 0.758);
     font-size: 34px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 /*  username and email  */
 .user-info {
     margin-left: 5%;
-    color: rgba(255, 255, 255, 0.849);
+    color: rgba(196, 196, 196, 0.849);
+    font-size: 20px;
+}
+
+p.user-info strong {
+    color: white;
 }
 
 /*  User Profile Page Background  */
@@ -63,18 +51,44 @@
 #edit-profile-button {
     margin-bottom: 20px;
     margin-left: 5%;
-    background-color: #d48900;
-    border: 1px ridge #e9ff00;
-    color: #e9ff00;
+    background-image: url(../media/edit-profile-button.png);
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
 }
+
+#edit-profile-button:hover {
+    background-image: url(../media/edit-profile-button-hover.png);
+}
+
+
+.my-reviews-div-profile {
+    margin-top: 8px;
+}
+
 
 #my-reviews-button {
     margin-bottom: 20px;
     margin-left: 5%;
-    background-color: #d48900;
-    border: 1px ridge #e9ff00;
-    color: #e9ff00;
+    background-image: url(../media/my-reviews-button.png);
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    width: auto;
 }
+
+#my-reviews-button:hover {
+    background-image: url(../media/my-reviews-button-hover.png);
+}
+
 
 .user-profile-div {
     margin-top: 13%;
@@ -82,20 +96,80 @@
 
 
 #edit-profile-form {
-    background-color: #f5f5f5;
+    background-color: #0236776e;
     padding: 20px;
     border-radius: 5px;
     margin-left: 5%;
+    margin-bottom: 3%;
+    border: 2px double #00bfff54;
+
 }
 
 
 #edit-profile-form button {
-    background-color: #007bff;
+    background-color: #000d9c;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+/*  Profile form headers  */
+form .form-headers {
+    color: #ff8c00be;
+}
+
+#change-password-header {
+    margin-top: 5%;
+}
+
+
+.form-control-profile {
+    margin-bottom: 5px;
+    display: block;
+    width: 70%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: 2px solid rgba(0, 179, 255, 0.269);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+input#id_email.form-control-profile {
+    background-color: #0236776e;
+}
+
+input#id_email.form-control-profile::placeholder {
+    color: rgba(121, 121, 121, 0.703);
+}
+
+#id_email.form-control-profile:focus {
+        background-color: black;
+        color: white;
+        border: 2px double rgb(0, 197, 215);
+}
+
+
+
+#password-inputs {
+    background-color: #0236776e;
+}
+
+#password-inputs::placeholder {
+    color: rgba(121, 121, 121, 0.703);
+}
+
+#password-inputs:focus {
+    background-color: black;
+    color: white;
+    border: 2px double rgb(0, 197, 215);
 }
 
 
