@@ -266,4 +266,5 @@ h1.text-center strong {
 
 .errorlist {
     font-size: 12px;
+    display: flex;
 }
