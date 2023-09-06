@@ -11,9 +11,21 @@ class LoginForm(forms.Form):
 
 # User Profile Form
 class UserProfileForm(forms.ModelForm):
+    email = forms.EmailField(required=False, label="E-mail")
+    new_password = forms.CharField(
+        widget=forms.PasswordInput,
+        required=True,
+        label="New Password"
+    )
+    confirm_new_password = forms.CharField(
+        widget=forms.PasswordInput,
+        required=True,
+        label="Confirm New Password"
+    )
+
     class Meta:
         model = UserProfile
-        fields = []
+        fields = ['email', 'new_password', 'confirm_new_password']
 
 
 # Review Form
