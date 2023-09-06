@@ -63,6 +63,17 @@
 #edit-profile-button {
     margin-bottom: 20px;
     margin-left: 5%;
+    background-color: #d48900;
+    border: 1px ridge #e9ff00;
+    color: #e9ff00;
+}
+
+#my-reviews-button {
+    margin-bottom: 20px;
+    margin-left: 5%;
+    background-color: #d48900;
+    border: 1px ridge #e9ff00;
+    color: #e9ff00;
 }
 
 .user-profile-div {
