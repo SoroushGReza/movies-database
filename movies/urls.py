@@ -31,7 +31,7 @@ urlpatterns = [
     path('logout/', views.user_logout, name='user_logout'),
 
     # Path to User Profile
-    path('user_profile/', views.user_reviews, name='user_profile'),
+    path('user_profile/', views.user_profile, name='user_profile'),
 
     # User reviews
     path('user_reviews/', user_reviews, name='user_reviews'),
@@ -44,7 +44,6 @@ urlpatterns = [
         'delete_review/<int:review_id>/',
         views.delete_review, name='delete_review'
     ),
-
 
     # Path to Movie Search
     path('search/', views.search_movies, name='search_movies'),
