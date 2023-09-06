@@ -26,20 +26,30 @@
                 <p class="user-info"><strong>E-mail: </strong>{{ user.email }}</p>
                 <a href="#" class="btn btn-primary" id="edit-profile-button">Edit Profile</a>
                 <div id="edit-profile-form" style="display: none;">
-                    <form method="post" enctype="multipart/form-data" {% if form.errors or password_form.errors %}{%endif %}>
+                    <form method="post" enctype="multipart/form-data" class="mt-3">
                         {% csrf_token %}
-                        {{ form.as_p }}
-                        <h3>Change Password</h3>
-                        <div class="errorlist">
-                            {{ password_form.as_p }}
+                        <h3>Update Email</h3>
+                        <div class="form-group">
+                            <input type="email" id="{{ profile_form.email.id_for_label }}" name="{{ profile_form.email.name }}" class="form-control" value="{{ profile_form.email.value|default_if_none:'' }}">
+
                         </div>
-                        <button type="submit">Update Profile</button>
+                        <h3>Change Password</h3>
+                        <div class="form-group">
+                            {% for field in password_form %}
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                            <input type="{{ field.field.widget.input_type }}" id="{{ field.id_for_label }}" name="{{ field.name }}" class="form-control" value="{{ field.value|default_if_none:'' }}">
+                            {% endfor %}
+                        </div>
+                        
+
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
                     </form>
                 </div>
+
             </div>
         </div>
         <div class=" row col-4 col-lg-4  col-sm-12 my-reviews-div">
-            <a href="{% url 'movies:my_reviews' %}">My Reviews</a>
+            <a id="my-reviews-button" class="btn btn-primary" href="{% url 'movies:my_reviews' %}">My Reviews</a>
         </div>
     </div>
 </div>
