@@ -100,6 +100,7 @@ p.user-info strong {
     padding: 20px;
     border-radius: 5px;
     margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 3%;
     border: 2px double #00bfff54;
 
@@ -114,6 +115,7 @@ p.user-info strong {
     cursor: pointer;
     border-radius: 5px;
 }
+
 
 /*  Profile form headers  */
 form .form-headers {
