@@ -175,15 +175,38 @@ input#id_email.form-control-profile::placeholder {
     border: 2px double rgb(0, 197, 215);
 }
 
+/*      Alert Messages      */
+
+.messages-container {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    z-index: 10000;
+    pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: fit-content;
+}
+
+.alert {
+    margin: 0 10px !important;
+    pointer-events: auto;
+}
 
 /* Success message */
 body .alert-success {
     color: black !important;
-    z-index: 10000 !important;
-    margin-top: 70px;
-    position: fixed;
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
 }
 
+/* Error Messages */
+body .alert-error {
+    color: black !important;
+    background-color: #f8d7da !important;
+    border-color: #f5c6cb !important;
+}
 
 
 /* Close success message */
