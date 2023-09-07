@@ -72,34 +72,32 @@ def user_profile(request):
         )
         password_form = PasswordChangeForm(request.user, request.POST)
 
-        if form.is_valid() and profile_form.is_valid() and password_form.is_valid():
+        # Validate and save user details form
+        if form.is_valid():
             form.save()
+            messages.success(request, 'User details updated successfully')
 
+        # Validate and save profile form
+        if profile_form.is_valid():
             # Update email if provided
             email = profile_form.cleaned_data.get('email')
             if email:
                 request.user.email = email
                 request.user.save()
 
-            # Update password if provided
-            new_password = profile_form.cleaned_data.get('new_password')
-            confirm_new_password = profile_form.cleaned_data.get(
-                'confirm_new_password'
-            )
-            if new_password and new_password == confirm_new_password:
-                request.user.set_password(new_password)
-                request.user.save()
-                update_session_auth_hash(request, request.user)
-
             profile_form.save()
+            messages.success(request, 'Profile details updated successfully')
 
+        # Validate and save password form
+        if password_form.is_valid():
             user = password_form.save()
-            update_session_auth_hash(request, user)
+            update_session_auth_hash(
+                request,
+                user
+            )  # Update session with new password
+            messages.success(request, 'Password updated successfully')
 
-            messages.success(
-                request, 'Profile information updated successfully!'
-            )
-            return redirect('movies:user_profile')
+        return redirect('movies:user_profile')
     else:
         form = CustomUserChangeForm(instance=request.user)
         profile_form = UserProfileForm(instance=user_profile)
