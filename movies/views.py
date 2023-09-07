@@ -78,12 +78,14 @@ def user_profile(request):
         if form.is_valid():
             form.save()
             update_success = True
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, error)
 
         # Validate and save profile form
         if profile_form.is_valid():
-            print(profile_form.errors)
-
-            # Get the email from the form
+            # Get the email from the profile form
             email = profile_form.cleaned_data.get('email')
 
             # Update the user's email address if an email was provided
@@ -93,13 +95,16 @@ def user_profile(request):
 
             profile_form.save()
             update_success = True
+        else:
+            for field, errors in profile_form.errors.items():
+                for error in errors:
+                    messages.error(request, error)
 
         # Validate and save password form
         if password_form.is_valid():
             user = password_form.save()
             update_session_auth_hash(
-                request,
-                user
+                request, user
             )  # Update session with new password
             update_success = True
         else:
