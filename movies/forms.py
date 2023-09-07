@@ -27,6 +27,20 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         fields = ['email', 'new_password', 'confirm_new_password']
 
+    def clean(self):
+        cleaned_data = super().clean()
+        new_password = cleaned_data.get("new_password")
+        confirm_new_password = cleaned_data.get("confirm_new_password")
+
+        if new_password or confirm_new_password:
+            if new_password != confirm_new_password:
+                self.add_error(
+                    'confirm_new_password',
+                    "New password and confirm new password do not match"
+                )
+
+        return cleaned_data
+
 
 # Review Form
 class ReviewForm(forms.ModelForm):
