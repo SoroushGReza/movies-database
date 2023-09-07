@@ -1,3 +1,9 @@
+// Close message 
+function closeMessage(element) {
+    element.parentElement.style.display = 'none';
+}
+
+
 // Get CSRF token from cookies 
 function getCookie(name) {
     var cookieValue = null;
