@@ -44,9 +44,10 @@
                         <div class="form-group">
                             {% for field in password_form %}
                             <input placeholder="{{ field.label }}" type="{{ field.field.widget.input_type }}"
-                                id="password-inputs" name="{{ field.name }}" class="form-control-profile"
-                                value="{{ field.value|default_if_none:'' }}">
+                                id="password-input-{{ forloop.counter }}" name="{{ field.name }}"
+                                class="form-control-profile" value="{{ field.value|default_if_none:'' }}">
                             {% endfor %}
+
                         </div>
 
 
