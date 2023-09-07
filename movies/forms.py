@@ -14,12 +14,12 @@ class UserProfileForm(forms.ModelForm):
     email = forms.EmailField(required=False, label="E-mail")
     new_password = forms.CharField(
         widget=forms.PasswordInput,
-        required=True,
+        required=False,
         label="New Password"
     )
     confirm_new_password = forms.CharField(
         widget=forms.PasswordInput,
-        required=True,
+        required=False,
         label="Confirm New Password"
     )
 
