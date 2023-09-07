@@ -79,9 +79,18 @@ def user_profile(request):
 
         # Validate and save profile form
         if profile_form.is_valid():
+            print(profile_form.errors)
 
-            profile_form.save()
-            messages.success(request, 'Profile details updated successfully')
+            # Get the email from the form
+            email = profile_form.cleaned_data.get('email')
+
+            # Update the user's email address if an email was provided
+            if email:
+                request.user.email = email
+                request.user.save()
+
+        profile_form.save()
+        messages.success(request, 'Profile details updated successfully')
 
         # Validate and save password form
         if password_form.is_valid():
