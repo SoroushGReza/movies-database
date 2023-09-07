@@ -57,7 +57,6 @@ def user_logout(request):
 
 
 # User Profile
-# User Profile
 @login_required
 def user_profile(request):
     user_profile, created = UserProfile.objects.get_or_create(
@@ -103,8 +102,12 @@ def user_profile(request):
                 user
             )  # Update session with new password
             update_success = True
+        else:
+            for field, errors in password_form.errors.items():
+                for error in errors:
+                    messages.error(request, error)
 
-        if update_success:  # If any update was successfull show message
+        if update_success:  # If any update was successful show message
             messages.success(request, "Profile updated successfully")
 
         return redirect('movies:user_profile')
