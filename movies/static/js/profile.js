@@ -1,6 +1,8 @@
 // Close message 
 function closeMessage(element) {
-    element.parentElement.style.display = 'none';
+    setTimeout(function() {
+        $(element).closest('.alert').alert('close');
+    }, 5000);
 }
 
 
