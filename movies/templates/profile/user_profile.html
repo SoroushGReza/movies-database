@@ -3,18 +3,18 @@
 
 {% block content %}
 
-{% if messages %}
-{% for message in messages %}
-<div class="container">
-    <div class="alert alert-success success-message">
-        {{ message }}
-        <button type="button" class="close" onclick="closeMessage(this)" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+<div class="messages-container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
 </div>
-{% endfor %}
-{% endif %}
+
+
 <div class="container-fluid profile-container">
     <div id="user-profile-bg">
         <div id="user-profile-bg-overlay"></div>
@@ -63,10 +63,14 @@
 <script>
     // Hide messages after 5 seconds
     setTimeout(function () {
-        const successMessageElement = document.getElementById('success-message');
-        if (successMessageElement) {
-            successMessageElement.style.display = 'none';
+        const alertElements = document.querySelectorAll('.alert');
+        if (alertElements) {
+            alertElements.forEach((element) => {
+                element.style.display = 'none';
+            });
         }
     }, 5000);
 </script>
+
+
 {% endblock %}
