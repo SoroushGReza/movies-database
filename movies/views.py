@@ -57,11 +57,14 @@ def user_logout(request):
 
 
 # User Profile
+# User Profile
 @login_required
 def user_profile(request):
     user_profile, created = UserProfile.objects.get_or_create(
         user=request.user
     )
+
+    update_success = False  # To check if any update was successful
 
     if request.method == 'POST':
         form = CustomUserChangeForm(request.POST, instance=request.user)
@@ -75,7 +78,7 @@ def user_profile(request):
         # Validate and save user details form
         if form.is_valid():
             form.save()
-            messages.success(request, 'User details updated successfully')
+            update_success = True
 
         # Validate and save profile form
         if profile_form.is_valid():
@@ -89,8 +92,8 @@ def user_profile(request):
                 request.user.email = email
                 request.user.save()
 
-        profile_form.save()
-        messages.success(request, 'Profile details updated successfully')
+            profile_form.save()
+            update_success = True
 
         # Validate and save password form
         if password_form.is_valid():
@@ -99,7 +102,10 @@ def user_profile(request):
                 request,
                 user
             )  # Update session with new password
-            messages.success(request, 'Password updated successfully')
+            update_success = True
+
+        if update_success:  # If any update was successfull show message
+            messages.success(request, "Profile updated successfully")
 
         return redirect('movies:user_profile')
     else:
