@@ -63,7 +63,8 @@ def user_profile(request):
         user=request.user
     )
 
-    update_success = False  # To check if any update was successful
+    update_success = False
+    current_email = request.user.email
 
     if request.method == 'POST':
         form = CustomUserChangeForm(request.POST, instance=request.user)
@@ -75,44 +76,53 @@ def user_profile(request):
         password_form = PasswordChangeForm(request.user, request.POST)
 
         # Validate and save user details form
-        if form.is_valid():
-            form.save()
-            update_success = True
-        else:
-            for field, errors in form.errors.items():
-                for error in errors:
-                    messages.error(request, error)
+        if form.has_changed():
+            if form.is_valid():
+                form.save()
+                update_success = True
+            else:
+                for field, errors in form.errors.items():
+                    for error in errors:
+                        messages.error(request, error)
 
         # Validate and save profile form
-        if profile_form.is_valid():
-            # Get the email from the profile form
-            email = profile_form.cleaned_data.get('email')
+        if profile_form.has_changed():
+            if profile_form.is_valid():
+                # Get the email from the profile form
+                email = profile_form.cleaned_data.get('email')
 
-            # Update the user's email address if an email was provided
-            if email:
-                request.user.email = email
-                request.user.save()
+                # Control if email has been updated
+                email_unchanged = email == current_email if email else True
 
-            profile_form.save()
-            update_success = True
-        else:
-            for field, errors in profile_form.errors.items():
-                for error in errors:
-                    messages.error(request, error)
+                # Update the user's email address if an email was provided
+                if email:
+                    request.user.email = email
+                    request.user.save()
+
+                profile_form.save()
+                # New check to only set update success
+                # if email has been changed
+                if not email_unchanged:
+                    update_success = True
+            else:
+                for field, errors in profile_form.errors.items():
+                    for error in errors:
+                        messages.error(request, error)
 
         # Validate and save password form
-        if password_form.is_valid():
-            user = password_form.save()
-            update_session_auth_hash(
-                request, user
-            )  # Update session with new password
-            update_success = True
-        else:
-            for field, errors in password_form.errors.items():
-                for error in errors:
-                    messages.error(request, error)
+        if password_form.has_changed():
+            if password_form.is_valid():
+                user = password_form.save()
+                update_session_auth_hash(
+                    request, user
+                )  # Update session with new password
+                update_success = True
+            else:
+                for field, errors in password_form.errors.items():
+                    for error in errors:
+                        messages.error(request, error)
 
-        if update_success:  # If any update was successful show message
+        if update_success:
             messages.success(request, "Profile updated successfully")
 
         return redirect('movies:user_profile')
