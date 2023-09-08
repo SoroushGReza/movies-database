@@ -83,7 +83,8 @@ def user_profile(request):
             else:
                 for field, errors in form.errors.items():
                     for error in errors:
-                        messages.error(request, error)
+                        if error != "This field is required.":
+                            messages.error(request, error)
 
         # Validate and save profile form
         if profile_form.has_changed():
@@ -107,7 +108,8 @@ def user_profile(request):
             else:
                 for field, errors in profile_form.errors.items():
                     for error in errors:
-                        messages.error(request, error)
+                        if error != "This field is required.":
+                            messages.error(request, error)
 
         # Validate and save password form
         if password_form.has_changed():
@@ -120,7 +122,8 @@ def user_profile(request):
             else:
                 for field, errors in password_form.errors.items():
                     for error in errors:
-                        messages.error(request, error)
+                        if error != "This field is required.":
+                            messages.error(request, error)
 
         if update_success:
             messages.success(request, "Profile updated successfully")
