@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 import requests
-from .forms import ReviewForm, UserProfileForm
+from .forms import ReviewForm, UserProfileForm, UserRegisterForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -20,15 +20,14 @@ from django.urls import reverse
 # Registration for Users
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)  # Login after registration
-            return redirect(
-                'movies:user_profile'
-            )  # Redirect to profile after Login
+            # Redirect to profile after Login
+            return redirect('movies:user_profile')
     else:
-        form = UserCreationForm()
+        form = UserRegisterForm()
     return render(request, 'registration/register.html', {'form': form})
 
 
