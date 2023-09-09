@@ -33,6 +33,9 @@ urlpatterns = [
     # Path to User Profile
     path('user_profile/', views.user_profile, name='user_profile'),
 
+    # Path to Delete User Account
+    path('delete_account/', views.delete_account, name='delete_account'),
+
     # User reviews
     path('user_reviews/', user_reviews, name='user_reviews'),
 
