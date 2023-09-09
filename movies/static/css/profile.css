@@ -117,6 +117,11 @@ p.user-info strong {
     border-radius: 5px;
 }
 
+/*  User Account Deletion Verification  */
+.modal-backdrop {
+    z-index: 1;
+}
+
 
 /*  Profile form headers  */
 form .form-headers {
