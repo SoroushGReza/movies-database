@@ -110,6 +110,26 @@ p.user-info strong {
     border: 1px solid rgb(113, 0, 0);
 }
 
+/*    Modal Delete Verification    */
+
+#deleteAccountModal {
+    margin-top: 10%;
+}
+
+.modal-backdrop {
+    z-index: 1;
+}
+
+.modal-header {
+    background-color: burlywood;
+    color: black;
+}
+
+.modal-body {
+    background-color: blanchedalmond;
+    color: black;
+}
+
 
 .user-profile-div {
     margin-top: 13%;
@@ -136,11 +156,6 @@ p.user-info strong {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
-
-/*  User Account Deletion Verification  */
-.modal-backdrop {
-    z-index: 1;
 }
 
 
