@@ -90,6 +90,27 @@ p.user-info strong {
 }
 
 
+#delete-account-button {
+    margin-bottom: 20px;
+    margin-left: 5%;
+    background-color: rgb(184, 6, 6);
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    width: auto;
+}
+
+#delete-account-button:hover {
+    background-color: black;
+    color: red;
+    border: 1px solid rgb(113, 0, 0);
+}
+
+
 .user-profile-div {
     margin-top: 13%;
 }
@@ -141,9 +162,9 @@ form .form-headers {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--bs-body-color);
+    color: antiquewhite;
     appearance: none;
-    background-color: var(--bs-body-bg);
+    background-color: #0236776e;
     background-clip: padding-box;
     border: 2px solid rgba(0, 179, 255, 0.269);
     border-radius: var(--bs-border-radius);
@@ -165,16 +186,15 @@ input#id_email.form-control-profile::placeholder {
 }
 
 
-
-#password-inputs {
+.password-fields-custom {
     background-color: #0236776e;
 }
 
-#password-inputs::placeholder {
+.password-fields-custom::placeholder {
     color: rgba(121, 121, 121, 0.703);
 }
 
-#password-inputs:focus {
+.password-fields-custom:focus {
     background-color: black;
     color: white;
     border: 2px double rgb(0, 197, 215);
