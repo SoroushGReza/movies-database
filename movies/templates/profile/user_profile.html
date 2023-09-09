@@ -5,12 +5,12 @@
 
 <div class="messages-container">
     {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        {% endfor %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
     {% endif %}
 </div>
 
@@ -47,7 +47,43 @@
                                 id="password-input-{{ forloop.counter }}" name="{{ field.name }}"
                                 class="form-control-profile" value="{{ field.value|default_if_none:'' }}">
                             {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            <!-- Delete Account Button -->
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#deleteAccountModal">Delete Account</a>
 
+                            <!-- Delete Account Modal -->
+                            <div class="modal fade" id="deleteAccountModal" tabindex="-1"
+                                aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteAccountModalLabel">Delete Account</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to delete your account? All your data including
+                                                your reviews will be lost. If you are sure type your password to verify
+                                                and delete your account.</p>
+                                            <form method="post" action="{% url 'movies:delete_account' %}">
+                                                {% csrf_token %}
+                                                <div class="form-group">
+                                                    <label for="{{ form.password.id_for_label }}">Password:</label>
+                                                    <input type="password" name="{{ form.password.name }}"
+                                                        class="form-control" id="{{ form.password.id_for_label }}" />
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-danger">Delete Account</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
 
