@@ -147,12 +147,9 @@ def user_profile(request):
 
 # Delete User Account
 def delete_account(request):
-    print("Delete account view check")
     if request.method == 'POST':
-        print("POST method recognized")
         form = VerifyDeleteUserForm(request.POST)
         if form.is_valid():
-            print("Form is valid cehck")
             password = form.cleaned_data.get('password')
             user = authenticate(
                 request,
@@ -160,7 +157,6 @@ def delete_account(request):
                 password=password
             )
             if user is not None:
-                print("usser authenticated check")
                 user.delete()
                 logout(request)
 
@@ -171,13 +167,8 @@ def delete_account(request):
 
                 return redirect('movies:register')
             else:
-                print("User authentication faik")
                 messages.error(request, "Incorrect password")
-        else:
-            print("Form errors:", form.errors)
-            print("Form is not valid")
     else:
-        print("Not a post method")
         form = VerifyDeleteUserForm()
 
     return render(request, 'profile/user_profile.html', {'form': form})
