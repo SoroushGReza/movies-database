@@ -26,7 +26,7 @@
                 <p class="user-info"><strong>E-mail: </strong>{{ user.email }}</p>
                 <!--  Link to my reviews page  -->
 
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <!-- Edit Prfofile Button -->
                     <a href="#" class="btn btn-primary" id="edit-profile-button">Edit Profile</a>
 
@@ -35,7 +35,7 @@
                         Reviews</a>
 
                     <!-- Delete Account Button -->
-                    <a href="#" class="btn btn-danger" data-bs-toggle="modal"
+                    <a href="#" class="btn btn-primary" id="delete-account-button" data-bs-toggle="modal"
                         data-bs-target="#deleteAccountModal">Delete Account</a>
 
                     <!-- Delete Account Modal -->
@@ -85,7 +85,7 @@
                             {% for field in password_form %}
                             <input placeholder="{{ field.label }}" type="{{ field.field.widget.input_type }}"
                                 id="password-input-{{ forloop.counter }}" name="{{ field.name }}"
-                                class="form-control-profile" value="{{ field.value|default_if_none:'' }}">
+                                class="form-control-profile password-fields-custom value="{{ field.value|default_if_none:'' }}">
                             {% endfor %}
                         </div>
                         <button type="submit" class="btn btn-primary update-profile-button">Update Profile</button>
