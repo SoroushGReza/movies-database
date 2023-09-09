@@ -46,6 +46,12 @@ function clearRecentSearches(event) {
 
 
 // Call the displayRecentSearches function when page loads
+const logoutUrl = document.body.getAttribute('data-logout-url');
+
 window.onload = function() {
-    displayRecentSearches();
-}
+    if (document.querySelector(`body[data-logout-url="${logoutUrl}"]`)) {
+        displayRecentSearches();
+    }
+};
+
+
