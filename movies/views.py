@@ -12,7 +12,8 @@ from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 import requests
-from .forms import ReviewForm, UserProfileForm, UserRegisterForm
+from .forms import ReviewForm, UserProfileForm
+from .forms import VerifyDeleteUserForm, UserRegisterForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -142,6 +143,29 @@ def user_profile(request):
             'password_form': password_form
         }
     )
+
+
+# Delete User Account
+def delete_account(request):
+    if request.method == 'POST':
+        form = VerifyDeleteUserForm(request.POST)
+        if form.is_valid():
+            password = form.cleaned_data.get('password')
+            user = authenticate(
+                request,
+                username=request.user.username,
+                password=password
+            )
+            if user is not None:
+                user.delete()
+                logout(request)
+                return redirect('register')
+            else:
+                messages.error(request, "Incorrect password")
+    else:
+        form = VerifyDeleteUserForm()
+
+    return render(request, 'profile/user_profile.html', {'form': form})
 
 
 # My Reviews
