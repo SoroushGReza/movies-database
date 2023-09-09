@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from .models import Review, UserProfile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django import forms
 
 
 # User Register Form
@@ -51,6 +52,14 @@ class UserProfileForm(forms.ModelForm):
                 )
 
         return cleaned_data
+
+
+# Delete User Account Form
+class VerifyDeleteUserForm(forms.Form):
+    password = forms.CharField(
+        widget=forms.PasswordInput,
+        label='Password'
+    )
 
 
 # Review Form
