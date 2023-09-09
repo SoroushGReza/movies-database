@@ -174,6 +174,7 @@ def delete_account(request):
                 print("User authentication faik")
                 messages.error(request, "Incorrect password")
         else:
+            print("Form errors:", form.errors)
             print("Form is not valid")
     else:
         print("Not a post method")
