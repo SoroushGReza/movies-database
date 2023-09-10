@@ -11,36 +11,43 @@ app_name = 'movies'
 
 # defining URL patterns for **MOVIES** app
 urlpatterns = [
-    # Path for list of "News"  in movie_list.html
+    # Movie list page
     path('', movie_list, name='movie_list'),
 
-    # path for movie overview
+    # Movie overview
     path(
         'overview/<int:movie_id>/',
         views.movie_overview,
         name='movie_overview',
     ),
 
-    # Path for Registration
+    # Registration
     path('register/', views.register, name='register'),
 
-    # Path for verification e-mail
+    # Verification e-mail
     path(
         'verify_email/<int:user_id>/',
         views.verify_email,
         name='verify_email'
     ),
 
-    # Path for Login
+    # Email verification sent
+    path(
+        'email_verification_sent',
+        views.email_verification_sent,
+        name='email_verification_sent'
+    ),
+
+    # Login
     path('login/', views.user_login, name='user_login'),
 
-    # Path fot Logout
+    # Logout
     path('logout/', views.user_logout, name='user_logout'),
 
-    # Path to User Profile
+    # User Profile
     path('user_profile/', views.user_profile, name='user_profile'),
 
-    # Path to Delete User Account
+    # Delete User Account
     path('delete_account/', views.delete_account, name='delete_account'),
 
     # User reviews
@@ -55,17 +62,17 @@ urlpatterns = [
         views.delete_review, name='delete_review'
     ),
 
-    # Path to Movie Search
+    # Movie Search
     path('search/', views.search_movies, name='search_movies'),
 
-    # Path to Clear search history
+    # Clear search history
     path(
         'clear_search_history/',
         views.clear_search_history,
         name='clear_search_history',
     ),
 
-    # Path to get recent searches
+    # Get recent searches
     path(
         'get_recent_searches/',
         get_recent_searches,
