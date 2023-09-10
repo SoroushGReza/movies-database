@@ -50,14 +50,14 @@
                                 </div>
                                 <div class="modal-body">
                                     <p>Are you sure you want to delete your account? All your data including
-                                        your reviews will be lost. If you are sure type your password to verify
-                                        and delete your account.</p>
+                                        your reviews will be lost. <br><br>
+                                        If yes are certain, type your password to verify.
                                     <form method="post" action="{% url 'movies:delete_account' %}">
                                         {% csrf_token %}
                                         <div class="form-group">
                                             <label for="{{ form.password.id_for_label }}">Password:</label>
                                             <input type="password" name="password" class="form-control"
-                                                id="{{ form.password.id_for_label }}" autocomplete="new-password"/>
+                                                id="{{ form.password.id_for_label }}" autocomplete="new-password" />
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
@@ -85,7 +85,8 @@
                             {% for field in password_form %}
                             <input placeholder="{{ field.label }}" type="{{ field.field.widget.input_type }}"
                                 id="password-input-{{ forloop.counter }}" name="{{ field.name }}"
-                                class="form-control-profile password-fields-custom value="{{ field.value|default_if_none:'' }}">
+                                class="form-control-profile password-fields-custom value=" {{
+                                field.value|default_if_none:'' }}">
                             {% endfor %}
                         </div>
                         <button type="submit" class="btn btn-primary update-profile-button">Update Profile</button>
