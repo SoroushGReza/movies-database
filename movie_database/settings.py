@@ -25,7 +25,6 @@ EMAIL_HOST_USER = EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 
 
-
 LOGIN_URL = 'movies:user_login'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
