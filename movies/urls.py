@@ -33,7 +33,7 @@ urlpatterns = [
 
     # Email verification sent
     path(
-        'email_verification_sent',
+        'email_verification_sent/',
         views.email_verification_sent,
         name='email_verification_sent'
     ),
