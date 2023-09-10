@@ -1,7 +1,24 @@
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.core.mail import send_mail
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils import timezone
+
+
+# Send email verifications when signing up
+@receiver(post_save, sender=User)
+def send_verification_email(sender, instance, created, **kwargs):
+    if created:
+        subject = "Verify Movie Base registration"
+        message = (
+            f"Did you signup to Movie Base? If you did,"
+            f"please click the link below to verify registration:"
+            f"\nhttp://{settings.ALLOWED_HOSTS[0]}/"
+            f"{settings.EMAIL_VERIFICATION_URL}/{instance.id}/"
+        )
 
 
 # User Profile
