@@ -17,6 +17,7 @@ from .forms import VerifyDeleteUserForm, UserRegisterForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from movie_database.settings import EMAIL_HOST_USER
+from django.core.mail import send_mail
 
 
 # Registration for Users
@@ -35,13 +36,14 @@ def register(request):
             )
 
             # Send verification email
+            user_email = form.cleaned_data.get('email')
             send_mail(
                 'Verify your email address',
-                f'Plase verify your email by clicking the following link:'
+                f'Please verify your email by clicking the following link:'
                 f'{verification_link}',
                 EMAIL_HOST_USER,
                 [user_email],
-                fail_silent=False,
+                fail_silently=False,
             )
 
             # Redirect to profile after Login
