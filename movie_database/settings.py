@@ -18,7 +18,7 @@ from pathlib import Path
 # Email verification
 EMAIL_VERIFICATION_URL = 'verify_email'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.office365.com'
+EMAIL_HOST = 'smtp.smtp-mail.outlook.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = EMAIL_HOST_USER
@@ -45,6 +45,8 @@ ALLOWED_HOSTS = ['8000-soroushgrez-moviesdatab-21but2m2le2.ws-us104.gitpod.io']
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-soroushgrez-moviesdatab-21but2m2le2.ws-us104.gitpod.io'
 ]
+
+CSRF_COOKIE_NAME = 'csrftoken'
 
 # Application definition
 
