@@ -46,7 +46,7 @@ def register(request):
                 fail_silently=False,
             )
 
-            # Redirect to profile after Login
+            # Redirect to verification page
             return redirect('movies:email_verification_sent')
     else:
         form = UserRegisterForm()
