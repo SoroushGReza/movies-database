@@ -24,6 +24,13 @@ urlpatterns = [
     # Path for Registration
     path('register/', views.register, name='register'),
 
+    # Path for verification e-mail
+    path(
+        'verify_email/<int:user_id>/',
+        views.verify_email,
+        name='verify_email'
+    ),
+
     # Path for Login
     path('login/', views.user_login, name='user_login'),
 
