@@ -16,6 +16,7 @@ from .forms import ReviewForm, UserProfileForm
 from .forms import VerifyDeleteUserForm, UserRegisterForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from movie_database.settings import EMAIL_HOST_USER
 
 
 # Registration for Users
@@ -27,6 +28,21 @@ def register(request):
             user = form.save(commit=False)
             user.is_active = False  # Set account to inactive
             user.save()  # save as inactive
+
+            # Create verification link
+            verification_link = request.build_absolute_uri(
+                reverse('movies:verify_email', args=[user.id])
+            )
+
+            # Send verification email
+            send_mail(
+                'Verify your email address',
+                f'Plase verify your email by clicking the following link:'
+                f'{verification_link}',
+                EMAIL_HOST_USER,
+                [user_email],
+                fail_silent=False,
+            )
 
             # Redirect to profile after Login
             return redirect('movies:email_verification_sent')
