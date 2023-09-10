@@ -23,10 +23,13 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)  # Login after registration
+            # Temporarily prevent saving
+            user = form.save(commit=False)
+            user.is_active = False  # Set account to inactive
+            user.save()  # save as inactive
+
             # Redirect to profile after Login
-            return redirect('movies:user_profile')
+            return redirect('movies:email_verification_sent')
     else:
         form = UserRegisterForm()
     return render(request, 'registration/register.html', {'form': form})
