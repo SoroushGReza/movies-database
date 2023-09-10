@@ -48,6 +48,11 @@ def verify_email(request, user_id):
         return redirect('movies:register')
 
 
+# Email verification sent
+def email_verification_sent(request):
+    return render(request, 'registration/email_verification_sent.html')
+
+
 # User Login
 def user_login(request):
     if request.method == 'POST':
