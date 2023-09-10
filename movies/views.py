@@ -32,6 +32,19 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 
 
+# Email verification when signing upp
+def verify_email(request, user_id):
+    try:
+        user = User.objects.get(id=user_id)
+        user.is_active = True
+        user.save()
+        messages.success(request, "Your email has been verified successfully!")
+        return redirect('movies:movie_list')
+    except User.DoesNotExist:
+        messages.error(request, "Invalid verification link")
+        return redirect('movies:register')
+
+
 # User Login
 def user_login(request):
     if request.method == 'POST':
