@@ -16,6 +16,7 @@ from pathlib import Path
 
 
 # Email verification
+EMAIL_VERIFICATION_URL = 'verify_email'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.office365.com'
 EMAIL_PORT = 587
