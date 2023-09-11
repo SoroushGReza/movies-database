@@ -25,50 +25,26 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            # Temporarily prevent saving
-            user = form.save(commit=False)
-            user.is_active = False  # Set account to inactive
-            user.save()  # save as inactive
+            # Save user after valid registration
+            user = form.save()
+            user.is_active = True
+            user.save()  # save as active
 
-            # Create verification link
-            verification_link = request.build_absolute_uri(
-                reverse('movies:verify_email', args=[user.id])
-            )
-
-            # Send verification email
+            # Send membership confirmation email
             user_email = form.cleaned_data.get('email')
             send_mail(
-                'Verify your email address',
-                f'Please verify your email by clicking the following link:'
-                f'{verification_link}',
+                'Welcome to Movie Base!',
+                f'We are happy to have you on board with us!',
                 settings.EMAIL_HOST_USER,
                 [user_email],
                 fail_silently=False,
             )
 
-            # Redirect to verification page
-            return redirect('movies:email_verification_sent')
+            # Redirect to movie_list page
+            return redirect('movies:movie_list')
     else:
         form = UserRegisterForm()
     return render(request, 'registration/register.html', {'form': form})
-
-
-# Email verification when signing upp
-def verify_email(request, user_id):
-    try:
-        user = User.objects.get(id=user_id)
-        user.is_active = True
-        user.save()
-        messages.success(request, "Your email has been verified successfully!")
-        return redirect('movies:movie_list')
-    except User.DoesNotExist:
-        messages.error(request, "Invalid verification link")
-        return redirect('movies:register')
-
-
-# Email verification sent
-def email_verification_sent(request):
-    return render(request, 'registration/email_verification_sent.html')
 
 
 # User Login
