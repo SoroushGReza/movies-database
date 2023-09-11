@@ -8,19 +8,6 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils import timezone
 
 
-# # Send email verifications when signing up
-# @receiver(post_save, sender=User)
-# def send_verification_email(sender, instance, created, **kwargs):
-#     if created:
-#         subject = "Verify Movie Base registration"
-#         message = (
-#             f"Did you signup to Movie Base? If you did,"
-#             f"please click the link below to verify registration:"
-#             f"\nhttp://{settings.ALLOWED_HOSTS[0]}/"
-#             f"{settings.EMAIL_VERIFICATION_URL}/{instance.id}/"
-#         )
-
-
 # User Profile
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
