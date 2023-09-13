@@ -111,6 +111,25 @@ h1.text-center strong {
     align-items: center;
   }
 
+.form-control-search {
+    display: block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    appearance: none;
+    background-color: #0236776e;
+    background-clip: padding-box;
+    border: 1px solid #00bbc8dc;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control-search:focus {
+    background-color: #000000c4;
+    border: 1px solid #00727ae7;
+}
+
 
 #search-input {
     margin-left: -3%;
