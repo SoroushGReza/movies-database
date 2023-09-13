@@ -1,9 +1,12 @@
-/* Edit Profile forms */
+/* Avoided comments for descriptive id's and classes */
+
+/*     User Profile Page     */
 
 .profile-container {
     --bs-gutter-x: 0;
 }
 
+/* Profile page header */
 #user-profile-header {
     margin-left: 5%;
     margin-top: 3%;
@@ -16,6 +19,7 @@
     color: rgba(241, 194, 152, 0.71);
     font-size: 12px;
 }
+
 /*  username and email  */
 .user-info {
     margin-left: 5%;
@@ -23,6 +27,7 @@
     font-size: 20px;
 }
 
+/*  username and email strong text  */
 p.user-info strong {
     color: white;
 }
@@ -43,11 +48,9 @@ p.user-info strong {
     z-index: 2;
 }
 
-#user-profile-header {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
 
+
+/*     Edit Profile     */
 
 #edit-profile-button {
     margin-bottom: 20px;
@@ -66,6 +69,9 @@ p.user-info strong {
     background-image: url(../media/edit-profile-button-hover.png);
 }
 
+
+
+/*     My Reviews     */
 
 .my-reviews-div-profile {
     margin-top: 8px;
@@ -91,6 +97,9 @@ p.user-info strong {
 }
 
 
+
+/*     Delete Account     */
+
 #delete-account-button {
     margin-bottom: 20px;
     margin-left: 5%;
@@ -112,10 +121,6 @@ p.user-info strong {
 }
 
 
-#update-profile-button:hover {
-    background-color: rgb(0, 119, 210);
-    color: black;
-}
 /*    Modal Delete Verification    */
 
 #deleteAccountModal {
@@ -142,16 +147,16 @@ p.user-info strong {
 }
 
 
+
+/*     Edit Profile Form     */
+
 #edit-profile-form {
-    /* background-color: #0236776e; */
     background-image: url(../media/profile-form.png);
     padding: 20px;
     border-radius: 5px;
     margin-left: 4%;
     margin-right: 5%;
     margin-bottom: 3%;
-    /* border: 2px double #00bfff54; */
-
 }
 
 
@@ -167,12 +172,14 @@ p.user-info strong {
 
 
 /*  Profile form headers  */
+
 .form-headers-profile-page {
     color: #ff8c00be;
 }
 
+/* Form inputs */
 
-.form-control-profile {
+.form-control-input {
     margin-bottom: 5px;
     display: block;
     width: 70%;
@@ -189,6 +196,8 @@ p.user-info strong {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+/* Email input */
+
 input#id_email.form-control-profile {
     background-color: #0236776e;
 }
@@ -204,6 +213,8 @@ input#id_email.form-control-profile::placeholder {
 }
 
 
+/* Password inputs */
+
 .password-fields-custom {
     background-color: #0236776e;
 }
@@ -217,6 +228,8 @@ input#id_email.form-control-profile::placeholder {
     color: white;
     border: 2px double rgb(0, 197, 215);
 }
+
+
 
 /*      Alert Messages      */
 
@@ -238,17 +251,18 @@ input#id_email.form-control-profile::placeholder {
 }
 
 /* Success message */
+
 body .alert-success {
     color: black !important;
-    background-color: #d4edda !important;
-    border-color: #c3e6cb !important;
+    background-color: #47ff72 !important;
+    border-color: #006718b9 !important;
 }
 
 /* Error Messages */
 body .alert-error {
-    color: black !important;
-    background-color: #f8d7da !important;
-    border-color: #f5c6cb !important;
+    color: rgb(255, 255, 255) !important;
+    background-color: #c00c1b !important;
+    border-color: #79000cc8 !important;
 }
 
 
