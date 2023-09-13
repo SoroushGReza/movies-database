@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <link rel="stylesheet" href="{% static 'css/search_results.css' %}">
     <link rel="stylesheet" href="{% static 'css/my_reviews.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 
     <link rel="icon" href="{% static 'icons/favicon.ico' %}" type="image/x-icon">
 </head>
@@ -29,7 +30,7 @@
         <!--  Navbar  -->
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
             <div class="container base">
-                <a class="navbar-brand text-center brand-logo" href="#">Movie Base</a>
+                <a class="navbar-brand text-center brand-logo" href="{% url 'movies:movie_list' %}">Movie Base</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                     aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -37,10 +38,7 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto mb-1 mb-lg-0">
                         <li class="nav-item m-1">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item m-1">
-                            <a class="nav-link news-nav-movielist" href=" {% url 'movies:movie_list' %}">NEWS</a>
+                            <a class="nav-link home-nav" href=" {% url 'movies:movie_list' %}">Home</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li id="login-logout" class="nav-item m-1">

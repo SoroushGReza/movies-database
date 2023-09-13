@@ -1,26 +1,36 @@
-/*        base.html        */
+/*          Base.html Styling          */
 
-/*   Centered Elements   */
+
+/* Navbar Cotainer */
 
 .container .base {
     display: flex;
     justify-content: space-between;
 }
 
-.navbar-item {
-    margin-right: auto;
-}
 
 
 /*   Navbar   */
+
 .navbar {
     font-family: 'Lato', sans-serif; 
 }
 
+
+/* Movie Base Logo  */
 .navbar-brand {
     color: #00bbc8dc;
 }
 
+.brand-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 34px;
+}
+
+
+/* Navbar links */
 .nav-link {
     color: #fff; 
     transition: color 0.3s;
@@ -30,15 +40,27 @@
     color: #ffffffdc;
 }
 
-.news-nav-movielist{
+
+/* Home link */
+
+.home-nav{
     color: #a6477c;
 }
 
-.news-nav-movielist:hover {
+.home-nav:hover {
     color: red;
 }
 
+
+/* Navbar list items */
+
+.navbar-item {
+    margin-right: auto;
+}
+
+
 /* Login / Register in navbar */
+
 .custom-slash {
     color: #003e40;
 }
@@ -47,15 +69,6 @@
     color: #00acb56f;
 }
 
-
-
-/* Center Logo */
-.brand-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 34px;
-}
 
 /* Search button */
 .btn-outline-light {
@@ -68,6 +81,8 @@
     color: #fff; 
 }
 
+/*  Search History dropdown  */
+
 .dropdown-menu {
     position: absolute;
     width: 100%;
@@ -79,6 +94,8 @@
     align-items: center;
 }
 
+
+/* Results not found header */
 .search-results-not-found {
     margin-top: 75px;
     font-size: 70px;
@@ -102,7 +119,7 @@ h1.text-center strong {
 }
 
 
-/*  Search history drop-down  */
+/*  Search Hiatory  */
 
 #recent-searches {
     position: absolute;
@@ -110,6 +127,9 @@ h1.text-center strong {
     border: none;
     align-items: center;
   }
+
+
+/* Search Input */
 
 .form-control-search {
     display: block;
@@ -130,7 +150,6 @@ h1.text-center strong {
     border: 1px solid #00727ae7;
 }
 
-
 #search-input {
     margin-left: -3%;
 }
@@ -141,9 +160,8 @@ h1.text-center strong {
 }
 
 
-/*  For movie_overview, search_results & movie_list Templates  */
 
-/*      Cover Images      */
+/*      Cover Images for all Templates     */
 .image-movie {
     width: 60%;
     height: auto;
@@ -168,9 +186,6 @@ h1.text-center strong {
 }
 
 /* Movie review */
-#search-movie-review {
-    color: rgba(255, 255, 255, 0.788);
-}
 
 #search-movie-overview {
     color: rgba(182, 174, 174, 0.865);
@@ -230,20 +245,20 @@ h1.text-center strong {
     margin: 0 auto;
 }
 
-.news-block {
+.home-block {
     width: 50%;
     height: 8px;
     background-color: #a5487d9d;
     margin: 0 auto;
 }
 
-
+/* Div */
 .container-fluid {
     overflow-x: hidden;
     position: relative;
 }
 
-
+/*  Movie info  */
 .movie {
     align-items: center;
     margin-bottom: 20px;
@@ -271,7 +286,9 @@ h1.text-center strong {
 }
 
 
-/*   Footer   */
+
+/*     Footer     */
+
 .main-content {
     display: flex;
     flex-direction: column;
@@ -282,6 +299,8 @@ h1.text-center strong {
     flex: 1;
     min-height: 100vh;
 }
+
+/* Error List */
 
 .errorlist {
     font-size: 12px;

@@ -49,6 +49,7 @@
 }
 
 /*    Trailer    */
+
 iframe {
     margin-bottom: 8%;
     padding-top: 5%;
@@ -78,6 +79,8 @@ iframe {
     align-items: center;
 }
 
+
+/* Block Divider */
 hr.overview-block {
     width: 60%;
     height: 8px;
@@ -166,7 +169,8 @@ hr.overview-block {
     padding-bottom: 5px;
 }
 
-/*  Signin 2 write review text  */
+/*  Signin to write review text  */
+
 .signin-4-review {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:#f2ff00b5; 
@@ -177,6 +181,7 @@ hr.overview-block {
 
 
 /*    Review Form    */
+
 .review-form {
     background-color: rgba(255, 255, 255, 0.3); 
     border-radius: 6px;
@@ -189,6 +194,8 @@ hr.overview-block {
     font-size: 12px;
     color: rgba(81, 81, 81, 0.753);
 }
+
+/* Text are & Input Review form */
 
 .review-form textarea,
 .review-form input {
@@ -216,6 +223,9 @@ hr.overview-block {
     outline: none;
 }
 
+
+/* Submit Review Button */
+
 .transparent-button {
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
@@ -226,12 +236,15 @@ hr.overview-block {
     border: none;
 }
 
+/* Review form label */
 .user-review-label {
     color: rgba(62, 213, 255, 0.686);
     margin-left: 3px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 17px;
 }
+
+/* Rate movie paragraph */
 
 .rate-movie-p {
     color: rgba(62, 213, 255, 0.686);
@@ -441,6 +454,7 @@ input:checked + .star-label ~ .star-label:hover:before,
 
 
 /*** Reload ***/
+
 .star-label[for=rs0] {
 	position: absolute;
 	top: 20vmin;
