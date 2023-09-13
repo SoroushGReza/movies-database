@@ -165,16 +165,10 @@ p.user-info strong {
     margin-top: 2%;
 }
 
-#edit-profile-form button
-
 
 /*  Profile form headers  */
-form .form-headers {
+.form-headers-profile-page {
     color: #ff8c00be;
-}
-
-#change-password-header {
-    margin-top: 5%;
 }
 
 
