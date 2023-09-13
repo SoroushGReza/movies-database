@@ -16,14 +16,6 @@ class UserProfile(models.Model):
         return self.user.username
 
 
-# Movie Genre
-class Genre(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-
 # Search History model
 class SearchHistory(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # User Reference

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Genre, SearchHistory, Review, UserProfile
+from .models import SearchHistory, Review, UserProfile
 from .tmdb import get_movies_from_tmdb, get_movie_trailer, get_movie_title
 from .env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
