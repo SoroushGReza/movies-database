@@ -30,16 +30,33 @@ def register(request):
             user.is_active = True
             user.save()  # save as active
 
-            # Send membership confirmation email
-            user_email = form.cleaned_data.get('email')
-            send_mail(
-                'Welcome to Movie Base!',
-                f'We are happy to have you on board with us!',
-                settings.EMAIL_HOST_USER,
-                [user_email],
-                fail_silently=False,
-            )
+            # Login user
+            login(request, user)
 
+            # Send membership confirmation email
+            # user_email = form.cleaned_data.get('email')
+            # subject = "Welcome to Movie Base!"
+            # message = (
+            #     "We are thrilled to have you on board!"
+            #     "If you have any suggestions for improvements, "
+            #     "we would love to hear your ideas.\n\n"
+            #     "We also want to inform you that in Movie Base, "
+            #     "our users are expected to keep a respectful manner "
+            #     "in their reviews. And we expect that users don't post "
+            #     "content unrelated to the movie that the review "
+            #     "is written, as violations would result "
+            #     "in your review being rejected"
+            # )
+            # try:
+            #     send_mail(
+            #         subject,
+            #         message,
+            #         settings.EMAIL_HOST_USER,
+            #         [user_email],
+            #         fail_silently=False,
+            #     )
+            # except Exception as e:
+            #     pass
             # Redirect to movie_list page
             return redirect('movies:movie_list')
     else:
