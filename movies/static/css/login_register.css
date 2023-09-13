@@ -113,10 +113,10 @@
     margin-right: 25%;
     margin-bottom: 3%;
 
-    background-color: rgb(0, 54, 169);
-    color: white;
+    background-color: rgba(0, 4, 44, 0.932);
+    color: greenyellow;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid greenyellow;
     cursor: pointer;
 
     border-radius: 5px;
@@ -126,8 +126,9 @@
 }
 
 #register-button-login-page:hover {
-    background-color: rgb(4, 0, 110);
-    color: rgb(0, 157, 255);
+    background-color: greenyellow;
+    color: black;
+
 }
 
 /* "Not a memeber" Paragraph */
@@ -135,7 +136,7 @@
     font-size: 19px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
-    color: rgb(0, 174, 205);
+    color: rgba(172, 255, 47, 0.879);
 
 }
 
