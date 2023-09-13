@@ -17,7 +17,7 @@ from .forms import VerifyDeleteUserForm, UserRegisterForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.conf import settings
-from django.core.mail import send_mail
+# from django.core.mail import send_mail
 
 
 # Registration for Users
