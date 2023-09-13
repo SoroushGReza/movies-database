@@ -11,6 +11,11 @@
     font-size: 34px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.profile-form-labels {
+    color: rgba(241, 194, 152, 0.71);
+    font-size: 12px;
+}
 /*  username and email  */
 .user-info {
     margin-left: 5%;
@@ -38,15 +43,11 @@ p.user-info strong {
     z-index: 2;
 }
 
-.container h2 {
-    font-size: 24px;
+#user-profile-header {
+    font-size: 35px;
     margin-bottom: 20px;
 }
 
-.container p {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
 
 #edit-profile-button {
     margin-bottom: 20px;
@@ -141,7 +142,7 @@ p.user-info strong {
     background-image: url(../media/profile-form.png);
     padding: 20px;
     border-radius: 5px;
-    margin-left: 5%;
+    margin-left: 4%;
     margin-right: 5%;
     margin-bottom: 3%;
     /* border: 2px double #00bfff54; */
