@@ -111,6 +111,11 @@ p.user-info strong {
     border: 1px solid rgb(113, 0, 0);
 }
 
+
+#update-profile-button:hover {
+    background-color: rgb(0, 119, 210);
+    color: black;
+}
 /*    Modal Delete Verification    */
 
 #deleteAccountModal {
@@ -159,6 +164,8 @@ p.user-info strong {
     border-radius: 5px;
     margin-top: 2%;
 }
+
+#edit-profile-form button
 
 
 /*  Profile form headers  */
