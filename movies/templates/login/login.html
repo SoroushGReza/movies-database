@@ -25,20 +25,32 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6">
                 <div id="login-form" class="centered">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title text-light">Login</h2>
+                    <div class="card login-card">
+                        <div class="login-card-body">
+                            <h2 class="login-form-header">Login</h2>
                             <form class="text-light justify-content-center" action="/movies/login/" method="post">
                                 {% csrf_token %}
-                                {{ form.as_p }}
-                                <br>
-                                <button id="login-button" type="submit" class="btn btn-success btn-lg">Login</button>
-                                <br>
-                                <p id="not-a-member">Not a member? Press Register to Signup.</p>
-                                <p id="not-a-member">Press Register to Signup.</p>
-                                <a id="register" href="{% url 'movies:register' %}"
-                                    class="btn btn-primary btn-lg">Register</a>
+                                
+                                <div class="form-group login-form-group">
+                                    <label class="login-form-labels" for="{{ form.username.id_for_label }}">{{ form.username.label }}:</label>
+                                    <input placeholder="Enter {{ form.username.label|lower }} here.." type="text" name="{{ form.username.name }}" class="form-control"
+                                        id="{{ form.username.id_for_label }}"
+                                        value="{{ form.username.value|default_if_none:'' }}">
+                                </div>
+                            
+                                <div class="form-group login-form-group">
+                                    <label class="login-form-labels" for="{{ form.password.id_for_label }}">{{ form.password.label }}:</label>
+                                    <input placeholder="Enter {{ form.password.label|lower }} here.." type="password" name="{{ form.password.name }}" class="form-control"
+                                        id="{{ form.password.id_for_label }}"
+                                        value="{{ form.password.value|default_if_none:'' }}">
+                                </div>
+                            
+                                <button id="login-button-login-page" type="submit" class="btn btn-primary">Login</button>
+                                <p id="not-a-member">Not a member? Press Register</p>
+                                <a id="register-button-login-page" href="{% url 'movies:register' %}"
+                                    class="btn btn-primary">Register</a>
                             </form>
+                            
                         </div>
                     </div>
                 </div>
