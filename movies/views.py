@@ -390,3 +390,8 @@ def reject_review(request, review_id):
     return HttpResponseRedirect(
         reverse('movies:movie_overview', args=[review.movie_id])
     )
+
+
+# Contact
+def contact(request):
+    return render(request, 'contact/contact.html')
