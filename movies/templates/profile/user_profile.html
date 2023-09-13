@@ -83,10 +83,11 @@
                         <h4 id="change-password-header" class="form-headers">Change Password</h4>
                         <div class="form-group">
                             {% for field in password_form %}
-                            <input placeholder="{{ field.label }}" type="{{ field.field.widget.input_type }}"
+                            <label class="profile-form-labels" for="password-input-{{ forloop.counter }}">{{ field.label }}:</label>
+                            <input placeholder="Enter {{ field.label|lower }} here.." type="{{ field.field.widget.input_type }}"
                                 id="password-input-{{ forloop.counter }}" name="{{ field.name }}"
-                                class="form-control-profile password-fields-custom value=" {{
-                                field.value|default_if_none:'' }}">
+                                class="form-control-profile password-fields-custom"
+                                value="{{ field.value|default_if_none:'' }}">
                             {% endfor %}
                         </div>
                         <button type="submit" class="btn btn-primary update-profile-button">Update Profile</button>
