@@ -71,6 +71,7 @@ urlpatterns = [
         approve_review,
         name='approve_review',
     ),
+
     # Reject Review
     path(
         'reject_review/<int:review_id>/',
@@ -78,4 +79,6 @@ urlpatterns = [
         name='reject_review',
     ),
 
+    # Contact
+    path('contact/', views.contact, name='contact'),
 ]
