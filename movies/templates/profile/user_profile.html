@@ -76,7 +76,7 @@
                         <h4 class="form-headers-profile-page">Update Email</h4>
                         <div class="form-group">
                             <input type="email" id="{{ profile_form.email.id_for_label }}"
-                                name="{{ profile_form.email.name }}" class="form-control-profile"
+                                name="{{ profile_form.email.name }}" class="form-control-input password-fields-custom"
                                 placeholder="New email here.." value="{{ user.email }}">
 
                         </div>
@@ -86,7 +86,7 @@
                             <label class="profile-form-labels" for="password-input-{{ forloop.counter }}">{{ field.label }}:</label>
                             <input placeholder="Enter {{ field.label|lower }} here.." type="{{ field.field.widget.input_type }}"
                                 id="password-input-{{ forloop.counter }}" name="{{ field.name }}"
-                                class="form-control-profile password-fields-custom"
+                                class="form-control-input password-fields-custom"
                                 value="{{ field.value|default_if_none:'' }}">
                             {% endfor %}
                         </div>
@@ -108,7 +108,7 @@
                 element.style.display = 'none';
             });
         }
-    }, 5000);
+    }, 8000);
 </script>
 
 
