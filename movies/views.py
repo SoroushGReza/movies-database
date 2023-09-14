@@ -17,7 +17,7 @@ from .forms import VerifyDeleteUserForm, UserRegisterForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.conf import settings
-# from django.core.mail import send_mail
+from django.core.mail import send_mail
 
 
 # Registration for Users
@@ -26,37 +26,37 @@ def register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             # Save user after valid registration
-            user = form.save()
-            user.is_active = True
-            user.save()  # save as active
+            # user = form.save()
+            # user.is_active = True
+            # user.save()  # save as active
 
             # Login user
-            login(request, user)
+            # login(request, user)
 
             # Send membership confirmation email
-            # user_email = form.cleaned_data.get('email')
-            # subject = "Welcome to Movie Base!"
-            # message = (
-            #     "We are thrilled to have you on board!"
-            #     "If you have any suggestions for improvements, "
-            #     "we would love to hear your ideas.\n\n"
-            #     "We also want to inform you that in Movie Base, "
-            #     "our users are expected to keep a respectful manner "
-            #     "in their reviews. And we expect that users don't post "
-            #     "content unrelated to the movie that the review "
-            #     "is written, as violations would result "
-            #     "in your review being rejected"
-            # )
-            # try:
-            #     send_mail(
-            #         subject,
-            #         message,
-            #         settings.EMAIL_HOST_USER,
-            #         [user_email],
-            #         fail_silently=False,
-            #     )
-            # except Exception as e:
-            #     pass
+            user_email = form.cleaned_data.get('email')
+            subject = "Welcome to Movie Base!"
+            message = (
+                "We are thrilled to have you on board!"
+                "If you have any suggestions for improvements, "
+                "we would love to hear your ideas.\n\n"
+                "We also want to inform you that in Movie Base, "
+                "our users are expected to keep a respectful manner "
+                "in their reviews. And we expect that users don't post "
+                "content unrelated to the movie that the review "
+                "is written, as violations would result "
+                "in your review being rejected"
+            )
+            try:
+                send_mail(
+                    subject,
+                    message,
+                    settings.EMAIL_HOST_USER,
+                    [user_email],
+                    fail_silently=False,
+                )
+            except Exception as e:
+                raise
             # Redirect to movie_list page
             return redirect('movies:movie_list')
     else:
