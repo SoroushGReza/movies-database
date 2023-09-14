@@ -41,25 +41,25 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto mb-1 mb-lg-0">
                         <li class="nav-item m-1">
-                            <a class="nav-link home-nav" href=" {% url 'movies:movie_list' %}">Home</a>
+                            <a class="nav-link nav-links-hover home-nav" href=" {% url 'movies:movie_list' %}">Home</a>
                         </li>
                         <li class="nav-item m-1">
-                            <a href="{% url 'movies:contact' %}" class="nav-link">Contact</a>
+                            <a href="{% url 'movies:contact' %}" class="nav-link nav-links-hover">Contact</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li id="login-logout" class="nav-item m-1 dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-target="#dropdownMenu" aria-haspopup="true" aria-expanded="false" href="#">Profile</a>
+                            <a class="nav-link dropdown-toggle nav-links-hover" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-target="#dropdownMenu" aria-haspopup="true" aria-expanded="false" href="#">Profile</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="{% url  'movies:my_reviews' %}" class="dropdown-item">My Reviews</a>
                                 <a href="{% url 'movies:user_profile' %}" class="dropdown-item">My Profile</a>
                             </div>
                         </li>
                         <li class="nav-item m-1">
-                            <a class="nav-link" href="{% url 'movies:user_logout' %}">Logout</a>
+                            <a class="nav-link nav-links-hover" href="{% url 'movies:user_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item m-1">
-                            <a class="nav-link login-register" href="{% url 'movies:user_login' %}">Login<strong class="custom-slash"> / </strong>Register</a>
+                            <a class="nav-link login-register nav-links-hover" href="{% url 'movies:user_login' %}">Login<strong class="custom-slash"> / </strong>Register</a>
                             {% endif %}
                         </li>
                     </ul>
