@@ -43,9 +43,16 @@
                         <li class="nav-item m-1">
                             <a class="nav-link home-nav" href=" {% url 'movies:movie_list' %}">Home</a>
                         </li>
+                        <li class="nav-item m-1">
+                            <a href="{% url 'movies:contact' %}" class="nav-link">Contact</a>
+                        </li>
                         {% if user.is_authenticated %}
-                        <li id="login-logout" class="nav-item m-1">
-                            <a class="nav-link" href="{% url 'movies:user_profile' %}">Profile</a>
+                        <li id="login-logout" class="nav-item m-1 dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-target="#dropdownMenu" aria-haspopup="true" aria-expanded="false" href="#">Profile</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="{% url  'movies:my_reviews' %}" class="dropdown-item">My Reviews</a>
+                                <a href="{% url 'movies:user_profile' %}" class="dropdown-item">My Profile</a>
+                            </div>
                         </li>
                         <li class="nav-item m-1">
                             <a class="nav-link" href="{% url 'movies:user_logout' %}">Logout</a>
