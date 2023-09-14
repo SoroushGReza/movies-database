@@ -163,7 +163,7 @@ input.login-inputs {
 }
 
 input.login-inputs::placeholder {
-    color: rgba(121, 121, 121, 0.703);
+    color: rgba(255, 255, 255, 0.895);
 }
 
 input.login-inputs:focus {
