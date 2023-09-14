@@ -141,6 +141,21 @@ p.user-info strong {
     color: black;
 }
 
+input.modal-password-input {
+    background-color: burlywood;
+    color: black;
+    border: 1px solid #ffb30089;
+}
+
+input.modal-password-input::placeholder {
+    color: rgba(255, 255, 255, 0.895);
+}
+
+input.modal-password-input:focus {
+        background-color: black;
+        color: white;
+        border: 2px double rgb(0, 197, 215);
+}
 
 .user-profile-div {
     margin-top: 13%;
