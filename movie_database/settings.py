@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 import django_heroku
 import dj_database_url
-# from movies.env import *
 from pathlib import Path
+
 if os.path.isfile('env.py'):
     import env
 
