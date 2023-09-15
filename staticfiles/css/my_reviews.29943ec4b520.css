@@ -1,0 +1,128 @@
+/*      My Reviews Template page      */
+
+.my-reviews-container {
+    --bs-gutter-x: 0;
+}
+
+
+/*  My reviews Header  */
+
+#my-reviews-header {
+    text-align: center;
+    color: #ffa100b0;
+    font-size: 54px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 3%;
+}
+
+
+/*  My Reviews Page Background  */
+
+#my-reviews-bg {
+    min-height: 100vh;
+    background: url("../media/user-profile-bg.e071c4e0db33.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+.container p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.my-reviews-div {
+    margin-top: 13%;
+    padding-left: 0;
+}
+
+/* Review  */
+.review-item-my-reviews {
+    width: 60vw;
+    margin: auto;
+    border: 3px solid rgb(162 0 0 / 12%);
+    border-radius: 5px;
+    margin-bottom: 5%;
+    background-color: #3903009e;
+}
+
+
+/* Delete Review */
+#delete-my-review {
+    float: right;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: #870000;
+    border: 2px solid #ffa5002b;
+    width: 120px;
+    color: orange;
+    font-size: 20px;
+}
+
+.user-profile-div {
+    margin-top: 13%;
+}
+
+.review-title-bg {
+    width: 100%;
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+/*  Movie title "MY Reviews" Page  */
+.review-movie-title {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+    font-size: 21px;
+    background-color: #7f000044;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Review written by User */
+
+#review-user {
+    color: rgba(0, 255, 68, 0.689);
+}
+
+
+/* Review text content */
+.review-text {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5px;
+    font-size: 19px;
+    color: #ffffffdb;
+}
+
+/* User Rating */
+.rating-user {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5px;
+    
+    font-size: 21px;
+    color: #eeff00b9;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Review Created Date */
+.date-created {
+    font-size: 12px;
+    color: rgba(255, 251, 0, 0.315);
+    text-align: center;
+    padding-bottom: 5px;
+}

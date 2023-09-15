@@ -1,0 +1,313 @@
+/* Avoided comments for descriptive id's and classes */
+
+/*     User Profile Page     */
+
+.profile-container {
+    --bs-gutter-x: 0;
+}
+
+/* Profile page header */
+#user-profile-header {
+    margin-left: 5%;
+    margin-top: 3%;
+    color: rgba(255, 140, 0, 0.758);
+    font-size: 34px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.profile-form-labels {
+    color: rgba(241, 194, 152, 0.71);
+    font-size: 12px;
+}
+
+/*  username and email  */
+.user-info {
+    margin-left: 5%;
+    color: rgba(196, 196, 196, 0.849);
+    font-size: 20px;
+}
+
+/*  username and email strong text  */
+p.user-info strong {
+    color: white;
+}
+
+/*  User Profile Page Background  */
+#user-profile-bg {
+    min-height: 100vh;
+    background: url("../media/user-profile-bg.e071c4e0db33.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/*     Edit Profile     */
+
+#edit-profile-button {
+    margin-bottom: 20px;
+    margin-left: 5%;
+    background-image: url("../media/edit-profile-button.764098b80cf5.png");
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#edit-profile-button:hover {
+    background-image: url("../media/edit-profile-button-hover.7a3f046e31c0.png");
+}
+
+
+
+/*     My Reviews     */
+
+.my-reviews-div-profile {
+    margin-top: 8px;
+}
+
+
+#my-reviews-button {
+    margin-bottom: 20px;
+    margin-left: 5%;
+    background-image: url("../media/my-reviews-button.d3a8ca35eab1.png");
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    width: auto;
+}
+
+#my-reviews-button:hover {
+    background-image: url("../media/my-reviews-button-hover.07640fb87b7a.png");
+}
+
+
+
+/*     Delete Account     */
+
+#delete-account-button {
+    margin-bottom: 20px;
+    margin-left: 5%;
+    background-color: rgb(184, 6, 6);
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    width: auto;
+}
+
+#delete-account-button:hover {
+    background-color: black;
+    color: red;
+    border: 1px solid rgb(113, 0, 0);
+}
+
+
+/*    Modal Delete Verification    */
+
+#deleteAccountModal {
+    margin-top: 10%;
+}
+
+.modal-backdrop {
+    z-index: 1;
+}
+
+.modal-header {
+    background-color: burlywood;
+    color: black;
+}
+
+.modal-body {
+    background-color: blanchedalmond;
+    color: black;
+}
+
+input.modal-password-input {
+    background-color: burlywood;
+    color: black;
+    border: 1px solid #ffb30089;
+}
+
+input.modal-password-input::placeholder {
+    color: rgba(255, 255, 255, 0.895);
+}
+
+input.modal-password-input:focus {
+        background-color: black;
+        color: white;
+        border: 2px double rgb(0, 197, 215);
+}
+
+.user-profile-div {
+    margin-top: 13%;
+}
+
+
+
+/*     Edit Profile Form     */
+
+#edit-profile-form {
+    background-image: url("../media/profile-form.87866092d4df.png");
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 4%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+}
+
+
+/*  Profile form headers  */
+
+.form-headers-profile-page {
+    color: #ff8c00be;
+}
+
+/* Form inputs */
+
+.form-control-input {
+    margin-bottom: 5px;
+    display: block;
+    width: 70%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+
+    font-weight: 400;
+    line-height: 1.5;
+    color: antiquewhite;
+    appearance: none;
+    
+    background-color: #0236776e;
+    background-clip: padding-box;
+    border: 2px solid rgba(0, 179, 255, 0.269);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* Email input */
+
+input#id_email.form-control-profile {
+    background-color: #0236776e;
+}
+
+input#id_email.form-control-profile::placeholder {
+    color: rgba(121, 121, 121, 0.703);
+}
+
+#id_email.form-control-profile:focus {
+        background-color: black;
+        color: white;
+        border: 2px double rgb(0, 197, 215);
+}
+
+
+/* Password inputs */
+
+.password-fields-custom {
+    background-color: #0236776e;
+}
+
+.password-fields-custom::placeholder {
+    color: rgba(121, 121, 121, 0.703);
+}
+
+.password-fields-custom:focus {
+    background-color: black;
+    color: white;
+    border: 2px double rgb(0, 197, 215);
+}
+
+
+/* Update Profile Button */
+
+#update-profile-button {
+    background-color: #a94400;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 2%;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+#update-profile-button:hover {
+    background-color: #642800;
+    color: black;
+}
+
+
+/*      Alert Messages      */
+
+.messages-container {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    z-index: 10000;
+    pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: fit-content;
+}
+
+.alert {
+    margin: 0 10px !important;
+    pointer-events: auto;
+}
+
+/* Success message */
+
+body .alert-success {
+    color: black !important;
+    background-color: #47ff72 !important;
+    border-color: #006718b9 !important;
+}
+
+/* Error Messages */
+body .alert-error {
+    color: rgb(255, 255, 255) !important;
+    background-color: #c00c1b !important;
+    border-color: #79000cc8 !important;
+}
+
+
+/* Close success message */
+
+.close {
+    color: black;
+    float: right;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.close:hover {
+    color: white;
+    background-color: black;
+}

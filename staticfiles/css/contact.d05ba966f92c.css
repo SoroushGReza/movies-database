@@ -1,0 +1,92 @@
+/* Contact Container */
+
+.contact-container {
+    margin-top: 10%;
+}
+
+
+/*  Contact page background image  */
+
+.contact-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+
+    background: url("../media/contact.518878822c6c.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    z-index: -2;
+}
+
+/*  Form  */
+
+#contact-form {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    background-color: rgba(0, 77, 0, 0.795);
+    margin-top: 1%;
+}
+
+/* Contact form header */
+
+.contact-form-header {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 29px;
+    font-weight: bold;
+    margin-left: 3px;
+    margin-top: 5px;
+    color: antiquewhite;
+}
+
+
+/* Form labels */
+
+.form-label {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    color: antiquewhite;
+    margin-left: 3px;
+    margin-bottom: auto;
+    font-weight: bold;
+}
+
+
+/* Form inputs */
+.form-control-contact {
+    background-color: rgba(0, 77, 0, 0.795);
+}
+
+
+/* Send Button  */
+
+.send-button {
+    margin-left: 3px;
+    margin-bottom: 1%;
+    width: 130px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+
+    background-color: greenyellow;
+    color: #212529;
+    border: none;
+}
+
+.send-button:hover {
+    background-color: #212529;
+    color: greenyellow;
+}
+
+/* Form divs */
+
+.mb-3 {
+    margin-left: 3px;
+}

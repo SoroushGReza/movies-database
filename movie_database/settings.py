@@ -13,8 +13,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 import django_heroku
 import dj_database_url
-from movies.env import *
+# from movies.env import *
 from pathlib import Path
+if os.path.isfile('env.py'):
+    import env
+
 
 
 # Ladda env.py to use variables
@@ -48,7 +51,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '8000-soroushgrez-moviesdatab-21but2m2le2.ws-us104.gitpod.io',
     'movie-base-application.herokuapp.com',
-    'localhost'
+    'localhost',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -56,6 +59,28 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 CSRF_COOKIE_NAME = 'csrftoken'
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "WARNING",
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": os.getenv("DJANGO_LOG_LEVEL", "INFO"),
+            "propagate": False,
+        },
+    },
+}
+
 
 # Application definition
 
@@ -110,15 +135,8 @@ ENV_FILE_PATH = os.path.join(BASE_DIR, 'movies/env.py')
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase',
-        'USER': 'mydatabaseuser',
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'HOST': 'localhost',
-        'PORT': '5432',
+            'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
-}
 
 
 # Password validation
@@ -181,3 +199,24 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'movies/static/media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "WARNING",
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": os.getenv("DJANGO_LOG_LEVEL", "INFO"),
+            "propagate": False,
+        },
+    },
+}
