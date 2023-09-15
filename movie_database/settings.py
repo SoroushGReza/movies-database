@@ -13,7 +13,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 import django_heroku
 import dj_database_url
-from movies import env
+from movies.env import *
+from pathlib import Path
+
+
+# Ladda env.py to use variables
+try:
+    with open('env.py') as f:
+        exec(f.read())
+except FileNotFoundError:
+    pass
 
 
 # Welcome Email
@@ -101,10 +110,14 @@ ENV_FILE_PATH = os.path.join(BASE_DIR, 'movies/env.py')
 
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
-        conn_max_age=600,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 
