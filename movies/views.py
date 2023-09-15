@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import SearchHistory, Review, UserProfile
 from .tmdb import get_movies_from_tmdb, get_movie_trailer, get_movie_title
-# from .env import TMDB_API_KEY
+from env import TMDB_API_KEY
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login, logout
@@ -19,7 +19,7 @@ from django.urls import reverse
 from django.conf import settings
 import os
 
-TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
+# TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
 
 
 # Registration for Users
