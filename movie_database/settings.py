@@ -19,8 +19,7 @@ if os.path.isfile('env.py'):
     import env
 
 
-
-# Ladda env.py to use variables
+# Load env.py to use variables
 try:
     with open('env.py') as f:
         exec(f.read())
