@@ -1,0 +1,311 @@
+/*          Base.html Styling          */
+
+
+/* Navbar Cotainer */
+
+.container .base {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links-hover:hover {
+    background-color: black;
+    border-radius: 45px;
+}
+
+/*   Navbar   */
+
+.navbar {
+    font-family: 'Lato', sans-serif; 
+}
+
+
+/* Movie Base Logo  */
+.navbar-brand {
+    color: #00bbc8dc;
+}
+
+.brand-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 34px;
+}
+
+
+/* Navbar links */
+.nav-link {
+    color: #fff; 
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffffffdc;
+}
+
+
+/* Home link */
+
+.home-nav{
+    color: #a6477c;
+}
+
+.home-nav:hover {
+    color: red;
+}
+
+
+/* Navbar list items */
+
+.navbar-item {
+    margin-right: auto;
+}
+
+
+/* Login / Register in navbar */
+
+.custom-slash {
+    color: #003e40;
+}
+
+.login-register {
+    color: #00acb56f;
+}
+
+
+/* Search button */
+.btn-outline-light {
+    border-color: #00bbc8dc; 
+    color: #00bbc8dc;
+}
+
+.btn-outline-light:hover {
+    background-color: #00bbc8dc; 
+    color: #fff; 
+}
+
+/*  Search History dropdown  */
+
+.dropdown-menu {
+    position: absolute;
+    width: 100%;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Results not found header */
+.search-results-not-found {
+    margin-top: 75px;
+    font-size: 70px;
+    font-family: fantasy;
+}
+
+h1.text-center strong {
+    font-family: fantasy;
+    font-weight: 100;
+    font-size: 4.5rem;
+    color: #00bbc8dc;
+    text-shadow:
+        0 0 5px #004043,
+        0 0 10px #004043,
+        0 0 20px #004043,
+        0 0 40px #004043,
+        0 0 80px #004043,
+        0 0 90px #004043,
+        0 0 100px #004043,
+        0 0 150px #004043;
+}
+
+
+/*  Search Hiatory  */
+
+#recent-searches {
+    position: absolute;
+    background-color: rgba(24,156,167, 0.6); 
+    border: none;
+    align-items: center;
+  }
+
+
+/* Search Input */
+
+.form-control-search {
+    display: block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    appearance: none;
+    background-color: #0236776e;
+    background-clip: padding-box;
+    border: 1px solid #00bbc8dc;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control-search:focus {
+    background-color: #000000c4;
+    border: 1px solid #00727ae7;
+}
+
+#search-input {
+    margin-left: -3%;
+}
+
+#search-input:focus {
+    border-color: #00bbc8dc !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 187, 200, 0.25) !important;
+}
+
+
+
+/*      Cover Images for all Templates     */
+.image-movie {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+
+/* Fallback Image */
+
+.fallback-image {
+    border-radius: 50%;
+}
+
+
+/*  Movie title  */
+#search-movie-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:30px;
+    color: #108b94;
+}
+
+/* Movie review */
+
+#search-movie-overview {
+    color: rgba(182, 174, 174, 0.865);
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+/* Release date */
+.release-vote {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.626);
+    font-size: 19px;
+
+}
+
+.release-date-color {
+    font-family: 'Lato', sans-serif;
+    color: rgb(0 255 68 / 54%);
+    font-size: 21px;
+}
+
+
+/* Rating */
+
+.rating-color {
+    font-family: 'Lato', sans-serif;
+    color: #fff70091;
+    font-size: 21px;
+}
+
+
+/* Overview Link */
+.overview-link {
+    padding: 8px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 21px;
+    border: 1px solid rgba(255, 0, 0, 0.524);
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.524);
+    color: #ffffff94;
+}
+
+.overview-link:hover {
+    color: #ffffff;
+    background-color: #00b8d9cb;
+    border: 1px solid white;
+}
+
+
+/*  Block dividers */
+.block-divider {
+    width: 50%;
+    height: 8px;
+    background-color: #00fbff5f;
+    margin: 0 auto;
+}
+
+.home-block {
+    width: 50%;
+    height: 8px;
+    background-color: #a5487d9d;
+    margin: 0 auto;
+}
+
+/* Div */
+.container-fluid {
+    overflow-x: hidden;
+    position: relative;
+}
+
+/*  Movie info  */
+.movie {
+    align-items: center;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.movie h3 {
+    margin: 10px 0;
+}
+
+.movie h4 {
+    margin: 10px 0;
+}
+
+.movie-details {
+    text-align: left;
+}
+
+.movie-details h3 {
+    margin: 10px 0;
+}
+
+.movie-details h4 {
+    margin: 10px 0;
+}
+
+
+
+/*     Footer     */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    min-height: 100vh;
+}
+
+/* Error List */
+
+.errorlist {
+    font-size: 12px;
+    display: flex;
+}

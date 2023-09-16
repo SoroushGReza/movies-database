@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Overview background -->
+    <div id="movie-overview">
+        <div class="overview-bg-overlay"></div>
+    </div>
+    <div class="container overview-container">
+        <div class="row mb-4">
+            <div class="col-md-4 movie-details">
+                <br>
+                <!-- Cover-Image  &  Fallback Cover-Image -->
+                <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }} poster"
+                    onerror="handleImageError(this);" data-fallback-image="{% static 'media/image404.png' %}"
+                    class="img-fluid image-movie">
+                <!-- Release date -->
+                <h5 class="release-date-overview">
+                    <strong class="release-date-color">Release date: </strong><span class="release-vote">{{ movie.release_date }}</span>
+                </h5>
+                <!-- Rating -->
+                <h5>
+                    <strong class="rating-color">Rating: </strong><span class="release-vote">{{ movie.vote_average }}</span><strong class="rating-color"> /10</strong>
+                </h5>
+            </div>
+            <div class="col-md-6">
+                <!-- Movie title -->
+                <h1 id="search-movie-title" class="movie-details"><strong>{{ movie.title }}</strong></h1>
+                <!-- Movie Overview -->
+                <p id="search-movie-overview" class="movie-details">{{ movie.overview }}</p>
+                <br>
+                <hr class="block-divider overview-block">
+                <!-- Trailer -->
+                {% if trailer_key %}
+                <div class="col-md-12">
+                    <iframe width="100%" height="350" src="https://www.youtube.com/embed/{{ trailer_key }}" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+                {% else %}
+                <div class="trailer-404"></div>
+                {% endif %}
+                
+                <!-- User Reviews -->
+                    {% if reviews %}
+                        <div class="review-container-overview row">
+                            {% for review in reviews %}
+                            <div class="col-md-6 {% if forloop.counter > 4 %}hidden-review{% endif %}">
+                                <div class="review-item-overview">
+                                    <div class="review-user-overview"><strong id="review-user-overview">{{ review.user.username }}</strong></div>
+                                    <div class="review-text-overview" data-full-text="{{ review.text }}">
+                                        {{ review.text|slice:":100" }}
+                                        {% if review.text|length > 100 %}
+                                        ... <a href="#" class="show-full-review">Show full review</a>
+                                        {% endif %}
+                                    </div>
+                                    <div class="rating-user">{{ review.rating_as_stars }}</div>
+                                    <div class="date-created-overview">{{ review.date_created|date:"Y-m-d"}}</div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% if reviews|length > 4 %}
+                                <button id="toggle-reviews">Show All Reviews</button>
+                            {% endif %}
+                        </div>
+                    
+                    {% endif %}
+                
+                {% if not user.is_authenticated %}
+                <h5 class="signin-4-review">You must be signed in to post reviews and rate movies!</h5>
+                {% endif %}
+                
+                <!-- Review and Rating form -->
+                {% if user.is_authenticated %}
+                    <form class="review-form transparent-bg" method="POST"
+                        action="{% url 'movies:movie_overview' movie_id=movie.id %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="reviewText" class="transparent-text user-review-label">Write your review here:</label>
+                            <textarea class="form-control-overview transparent-input text-light review-input" id="reviewText" placeholder="Maximum 1000-letters" rows="2" name="text"
+                                maxlength="1000" required></textarea>
+                        </div>
+                        <!--    Star Rating    -->
+                        <div class="row col-12 justify-content-center">
+                            <p class="rate-movie-p">Rate Movie</p>
+                            <div class="rating-stars">
+                                <input class="star-label rating-star" value="1" type="radio" name="rating" id="rs1"><label class="star-label" for="rs1"></label>
+                                <input class="star-label rating-star" value="2" type="radio" name="rating" id="rs2"><label class="star-label" for="rs2"></label>
+                                <input class="star-label rating-star" value="3" type="radio" name="rating" id="rs3" checked><label class="star-label" for="rs3"></label>
+                                <input class="star-label rating-star" value="4" type="radio" name="rating" id="rs4"><label class="star-label" for="rs4"></label>
+                                <input class="star-label rating-star" value="5" type="radio" name="rating" id="rs5"><label class="star-label" for="rs5"></label>
+                                <span class="number"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary transparent-button">Submit Review</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% block extra_js %}
+    <script src="{% static 'js/overview.js' %}"></script>
+{% endblock %}
+
+
+{% endblock %}

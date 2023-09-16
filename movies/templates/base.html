@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=PT+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>{% block title %} Movie Base {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login_register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/movie_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/movie_overview.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search_results.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my_reviews.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+    <link rel="icon" href="{% static 'icons/favicon.ico' %}" type="image/x-icon">
+</head>
+
+<body data-logout-url="{% url 'movies:user_logout' %}">
+    <header>
+        <!--  Navbar  -->
+        <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
+            <div class="container base">
+                <a class="navbar-brand text-center brand-logo" href="{% url 'movies:movie_list' %}">Movie Base</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto mb-1 mb-lg-0">
+                        <li class="nav-item m-1">
+                            <a class="nav-link nav-links-hover home-nav" href=" {% url 'movies:movie_list' %}">Home</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a href="{% url 'movies:contact' %}" class="nav-link nav-links-hover">Contact</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li id="login-logout" class="nav-item m-1 dropdown">
+                            <a class="nav-link dropdown-toggle nav-links-hover" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-target="#dropdownMenu" aria-haspopup="true" aria-expanded="false" href="#">Profile</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="{% url  'movies:my_reviews' %}" class="dropdown-item">My Reviews</a>
+                                <a href="{% url 'movies:user_profile' %}" class="dropdown-item">My Profile</a>
+                            </div>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link nav-links-hover" href="{% url 'movies:user_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item m-1">
+                            <a class="nav-link login-register nav-links-hover" href="{% url 'movies:user_login' %}">Login<strong class="custom-slash"> / </strong>Register</a>
+                            {% endif %}
+                        </li>
+                    </ul>
+
+                    <!--  Search Form  -->
+                    <div class="search-container">
+                        <form class="d-flex" action="{% url 'movies:search_movies' %}" method="get" autocomplete="off">
+                            
+                            <div class="dropdown">
+                                <input class="form-control-search" type="text" name="query" placeholder="Search for movies"
+                                aria-label="Search" autocomplete="off" id="search-input" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <div class="dropdown-menu search-history-dropdown" id="recent-searches">
+                                    <!-- Recent searches here -->
+                                </div>
+                            </div>
+
+                            <button class="btn btn-outline-light" type="submit">Search</button>
+                        </form>
+                    </div>
+
+                    <!--  Search Form  /-->
+                </div>
+            </div>
+        </nav>
+        <!--  Navbar  /-->
+    </header>
+
+    <!--  Main content from extended templates  -->
+    <div class="main-content">
+        <div class="content">
+            <main>
+                {% block content %}
+
+                {% endblock %}
+            </main>
+        </div>
+        <!--  Main content from extended templates  /-->
+
+        <!--  Footer  -->
+        <footer class="text-center text-light bg-dark">
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 Soroush Gholamreza Portfolio Project
+            </div>
+        </footer>
+        <!-- Footer /-->
+    </div>
+
+    <!--  Scripts  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'js/profile.js' %}"></script>
+    <script src="{% static 'js/search.js' %}"></script>
+    <script src="{% static 'js/imageHandler.js' %}"></script>
+    <!-- Scripts /-->
+</body>
+
+</html>

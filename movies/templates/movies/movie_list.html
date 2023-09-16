@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid ">
+    <!-- News Background Image -->
+    <div class="news-bg-image">
+        <div class="news-bg-overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 news-container">
+                <h1 class="text-center news"><strong>{% now "Y" %}</strong></h1>
+            </div>
+        </div>
+        <br><br>
+        {% for movie in movies %}
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <br>
+                <!-- Cover-Image  &  Fallback Cover-Image -->
+                <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" onerror="handleImageError(this);"
+                    data-fallback-image="{% static 'media/image404.png' %}" class="img-fluid image-movie">
+
+            </div>
+            <div class="col-md-6">
+                <h1 id="search-movie-title"><strong>{{ movie.title }}</strong></h1>
+                <p id="search-movie-overview">{{ movie.overview }}</p>
+                <br>
+                <h5>
+                    <strong class="release-date-color">Release date: </strong><span class="release-vote">{{ movie.release_date }}</span>
+                </h5>
+                <h5>
+                    <strong class="rating-color">Rating: </strong>
+                    <span class="release-vote">{{ movie.vote_average }}</span>
+                    <strong class="rating-color"> /10</strong>
+                </h5>
+                <br>
+                <a class="overview-link" href="{% url 'movies:movie_overview' movie.id %}">Movie Overview</a>
+            </div>
+        </div>
+        <br>
+        <hr class="block-divider home-block">
+        <br>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

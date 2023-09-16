@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <!-- Login Background Image -->
+    <div class="bg-login"></div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="nav-alert-container col-12 col-md-8 col-lg-6">
+                {% if messages %}
+                {% for message in messages %}
+                <div id="danger" class="alert alert-danger" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" onclick="closeMessage()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div id="login-form" class="centered">
+                    <div class="card login-card">
+                        <div class="login-card-body">
+                            <h2 class="login-form-header">Login</h2>
+                            <form class="text-light justify-content-center" action="/movies/login/" method="post">
+                                {% csrf_token %}
+                                
+                                <div class="form-group login-form-group">
+                                    <label class="login-form-labels" for="{{ form.username.id_for_label }}">{{ form.username.label }}:</label>
+                                    <input placeholder="Enter {{ form.username.label|lower }} here.." type="text" name="{{ form.username.name }}" class="form-control login-inputs"
+                                        id="{{ form.username.id_for_label }}"
+                                        value="{{ form.username.value|default_if_none:'' }}">
+                                </div>
+                            
+                                <div class="form-group login-form-group">
+                                    <label class="login-form-labels" for="{{ form.password.id_for_label }}">{{ form.password.label }}:</label>
+                                    <input placeholder="Enter {{ form.password.label|lower }} here.." type="password" name="{{ form.password.name }}" class="form-control login-inputs"
+                                        id="{{ form.password.id_for_label }}"
+                                        value="{{ form.password.value|default_if_none:'' }}">
+                                </div>
+                            
+                                <button id="login-button-login-page" type="submit" class="btn btn-primary">Login</button>
+                                <p id="not-a-member">Not a member? Press Register</p>
+                                <a id="register-button-login-page" href="{% url 'movies:register' %}"
+                                    class="btn btn-primary">Register</a>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Hide messages after 5 seconds
+    setTimeout(function () {
+        document.getElementById('danger').style.display = 'none';
+    }, 5000);
+
+    // Function to manually close the message
+    function closeMessage() {
+        document.getElementById('danger').style.display = 'none';
+    }
+</script>
+
+{% endblock %}
