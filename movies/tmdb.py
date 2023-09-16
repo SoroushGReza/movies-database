@@ -1,8 +1,8 @@
 import requests
-# from .env import TMDB_API_KEY
+from env import TMDB_API_KEY
 import os
 
-TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
+# TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
 
 
 def get_movies_from_tmdb():
