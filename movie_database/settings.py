@@ -20,11 +20,11 @@ if os.path.isfile('env.py'):
 
 
 # Load env.py to use variables
-try:
-    with open('env.py') as f:
-        exec(f.read())
-except FileNotFoundError:
-    pass
+# try:
+#     with open('env.py') as f:
+#         exec(f.read())
+# except FileNotFoundError:
+#     pass
 
 
 # Welcome Email
@@ -136,12 +136,6 @@ ENV_FILE_PATH = os.path.join(BASE_DIR, 'movies/env.py')
 DATABASES = {
             'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
-DATABASES['default']['ENGINE'] = 'django_db-geventpool.backends.postgresql_psycopg2'
-DATABASES['default']['ATOMIC_REQUESTS'] = True
-DATABASES['default']['CONN_MAX_AGE'] = 0
-DATABASES['default']['OPTIONS'] = {
-    'MAX_CONNS': 20
-}
 
 
 # Password validation
