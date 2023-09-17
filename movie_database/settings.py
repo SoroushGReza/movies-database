@@ -130,7 +130,7 @@ WSGI_APPLICATION = 'movie_database.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-ENV_FILE_PATH = os.path.join(BASE_DIR, 'movies/env.py')
+ENV_FILE_PATH = os.path.join(BASE_DIR, 'env.py')
 
 
 DATABASES = {
@@ -188,7 +188,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "movies/static")]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media URL
-MEDIA_URL = '/media/'
+MEDIA_URL = 'movies/static/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'movies/static/media')
 
@@ -196,8 +196,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'movies/static/media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-django_heroku.settings(locals())
 
 
 LOGGING = {
@@ -220,3 +218,7 @@ LOGGING = {
         },
     },
 }
+
+
+django_heroku.settings(locals())
+DATABASES['default']['CONN_MAX_AGE'] = 0
