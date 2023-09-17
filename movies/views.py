@@ -329,9 +329,10 @@ class CustomUserChangeForm(UserChangeForm):
 # Display of all movies
 def movie_list(request):
     movies = get_movies_from_tmdb()
-    print(movies)
+    # Get 'results' if it exists, or empty list if not
+    results = movies.get('results', [])
     return render(
-        request, 'movies/movie_list.html', {'movies': movies['results']}
+        request, 'movies/movie_list.html', {'movies': results}
     )
 
 
