@@ -20,11 +20,11 @@ if os.path.isfile('env.py'):
 
 
 # Load env.py to use variables
-# try:
-#     with open('env.py') as f:
-#         exec(f.read())
-# except FileNotFoundError:
-#     pass
+try:
+    with open('env.py') as f:
+        exec(f.read())
+except FileNotFoundError:
+    pass
 
 
 # Welcome Email
@@ -192,10 +192,31 @@ MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'movies/static/media')
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "WARNING",
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": os.getenv("DJANGO_LOG_LEVEL", "INFO"),
+            "propagate": False,
+        },
+    },
+}

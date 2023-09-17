@@ -14,4 +14,3 @@ python-decouple==3.8
 sqlparse==0.4.4
 urllib3==1.26.16
 whitenoise==6.5.0
-django-db-geventpool
