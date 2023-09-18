@@ -59,13 +59,14 @@
                     data-target="#deleteModal{{ review.id }}" data-review-id="{{ review.id }}">Delete</button>
 
                 <!-- Delete Confirmation Modal -->
-                <div class="modal fade" id="deleteModal{{ review.id }}" tabindex="-1" role="dialog"
-                    aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal fade col-5 col-md-5 col-lg-10" id="deleteModal{{ review.id }}" tabindex="-1"
+                    role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="close" id="close-review-modal" data-dismiss="modal"
+                                    aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -157,7 +158,7 @@
                                     </div>
 
                                     <!-- Edit User Rating -->
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="reviewRating" class="transparent-text user-review-label">Your rating</label>
                                         <select class="form-control-overview transparent-input text-light review-input" id="reviewRating" name="rating" required>
                                             <option value="" disabled selected>Select your rating</option>
@@ -167,8 +168,27 @@
                                             <option value="4" {% if review.rating == 4 %}selected{% endif %}>4</option>
                                             <option value="5" {% if review.rating == 5 %}selected{% endif %}>5</option>
                                         </select>
-                                    </div>                                    
-
+                                    </div>                                     -->
+                                    <!--    Star Rating    -->
+                                    <div class="row col-12 edit-star-rating justify-content-center">
+                                        <p class="edit-rate-movie-p">Rate Movie</p>
+                                        <div id="edit-stars-div">
+                                            <div class="rating-stars">
+                                                <input class="star-label rating-star" value="1" type="radio"
+                                                    name="rating" id="rs1"><label class="star-label" for="rs1"></label>
+                                                <input class="star-label rating-star" value="2" type="radio"
+                                                    name="rating" id="rs2"><label class="star-label" for="rs2"></label>
+                                                <input class="star-label rating-star" value="3" type="radio"
+                                                    name="rating" id="rs3" checked><label class="star-label"
+                                                    for="rs3"></label>
+                                                <input class="star-label rating-star" value="4" type="radio"
+                                                    name="rating" id="rs4"><label class="star-label" for="rs4"></label>
+                                                <input class="star-label rating-star" value="5" type="radio"
+                                                    name="rating" id="rs5"><label class="star-label" for="rs5"></label>
+                                                <span class="number"></span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!-- Modal Close and Save buttons -->
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
