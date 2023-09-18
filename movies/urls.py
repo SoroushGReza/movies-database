@@ -48,6 +48,12 @@ urlpatterns = [
         views.delete_review, name='delete_review'
     ),
 
+    # Edit User Review
+    path(
+        'edit_review/<int:review_id>/',
+        views.edit_review, name='edit_review'
+    ),
+
     # Movie Search
     path('search/', views.search_movies, name='search_movies'),
 
