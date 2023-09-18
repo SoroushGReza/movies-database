@@ -260,6 +260,53 @@ def delete_review(request, review_id):
         return redirect('movies:user_profile')
 
 
+# Edit Review ( As User )
+@login_required
+def edit_review(request, review_id):
+    # Fetch specific review using review ID and current user
+    review = get_object_or_404(Review, id=review_id, user=request.user)
+
+    # Check if the request method is POST
+    if request.method == 'POST':
+        # Create a form instance with the POST data
+        form = ReviewForm(request.POST, instance=review)
+
+        # Check if the form data is valid
+        if form.is_valid():
+            # Save form but dont commit to database
+            form.save(commit=False)
+            # Set review status to 'pending'
+            review.status = 'pending'
+            review.approved = False
+            # Save the review to the database
+            review.save()
+
+            # Check if the request is AJAX
+            if request.is_ajax():
+                # If it is AJAX, return JSON response
+                return JsonResponse({"status": "success"})
+            else:
+                # If not AJAX, show success message and redirect to my_reviews
+                messages.success(
+                    request,
+                    "Your review has been updated and is pending for approval."
+                )
+                return redirect('movies:my_reviews')
+        else:
+            # If form is not valid
+            if request.is_ajax():
+                # If AJAX, return a JSON response error
+                return JsonResponse({"status": "error", "errors": form.errors})
+            else:
+                # If not AJAX, set an error message
+                messages.error(request, "No changes detected.")
+    else:
+        # If request is not POST, create a formwith specific review data
+        form = ReviewForm(instance=review)
+
+    return render(request, 'profile/my_reviews.html', {'form': form})
+
+
 # Searching for movie
 def search_movies(request):
     query = request.GET.get('query')
