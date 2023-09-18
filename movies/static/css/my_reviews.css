@@ -126,3 +126,31 @@
     text-align: center;
     padding-bottom: 5px;
 }
+
+
+/* Edit Reviws Modal */
+.modal {
+    margin-top: 10%;
+}
+
+.modal-header {
+    background-color: #000550;
+    color: white;
+}
+
+.modal-body {
+    background-color: rgba(0, 2, 127, 0.854);
+}
+
+.edit-star-rating {
+    margin-bottom: 35px;
+}
+
+.edit-rate-movie-p {
+    text-align: center;
+}
+
+#edit-stars-div {
+    transform: scale(0.7);
+    text-align: center;
+}
