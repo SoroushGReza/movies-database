@@ -9,7 +9,7 @@ from django.conf.urls.static import static
 app_name = 'movies'
 
 
-# defining URL patterns for **MOVIES** app
+# URL patterns for "Movies" app
 urlpatterns = [
     # Movie list page
     path('', movie_list, name='movie_list'),
