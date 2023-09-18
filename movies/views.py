@@ -260,6 +260,29 @@ def delete_review(request, review_id):
         return redirect('movies:user_profile')
 
 
+# Edit Review ( As User )
+@login_required
+def update_review(request, review_id):
+    """Handle AJAX requests to update a review's text."""
+    # Ensure request is AJAX and method POST
+    if request.is_ajax() and request.method == "POST":
+        # Get the new text from the POST data
+        new_text = request.POST.get("new_text", None)
+
+        # Get the review object
+        review = get_object_or_404(Review, id=review_id, user=request.user)
+
+        # Update the review text
+        review.text = new_text
+        review.save()
+
+        # Return a JSON response with the new text
+        return JsonResponse({"new_text": new_text}, status=200)
+
+    # If the request is not AJAX or not POST, return a 400 Bad Request response
+    return JsonResponse({}, status=400)
+
+
 # Searching for movie
 def search_movies(request):
     query = request.GET.get('query')
