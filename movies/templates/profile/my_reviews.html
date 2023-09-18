@@ -17,13 +17,22 @@
                     ... <a href="#" class="show-full-review">Show full review</a>
                     {% endif %}
                 </div>
+
+                <!-- Edit review as User -->
+                <textarea id="review-textarea-{{ review.id }}" style="display: none;" rows="4" cols="50">{{ review.text }}</textarea>
+
                 <div class="rating-user">{{ review.rating_as_stars }}</div>
                 <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
 
-                <!-- Button to trigger the modal -->
+                <!-- Delete Button to delete Review (Triggers Modal) -->
                 <button id="delete-my-review" type="button" class="btn btn-primary" data-toggle="modal"
                     data-target="#deleteModal{{ review.id }}" data-review-id="{{ review.id }}">Delete</button>
 
+                <!-- Edit Review button -->
+                <button id="edit-button-{{ review.id }}" class="btn btn-primary">Edit</button>
+
+                <!-- Save review button -->
+                <button style="display: none;" id="save-button-{{ review.id }}">Save</button>
 
                 <!-- Delete Confirmation Modal -->
                 <div class="modal fade" id="deleteModal{{ review.id }}" tabindex="-1" role="dialog"
