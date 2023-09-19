@@ -153,4 +153,6 @@
 #edit-stars-div {
     transform: scale(0.7);
     text-align: center;
+    display: grid;
+    place-items: center;
 }
