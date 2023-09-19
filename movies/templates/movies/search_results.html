@@ -7,9 +7,9 @@
         <div class="search-results-bg-overlay"></div>
         <div class="container search-content-details">
             {% if movies %}
-            <h1 id="results-header" class="text-center search-results-headers"><strong>Search Results</strong></h1>
+            <h1 class="text-center search-result-headers">Search Results</h1>
             {% else %}
-            <h1 class="text-center search-results-headers"><strong>No Results Found</strong></h1>
+            <h1 class="text-center search-result-headers">No Results Found</h1>
             {% endif %}
             <br><br>
             {% for movie in movies %}
