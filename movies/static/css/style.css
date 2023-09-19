@@ -46,12 +46,12 @@
 
 /* Home link */
 
-.home-nav{
-    color: #a6477c;
+.recommendations-nav{
+    color: rgb(188 124 0);
 }
 
-.home-nav:hover {
-    color: red;
+.recommendations-nav:hover {
+    color: #a6477c;
 }
 
 
@@ -248,8 +248,8 @@ h1.text-center strong {
     margin: 0 auto;
 }
 
-.home-block {
-    width: 50%;
+.recommendations-block {
+    width: 30%;
     height: 8px;
     background-color: #a5487d9d;
     margin: 0 auto;
