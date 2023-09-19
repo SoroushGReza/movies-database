@@ -30,7 +30,6 @@ class SearchHistory(models.Model):
 
 
 # User Reviews & User Rating
-
 STATUS_CHOICES = [
     ('pending', 'Pending'),
     ('approved', 'Approved'),
@@ -38,6 +37,7 @@ STATUS_CHOICES = [
 ]
 
 
+# Review form
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie_id = models.IntegerField(default=0)
