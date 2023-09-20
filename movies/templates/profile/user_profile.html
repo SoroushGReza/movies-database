@@ -26,16 +26,16 @@
                 <p class="user-info"><strong>E-mail: </strong>{{ user.email }}</p>
                 <!--  Link to my reviews page  -->
 
-                <div class="col-md-10">
+                <div class="col-10 col-md-10">
                     <!-- Edit Prfofile Button -->
-                    <a href="#" class="btn btn-primary" id="edit-profile-button">Edit Profile</a>
+                    <a href="#" class="btn btn-primary profile-page-buttons" id="edit-profile-button">Edit Profile</a>
 
                     <!-- My Reviews Button -->
-                    <a id="my-reviews-button" class="btn btn-primary" href="{% url 'movies:my_reviews' %}">My
+                    <a id="my-reviews-button" class="btn btn-primary profile-page-buttons" href="{% url 'movies:my_reviews' %}">My
                         Reviews</a>
 
                     <!-- Delete Account Button -->
-                    <a href="#" class="btn btn-primary" id="delete-account-button" data-bs-toggle="modal"
+                    <a href="#" class="btn btn-primary profile-page-buttons" id="delete-account-button" data-bs-toggle="modal"
                         data-bs-target="#deleteAccountModal">Delete Account</a>
 
                     <!-- Delete Account Modal -->

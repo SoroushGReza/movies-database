@@ -48,6 +48,21 @@ p.user-info strong {
     z-index: 2;
 }
 
+/* Div with profile page buttons */
+@media screen and (min-width: 355px) and (max-width: 645px) {
+    .profile-page-buttons {
+        display: block;
+        width: fit-content;
+    }
+}
+
+@media screen and (min-width: 678px) and (max-width: 1035px) {
+    .profile-page-buttons {
+        display: inherit;
+        width: fit-content;
+    }
+}
+
 
 
 /*     Edit Profile     */
@@ -89,7 +104,6 @@ p.user-info strong {
     cursor: pointer;
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
-    width: auto;
 }
 
 #my-reviews-button:hover {
@@ -107,11 +121,10 @@ p.user-info strong {
     font-weight: bold;
     color: white;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0);
     cursor: pointer;
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
-    width: auto;
 }
 
 #delete-account-button:hover {
@@ -152,9 +165,9 @@ input.modal-password-input::placeholder {
 }
 
 input.modal-password-input:focus {
-        background-color: black;
-        color: white;
-        border: 2px double rgb(0, 197, 215);
+    background-color: black;
+    color: white;
+    border: 2px double rgb(0, 197, 215);
 }
 
 .user-profile-div {
@@ -164,7 +177,7 @@ input.modal-password-input:focus {
 @media screen and (min-width: 355px) and (max-width: 425px) {
     .user-profile-div {
         margin-top: 18%;
-    }    
+    }
 }
 
 
@@ -200,12 +213,12 @@ input.modal-password-input:focus {
     line-height: 1.5;
     color: antiquewhite;
     appearance: none;
-    
+
     background-color: #0236776e;
     background-clip: padding-box;
     border: 2px solid rgba(0, 179, 255, 0.269);
     border-radius: var(--bs-border-radius);
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 /* Email input */
@@ -219,9 +232,9 @@ input#id_email.form-control-profile::placeholder {
 }
 
 #id_email.form-control-profile:focus {
-        background-color: black;
-        color: white;
-        border: 2px double rgb(0, 197, 215);
+    background-color: black;
+    color: white;
+    border: 2px double rgb(0, 197, 215);
 }
 
 
