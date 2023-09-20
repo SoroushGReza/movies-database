@@ -26,10 +26,13 @@
 }
 
 .brand-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 34px;
+    font-size: 30px;
+}
+
+@media screen and (min-width: 355px) and (max-width: 1199px) {
+    .brand-logo {
+        margin-left: 10%;
+    }
 }
 
 
@@ -287,7 +290,6 @@ h1.text-center strong {
 .movie-details h4 {
     margin: 10px 0;
 }
-
 
 
 /*     Footer     */

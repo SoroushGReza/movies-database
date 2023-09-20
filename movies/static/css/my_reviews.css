@@ -83,6 +83,14 @@
     display: inline;
 }
 
+@media screen and (min-width: 355px) and (max-width: 631px) {
+    .review-item-my-reviews {
+        display: block;
+        width: 100%;
+    }
+}
+
+
 .review-title-bg {
     width: 100%;
 }

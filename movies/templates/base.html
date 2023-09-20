@@ -37,56 +37,63 @@
                     aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand text-center brand-logo d-none d-lg-block"
-                    href="{% url 'movies:movie_list' %}">Movie Base</a>
                 <div class="collapse navbar-collapse" id="navbarColor01">
-                    <ul class="navbar-nav me-auto mb-1 mb-lg-0">
-                        {% if user.is_authenticated %}
-                        <li id="login-logout" class="nav-item m-1 dropdown">
-                            <a class="nav-link dropdown-toggle nav-links-hover" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" data-bs-target="#dropdownMenu" aria-haspopup="true"
-                                aria-expanded="false" href="#">Profile</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a href="{% url 'movies:user_profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url  'movies:my_reviews' %}" class="dropdown-item">My Reviews</a>
-                            </div>
-                        </li>
-                        {% endif %}
-                        <li class="nav-item m-1">
-                            <a href="{% url 'movies:contact' %}" class="nav-link nav-links-hover">Contact</a>
-                        </li>
-                        <li class="nav-item m-1">
-                            <a class="nav-link nav-links-hover recommendations-nav"
-                                href=" {% url 'movies:movie_list' %}">Recommendations</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item m-1">
-                            <a class="nav-link nav-links-hover" href="{% url 'movies:user_logout' %}">Logout</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item m-1">
-                            <a class="nav-link login-register nav-links-hover"
-                                href="{% url 'movies:user_login' %}">Login<strong class="custom-slash"> /
-                                </strong>Register</a>
-                        {% endif %}
-                        </li>
-                    </ul>
+                    <div class="row col-md-4 custom-links">
+                        <ul class="navbar-nav me-auto mb-1 mb-lg-0">
+                            {% if user.is_authenticated %}
+                            <li id="login-logout" class="nav-item m-1 dropdown">
+                                <a class="nav-link dropdown-toggle nav-links-hover" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" data-bs-target="#dropdownMenu" aria-haspopup="true"
+                                    aria-expanded="false" href="#">Profile</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a href="{% url 'movies:user_profile' %}" class="dropdown-item">My Profile</a>
+                                    <a href="{% url  'movies:my_reviews' %}" class="dropdown-item">My Reviews</a>
+                                </div>
+                            </li>
+                            {% endif %}
+                            <li class="nav-item m-1">
+                                <a href="{% url 'movies:contact' %}" class="nav-link nav-links-hover">Contact</a>
+                            </li>
+                            <li class="nav-item m-1">
+                                <a class="nav-link nav-links-hover recommendations-nav"
+                                    href=" {% url 'movies:movie_list' %}">Recommendations</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                            <li class="nav-item m-1">
+                                <a class="nav-link nav-links-hover" href="{% url 'movies:user_logout' %}">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item m-1">
+                                <a class="nav-link login-register nav-links-hover"
+                                    href="{% url 'movies:user_login' %}">Login<strong class="custom-slash"> /
+                                    </strong>Register</a>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row col-md-4">
+                        <a class="navbar-brand text-center brand-logo d-none d-lg-block"
+                            href="{% url 'movies:movie_list' %}">Movie Base</a>
+                    </div>
 
                     <!--  Search Form  -->
-                    <div class="search-container">
-                        <form class="d-flex" action="{% url 'movies:search_movies' %}" method="get" autocomplete="off">
+                    <div class="row col-md-4">
+                        <div class="search-container">
+                            <form class="d-flex" action="{% url 'movies:search_movies' %}" method="get"
+                                autocomplete="off">
 
-                            <div class="dropdown">
-                                <input class="form-control-search" type="text" name="query"
-                                    placeholder="Search for movies" aria-label="Search" autocomplete="off"
-                                    id="search-input" data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="dropdown-menu search-history-dropdown" id="recent-searches">
-                                    <!-- Recent searches here -->
+                                <div class="dropdown">
+                                    <input class="form-control-search" type="text" name="query"
+                                        placeholder="Search for movies" aria-label="Search" autocomplete="off"
+                                        id="search-input" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="dropdown-menu search-history-dropdown" id="recent-searches">
+                                        <!-- Recent searches here -->
+                                    </div>
                                 </div>
-                            </div>
 
-                            <button class="btn btn-outline-light" type="submit">Search</button>
-                        </form>
+                                <button class="btn btn-outline-light" type="submit">Search</button>
+                            </form>
+                        </div>
                     </div>
 
                     <!--  Search Form  /-->
