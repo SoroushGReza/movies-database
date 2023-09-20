@@ -161,6 +161,12 @@ input.modal-password-input:focus {
     margin-top: 13%;
 }
 
+@media screen and (min-width: 355px) and (max-width: 425px) {
+    .user-profile-div {
+        margin-top: 18%;
+    }    
+}
+
 
 
 /*     Edit Profile Form     */
