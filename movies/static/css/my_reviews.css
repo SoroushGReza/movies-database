@@ -5,14 +5,47 @@
 }
 
 
-/*  My reviews Header  */
+/* Page header */
 
 #my-reviews-header {
+    font-size: 3.5rem;
+    position: relative;
+    font-family: fantasy;
+    color: rgb(188 124 0);
+
     text-align: center;
-    color: #ffa100b0;
-    font-size: 54px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 3%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    text-shadow:
+        0 0 5px #004043,
+        0 0 10px #004043,
+        0 0 20px #004043,
+        0 0 40px #004043,
+        0 0 80px #004043,
+        0 0 90px #004043,
+        0 0 100px #004043,
+        0 0 150px #004043;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    #my-reviews-header {
+        margin-top: 12%;
+        font-size: 3.0rem;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 767px) {
+    #my-reviews-header {
+        font-size: 2.5rem;
+        margin-top: 17%;
+    }
+}
+
+@media screen and (min-width: 355px) and (max-width: 499px) {
+    #my-reviews-header {
+        font-size: 2.0rem;
+        margin-top: 25%;
+    }
 }
 
 
@@ -39,19 +72,15 @@
     margin-bottom: 10px;
 }
 
-.my-reviews-div {
-    margin-top: 13%;
-    padding-left: 0;
-}
-
 /* Review  */
 .review-item-my-reviews {
-    width: 60vw;
+    width: 40vw;
     margin: auto;
     border: 3px solid rgb(162 0 0 / 12%);
     border-radius: 5px;
     margin-bottom: 5%;
     background-color: #3903009e;
+    display: inline;
 }
 
 
@@ -65,10 +94,6 @@
     width: 120px;
     color: orange;
     font-size: 20px;
-}
-
-.user-profile-div {
-    margin-top: 13%;
 }
 
 .review-title-bg {
@@ -103,7 +128,7 @@
     padding-top: 3%;
     padding-bottom: 3%;
     padding-left: 5px;
-    font-size: 19px;
+    font-size: 15px;
     color: #ffffffdb;
 }
 
