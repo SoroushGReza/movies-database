@@ -76,24 +76,11 @@
 .review-item-my-reviews {
     width: 40vw;
     margin: auto;
-    border: 3px solid rgb(162 0 0 / 12%);
+    border: none;
     border-radius: 5px;
     margin-bottom: 5%;
-    background-color: #3903009e;
+    background-color: #00243ff2;
     display: inline;
-}
-
-
-/* Delete Review */
-#delete-my-review {
-    float: right;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    background-color: #870000;
-    border: 2px solid #ffa5002b;
-    width: 120px;
-    color: orange;
-    font-size: 20px;
 }
 
 .review-title-bg {
@@ -109,17 +96,18 @@
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 3px;
     font-size: 21px;
-    background-color: #7f000044;
+    background-color: #006f7f44;
     border-radius: 5px 5px 0 0;
 }
 
 /* Review written by User */
 
 #review-user {
-    color: rgba(0, 255, 68, 0.689);
+    color: rgb(192 157 0 / 92%);
+    font-size: 16px;
 }
 
 
@@ -132,12 +120,35 @@
     color: #ffffffdb;
 }
 
+/*   Reviews info and action divs   */
+.actions-and-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+
+/* Edit Review Button */
+#edit-review-button {
+    margin-left: 5px;
+    background-color: #1f4ce5;
+    border: 1px solid rgba(255, 255, 255, 0);
+    color: white;
+}
+
+#edit-review-button:hover {
+    background-color: black;
+    color: #1f4ce5;
+    border: 1px solid #1f4ce5;
+}
+
 /* User Rating */
 .rating-user {
-    padding-top: 3%;
-    padding-bottom: 3%;
-    padding-left: 5px;
-    
     font-size: 21px;
     color: #eeff00b9;
     max-width: 100%;
@@ -149,7 +160,20 @@
     font-size: 12px;
     color: rgba(255, 251, 0, 0.315);
     text-align: center;
-    padding-bottom: 5px;
+}
+
+/* Delete Review */
+#delete-my-review {
+    margin-right: 5px;
+    background-color: #bf0000;
+    border: 1px solid rgba(255, 255, 255, 0);
+    color: white;
+}
+
+#delete-my-review:hover {
+    background-color: black;
+    color: #bf0000;
+    border: 1px solid #bf0000;
 }
 
 
