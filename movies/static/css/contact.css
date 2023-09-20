@@ -36,6 +36,12 @@
     margin-top: 1%;
 }
 
+@media screen and (min-width: 355px) and (max-width: 499px) {
+    #contact-form {
+        margin-top: 15%;
+    }
+}
+
 /* Contact form header */
 
 .contact-form-header {
