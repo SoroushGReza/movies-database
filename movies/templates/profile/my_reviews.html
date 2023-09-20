@@ -30,7 +30,7 @@
         <div id="my-reviews-bg-overlay"></div>
 
         <!-- My reviews -->
-        <div class="row col-12">
+        <div class="row col-10">
             <h2 id="my-reviews-header">My Reviews</h2>
 
             <!-- Loop through reviews -->
@@ -49,14 +49,23 @@
                 </div>
 
                 <!-- User rating -->
-                <div class="rating-user">{{ review.rating_as_stars }}</div>
+                <div class="actions-and-info">
+                    <!-- Edit Review Button -->
+                    <a href="#" class="btn btn-primary" id="edit-review-button" data-bs-toggle="modal"
+                        data-bs-target="#editReviewModal{{ review.id }}">Edit</a>
+                        
+                    <div class="rating-and-date">
+                        <div class="rating-user">{{ review.rating_as_stars }}</div>
 
-                <!-- Creation date of review -->
-                <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
-
-                <!-- Delete Button to delete Review (Triggers Modal) -->
-                <button id="delete-my-review" type="button" class="btn btn-primary" data-toggle="modal"
-                    data-target="#deleteModal{{ review.id }}" data-review-id="{{ review.id }}">Delete</button>
+                        <!-- Creation date of review -->
+                        <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
+                    </div>
+                    <div class="review-actions">
+                        <!-- Delete Button to delete Review (Triggers Modal) -->
+                        <button id="delete-my-review" type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#deleteModal{{ review.id }}" data-review-id="{{ review.id }}">Delete</button>
+                    </div>
+                </div>
 
                 <!-- Delete Confirmation Modal -->
                 <div class="modal fade col-5 col-md-5 col-lg-10" id="deleteModal{{ review.id }}" tabindex="-1"
@@ -80,10 +89,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Edit Review Button -->
-                <a href="#" class="btn btn-primary" id="edit-review-button" data-bs-toggle="modal"
-                    data-bs-target="#editReviewModal{{ review.id }}">Edit</a>
 
                 <!-- Edit Review Modal -->
                 <div class="modal fade" id="editReviewModal{{ review.id }}" tabindex="-1"
