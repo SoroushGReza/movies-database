@@ -38,14 +38,17 @@
                         allowfullscreen></iframe>
                 </div>
                 {% else %}
-                <div class="trailer-404"></div>
+                <div class="row col-10">
+                    <div class="trailer-404"></div>
+                </div>
                 {% endif %}
                 
                 <!-- User Reviews -->
                     {% if reviews %}
                         <div class="review-container-overview row">
+                            <h3 id="movie-reviews-header-overviews-page">Movie reviews</h3>
                             {% for review in reviews %}
-                            <div class="col-md-6 {% if forloop.counter > 4 %}hidden-review{% endif %}">
+                            <div class="col-md-12 col-12 col-lg-12 {% if forloop.counter > 4 %}hidden-review{% endif %}">
                                 <div class="review-item-overview">
                                     <div class="review-user-overview"><strong id="review-user-overview">{{ review.user.username }}</strong></div>
                                     <div class="review-text-overview" data-full-text="{{ review.text }}">
@@ -60,7 +63,9 @@
                             </div>
                             {% endfor %}
                             {% if reviews|length > 4 %}
+                            <div class="row justify-content-center">
                                 <button id="toggle-reviews">Show All Reviews</button>
+                            </div>
                             {% endif %}
                         </div>
                     
