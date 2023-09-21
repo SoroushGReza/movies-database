@@ -256,3 +256,19 @@
     color: black;
     border: 1px solid black;
 }
+
+/* Show Full Review LINK  for "my_reviews.html" and "movie_overview.html" */
+.show-full-review {
+    font-family: monospace;
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+    background-color: #00ff626b;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+.show-full-review:hover {
+    background-color: black;
+    color: #00ff626b;
+}
