@@ -63,8 +63,9 @@ iframe {
 .trailer-404 {
     width: 350px;
     height: 350px;
+	margin-left: 10%;
 
-    background: url('../media/trailer-404.gif');
+    background: url('../media/trailer-404.gif') no-repeat center;
     position: relative;
     z-index: -1;
     border-radius: 50%;
@@ -79,6 +80,14 @@ iframe {
     align-items: center;
 }
 
+@media screen and (min-width: 355px) and (max-width: 417px) {
+	.trailer-404 {
+		width: 250px;
+		height: 250px;
+		margin-left: 10%;
+	}
+}
+
 
 /* Block Divider */
 hr.overview-block {
@@ -91,12 +100,21 @@ hr.overview-block {
 
 /*    User Reviews    */
 
+#movie-reviews-header-overviews-page {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 33px;
+	color: #00afafe8;
+	text-align: center;
+	margin-bottom: 2%;
+}
+
 .review-container-overview {
     padding-top: 5%;
+	display: block;
 }
 
 .review-item-overview {
-    border: 1px solid rgba(0, 255, 68, 0.689);
+    border: 1px solid rgb(255 184 0 / 39%);
     border-radius: 5px;
     margin-bottom: 5%;
 	margin-right: 8px;
@@ -120,23 +138,36 @@ hr.overview-block {
 
 /*   Toggle reviews button   */
 #toggle-reviews {
-    width: 300px;
-    margin-left: 25%;
+    width: 200px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0);
     background-color: green;
     color: greenyellow;
+	
+	font-family: 'Montserrat', sans-serif;
+	font-size: 19px;
+	height: 35px;
+}
+
+#toggle-reviews:hover {
+	background-color: greenyellow;
+	color: green;
+	border: 1px solid greenyellow;
 }
 
 .review-user-overview {
     padding-top: 5px;
+	padding-left: 5px;
     text-align: center;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 3px;
-    font-size: 19px;
+    font-size: 20px;
     background-color: #108b9444;
-    color: #007bff;
+    color: #ffaa00;
     border-radius: 5px 5px 0 0;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #review-user {
