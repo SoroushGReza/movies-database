@@ -53,7 +53,7 @@
                     <!-- Edit Review Button -->
                     <a href="#" class="btn btn-primary" id="edit-review-button" data-bs-toggle="modal"
                         data-bs-target="#editReviewModal{{ review.id }}">Edit</a>
-                        
+
                     <div class="rating-and-date">
                         <div class="rating-user">{{ review.rating_as_stars }}</div>
 
@@ -68,7 +68,7 @@
                 </div>
 
                 <!-- Delete Confirmation Modal -->
-                <div class="modal fade col-5 col-md-5 col-lg-10" id="deleteModal{{ review.id }}" tabindex="-1"
+                <div class="modal fade col-10 col-md-8 col-lg-10" id="deleteModal{{ review.id }}" tabindex="-1"
                     role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -91,7 +91,7 @@
                 </div>
 
                 <!-- Edit Review Modal -->
-                <div class="modal fade" id="editReviewModal{{ review.id }}" tabindex="-1"
+                <div class="modal fade edit-review-modal-div" id="editReviewModal{{ review.id }}" tabindex="-1"
                     aria-labelledby="editReviewModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -102,14 +102,14 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body edit-my-review-modal-body">
                                 <!-- Edit Review Form -->
-                                <form class="review-form transparent-bg" method="POST"
+                                <form id="edit-review-form-my-reviews" class="review-form transparent-bg" method="POST"
                                     action="{% url 'movies:edit_review' review.id %}">
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <label for="reviewText{{ review.id }}"
-                                            class="transparent-text user-review-label">Edit your review</label>
+                                            class="transparent-text edit-my-review-label">Edit your review</label>
                                         <textarea
                                             class="form-control-overview transparent-input text-light review-input"
                                             id="reviewText{{ review.id }}" placeholder="Maximum 1000-letters" rows="2"
@@ -122,35 +122,39 @@
                                     </div>
 
                                     <!--    Star Rating    -->
-                                    <div class="row col-12 edit-star-rating justify-content-center">
-                                        <p class="edit-rate-movie-p">Rate Movie</p>
-                                        <div id="edit-stars-div">
-                                            <div class="rating-stars">
-                                                <input class="star-label rating-star" value="1" type="radio"
-                                                    name="rating" id="rs1_{{ review.id }}"><label class="star-label"
-                                                    for="rs1_{{ review.id }}"></label>
-                                                <input class="star-label rating-star" value="2" type="radio"
-                                                    name="rating" id="rs2_{{ review.id }}"><label class="star-label"
-                                                    for="rs2_{{ review.id }}"></label>
-                                                <input class="star-label rating-star" value="3" type="radio"
-                                                    name="rating" id="rs3_{{ review.id }}" checked><label
-                                                    class="star-label" for="rs3_{{ review.id }}"></label>
-                                                <input class="star-label rating-star" value="4" type="radio"
-                                                    name="rating" id="rs4_{{ review.id }}"><label class="star-label"
-                                                    for="rs4_{{ review.id }}"></label>
-                                                <input class="star-label rating-star" value="5" type="radio"
-                                                    name="rating" id="rs5_{{ review.id }}"><label class="star-label"
-                                                    for="rs5_{{ review.id }}"></label>
+                                    <div class="form-group">
+                                        <div class="row col-12 edit-star-rating justify-content-center">
+                                            <p class="edit-rate-movie-p">Rate Movie</p>
+                                            <div id="edit-stars-div">
+                                                <div class="rating-stars">
+                                                    <input class="star-label rating-star" value="1" type="radio"
+                                                        name="rating" id="rs1_{{ review.id }}"><label class="star-label"
+                                                        for="rs1_{{ review.id }}"></label>
+                                                    <input class="star-label rating-star" value="2" type="radio"
+                                                        name="rating" id="rs2_{{ review.id }}"><label class="star-label"
+                                                        for="rs2_{{ review.id }}"></label>
+                                                    <input class="star-label rating-star" value="3" type="radio"
+                                                        name="rating" id="rs3_{{ review.id }}" checked><label
+                                                        class="star-label" for="rs3_{{ review.id }}"></label>
+                                                    <input class="star-label rating-star" value="4" type="radio"
+                                                        name="rating" id="rs4_{{ review.id }}"><label class="star-label"
+                                                        for="rs4_{{ review.id }}"></label>
+                                                    <input class="star-label rating-star" value="5" type="radio"
+                                                        name="rating" id="rs5_{{ review.id }}"><label class="star-label"
+                                                        for="rs5_{{ review.id }}"></label>
 
-                                                <span class="number"></span>
+                                                    <span class="number"></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Modal Close and Save buttons -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-danger">Save</button>
+                                    <div class="form-group">
+                                        <div class="modal-footer">
+                                            <button type="button" id="close-edited-review-button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-danger" id="save-edited-review-button">Save</button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -164,7 +168,7 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
     // Hide messages after 5 seconds
     setTimeout(function () {
         const ajaxSuccessMessageElement = document.getElementById('ajax-success-message');
@@ -172,6 +176,17 @@
             ajaxSuccessMessageElement.style.display = 'none';
         }
     }, 5000);
+</script> -->
+<script>
+    // Hide messages after 5 seconds
+    setTimeout(function () {
+        const alertElements = document.querySelectorAll('.alert');
+        if (alertElements) {
+            alertElements.forEach((element) => {
+                element.style.display = 'none';
+            });
+        }
+    }, 8000);
 </script>
 
 {% endblock %}
