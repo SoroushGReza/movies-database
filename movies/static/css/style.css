@@ -9,6 +9,14 @@
     background-color: brown;
 }
 
+#dropdown-menu-bg {
+    background-color: #212529;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
 .nav-links-hover:hover {
     background-color: black;
     border-radius: 45px;
@@ -47,6 +55,7 @@
     border-right: 5px solid transparent;
     border-top: 5px solid white;
 }
+
 
 /* Movie Base Logo  */
 .navbar-brand {
@@ -105,6 +114,7 @@
 }
 
 /*      Navbar Search      */
+
 
 @media (min-width: 768px) and (max-width: 817px) {
     .form-control-search {
