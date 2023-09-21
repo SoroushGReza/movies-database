@@ -74,13 +74,13 @@
 
 /* Review  */
 .review-item-my-reviews {
-    width: 40vw;
+    width: 60vw;
     margin: auto;
     border: none;
     border-radius: 5px;
     margin-bottom: 5%;
     background-color: #00243ff2;
-    display: inline;
+    display: block;
 }
 
 @media screen and (min-width: 355px) and (max-width: 631px) {
