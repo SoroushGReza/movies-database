@@ -14,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=PT+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>{% block title %} Movie Base {% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/login_register.css' %}">
@@ -37,7 +40,7 @@
                     data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span id="custom-toggler-icon">Movie Base</span>
-                    <span class="down-arrow"></span> <!-- Ny span för pilen -->
+                    <span class="down-arrow"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarColor01">
@@ -99,8 +102,8 @@
                             </form>
                         </div>
                     </div>
-
                     <!--  Search Form  /-->
+
                 </div>
             </div>
         </nav>
@@ -120,9 +123,28 @@
 
         <!--  Footer  -->
         <footer class="text-center text-light bg-dark">
-            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-                © 2023 Soroush Gholamreza Portfolio Project
+
+            <!--  Social links  -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12 p-3"
+                        style="background-color: rgba(0, 0, 0, 0.05);">
+                        <div class="row"> 
+                            <div class="col-4 col-md-4 social-icons-footer">
+                                <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter mx-2"></i></a>
+                                <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram mx-2"></i></a>
+                                <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github mx-2"></i></a>
+                                <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin mx-2"></i></a>
+                                <a href="https://reddit.com/" target="_blank"><i class="fa-brands fa-reddit mx-2"></i></a>
+                            </div>
+                            <div class="col-8 col-md-8 text-center">
+                                <p>© 2023 Soroush G-Reza Portfolio Project</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
             </div>
+
         </footer>
         <!-- Footer /-->
     </div>
