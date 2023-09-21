@@ -33,7 +33,11 @@ To install and run this project, follow these steps:
 - [**FontAwesome**](https://fontawesome.com/icons): For icons
 - [**TMDB API**](https://developer.themoviedb.org/docs): For fetching movie data
 - [**EmailJS**](https://www.emailjs.com/): For sending emails
+- [**Cloudinary**](https://console.cloudinary.com/): For image and media management
 <br><br>
+
+## Credits
+### Specials thanks to following
 
 
 ## &#x1F4CB; User Stories - [GitHub Project](https://github.com/users/SoroushGReza/projects/11/views/1)

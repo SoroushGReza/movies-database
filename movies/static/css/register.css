@@ -16,6 +16,12 @@
     border: 1px double aqua;
 }
 
+@media screen and (min-width: 355px) and (max-width: 455px) {
+    .register-card {
+        margin-top: 30%;
+    }
+}
+
 .register-card-body {
     background-color: #001e5fe4;
     border-radius: 5px;
