@@ -33,13 +33,16 @@
         <!--  Navbar  -->
         <nav class="navbar navbar-expand-md bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
             <div class="container base">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
-                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span id="custom-toggler-icon">Movie Base</span>
+                    <span class="down-arrow"></span> <!-- Ny span för pilen -->
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <div class="row col-md-4 custom-links">
-                        <ul class="navbar-nav me-auto mb-1 mb-lg-0">
+                        <ul class="navbar-nav me-auto mb-1 mb-lg-0 navbar-dropdown-custom">
                             {% if user.is_authenticated %}
                             <li id="login-logout" class="nav-item m-1 dropdown">
                                 <a class="nav-link dropdown-toggle nav-links-hover" id="navbarDropdown" role="button"
@@ -91,7 +94,8 @@
                                     </div>
                                 </div>
 
-                                <button class="btn btn-outline-light" type="submit">Search</button>
+                                <button class="btn btn-outline-light" id="search-button-base"
+                                    type="submit">Search</button>
                             </form>
                         </div>
                     </div>
@@ -130,6 +134,7 @@
     <script src="{% static 'js/profile.js' %}"></script>
     <script src="{% static 'js/search.js' %}"></script>
     <script src="{% static 'js/imageHandler.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
     <!-- Scripts /-->
 </body>
 
