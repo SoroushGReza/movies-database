@@ -18,10 +18,26 @@ To install and run this project, follow these steps:
 - **Movie List**: Users can view a list of movies in the database.
 - **Movie Detail**: Users can click on a movie to see more detailed information.
 - **Reviews**: Users kan post reviews and rate movies after signing up.
-- **Review Managment**: Users can delete their posted reviews.
+- **Review Managment**: Users can edit and delete their posted reviews.
+- **Send Email**: Users can send email directly to the site owner for contact.
+- **Profile Managment**: Users can manage their profile, such as changing email address and password
+- **Movie Search**: Users can search for movies, through the [TMDB](https://developer.themoviedb.org/docs) API.
 - **Account Deletion**: Users can delete their acount from the profile page.<br><br>
 
-## &#x1F4CB; User Stories
+
+## Technologies Used
+
+- [**Django**](https://docs.djangoproject.com/en/4.2/): For backend development
+- [**Bootstrap**](https://getbootstrap.com/docs/5.3/getting-started/introduction/): To make the application responsive
+- [**Google Fonts**](https://fonts.google.com/): For typography
+- [**FontAwesome**](https://fontawesome.com/icons): For icons
+- [**TMDB API**](https://developer.themoviedb.org/docs): For fetching movie data
+- [**EmailJS**](https://www.emailjs.com/): For sending emails
+<br><br>
+
+
+## &#x1F4CB; User Stories - [GitHub Project](https://github.com/users/SoroushGReza/projects/11/views/1)
+
 
 &#x1f7e2; As a **Developer**, I can **set up the workspace**, so that I can **start writing the code**.
 ### &#x2699; Tasks:
