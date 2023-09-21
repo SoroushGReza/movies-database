@@ -144,7 +144,7 @@ p.user-info strong {
     z-index: 1;
 }
 
-.modal-header {
+.delete-account-modal-header {
     background-color: burlywood;
     color: black;
 }
