@@ -363,12 +363,34 @@ h1.text-center strong {
 /* Social Links */
 
 .social-icons-footer a {
-    font-size: 25px;
+    font-size: 20px;
     color: #108b94;
 }
 
 .social-icons-footer a:hover {
     color: white;
+}
+
+#footer-text-content {
+    font-size: 14px;
+    color: #108b94;
+}
+
+/* Footer text content */
+@media screen and (min-width: 355px) and (max-width: 676px) {
+    #footer-text-content {
+        font-size: 10px;
+    }
+
+    .social-icons-footer {
+        display: inline;
+        width: 100%;
+    }
+
+    .social-icons-footer a {
+        font-size: 12px;
+    }
+
 }
 
 /* Error List */
