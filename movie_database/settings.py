@@ -138,6 +138,13 @@ WSGI_APPLICATION = 'movie_database.wsgi.application'
 
 ENV_FILE_PATH = os.path.join(BASE_DIR, 'env.py')
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE':
+#         'django.db.backends.sqlite3',
+#     }
+# }
+
 
 DATABASES = {
             'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
