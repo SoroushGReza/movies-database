@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %} Recommendations {% endblock %}
+
 {% block content %}
 <div class="container-fluid ">
     <!-- News Background Image -->
@@ -19,7 +21,7 @@
                 <br>
                 <!-- Cover-Image  &  Fallback Cover-Image -->
                 <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" onerror="handleImageError(this);"
-                    data-fallback-image="{% static 'media/image404.png' %}" class="img-fluid image-movie">
+                    data-fallback-image="{% static 'media/image404.png' %}" class="img-fluid image-movie" alt="Fallback cover image">
 
             </div>
             <div class="col-md-6">
