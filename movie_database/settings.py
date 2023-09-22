@@ -49,7 +49,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-soroushgrez-moviesdatab-21but2m2le2.ws-us104.gitpod.io',
-    'movie-base-application.herokuapp.com',
+    'movie-base-application-c1658d190bfd.herokuapp.com',
     'localhost',
 ]
 
