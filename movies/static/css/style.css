@@ -237,7 +237,7 @@ h1.text-center strong {
 
 
 /*  Movie title  */
-#search-movie-title {
+.search-movie-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
     color: #108b94;
@@ -245,7 +245,7 @@ h1.text-center strong {
 
 /* Movie review */
 
-#search-movie-overview {
+.search-movie-overview {
     color: rgba(182, 174, 174, 0.865);
     font-size: 20px;
     padding-top: 15px;
