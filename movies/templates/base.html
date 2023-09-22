@@ -88,10 +88,10 @@
                             <form class="d-flex" action="{% url 'movies:search_movies' %}" method="get"
                                 autocomplete="off">
 
-                                <div class="dropdown">
+                                <div class="dropdown" aria-label="Search" aria-expanded="false">
                                     <input role="searchbox" class="form-control-search" type="text" name="query"
-                                        placeholder="Search for movies" aria-label="Search" autocomplete="off"
-                                        id="search-input" data-bs-toggle="dropdown" aria-expanded="false">
+                                        placeholder="Search for movies" autocomplete="off" id="search-input"
+                                        data-bs-toggle="dropdown">
                                     <div class="dropdown-menu search-history-dropdown" id="recent-searches">
                                         <!-- Recent searches here -->
                                     </div>
@@ -127,19 +127,23 @@
             <!--  Social links  -->
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-12 col-lg-12 p-3"
-                        style="background-color: rgba(0, 0, 0, 0.05);">
-                        <div class="row"> 
+                    <div class="col-12 col-md-12 col-lg-12 p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                        <div class="row">
                             <div class="col-12 col-md-12 text-center social-icons-footer">
-                                <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter mx-2"></i></a>
-                                <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram mx-2"></i></a>
-                                <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github mx-2"></i></a>
-                                <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin mx-2"></i></a>
-                                <a href="https://reddit.com/" target="_blank"><i class="fa-brands fa-reddit mx-2"></i></a>
+                                <a href="https://twitter.com/" target="_blank"><i
+                                        class="fa-brands fa-x-twitter mx-2"></i></a>
+                                <a href="https://instagram.com/" target="_blank"><i
+                                        class="fa-brands fa-square-instagram mx-2"></i></a>
+                                <a href="https://github.com/" target="_blank"><i
+                                        class="fa-brands fa-github mx-2"></i></a>
+                                <a href="https://linkedin.com/" target="_blank"><i
+                                        class="fa-brands fa-linkedin mx-2"></i></a>
+                                <a href="https://reddit.com/" target="_blank"><i
+                                        class="fa-brands fa-reddit mx-2"></i></a>
 
                                 <p id="footer-text-content">© Movie Base 2023</p>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
