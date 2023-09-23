@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Detele user reviews confirmation
 document.addEventListener("DOMContentLoaded", function () {
-    const deleteButtons = document.querySelectorAll('#delete-my-review');
+    const deleteButtons = document.querySelectorAll('.delete-my-review');
     deleteButtons.forEach(function (button) {
         button.addEventListener('click', function (event) {
             event.preventDefault(); // Prevent default
