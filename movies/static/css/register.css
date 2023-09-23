@@ -16,9 +16,9 @@
     border: 1px double aqua;
 }
 
-@media screen and (min-width: 355px) and (max-width: 455px) {
+@media screen and (min-width: 320px) and (max-width: 455px) {
     .register-card {
-        margin-top: 30%;
+        margin-top: 35%;
     }
 }
 

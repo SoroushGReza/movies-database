@@ -49,7 +49,7 @@ p.user-info strong {
 }
 
 /* Div with profile page buttons */
-@media screen and (min-width: 355px) and (max-width: 645px) {
+@media screen and (min-width: 320px) and (max-width: 645px) {
     .profile-page-buttons {
         display: block;
         width: fit-content;
@@ -140,6 +140,17 @@ p.user-info strong {
     margin-top: 10%;
 }
 
+@media screen and (min-width:320px) and (max-width: 500px) {
+    #deleteAccountModal {
+        margin-top: 20%;
+    }
+}
+
+@media screen and (min-width:500px) and (max-width: 576px) {
+    #deleteAccountModal {
+        margin-top: 15%;
+    }
+}
 .modal-backdrop {
     z-index: 1;
 }
@@ -150,14 +161,14 @@ p.user-info strong {
 }
 
 .modal-body {
-    background-color: blanchedalmond;
+    background-color: white;
     color: black;
 }
 
 input.modal-password-input {
-    background-color: burlywood;
-    color: black;
-    border: 1px solid #ffb30089;
+    background-color: #ebebeb;
+    color: white;
+    border: 2px double rgb(0, 197, 215);
 }
 
 input.modal-password-input::placeholder {
@@ -174,9 +185,9 @@ input.modal-password-input:focus {
     margin-top: 13%;
 }
 
-@media screen and (min-width: 355px) and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 425px) {
     .user-profile-div {
-        margin-top: 18%;
+        margin-top: 25%;
     }
 }
 
