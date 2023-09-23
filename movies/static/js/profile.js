@@ -1,3 +1,9 @@
+// Fix for JsHint validation
+/* jshint esversion: 6 */
+
+/* global $ */
+
+
 // Close message 
 function closeMessage(element) {
     setTimeout(function() {
