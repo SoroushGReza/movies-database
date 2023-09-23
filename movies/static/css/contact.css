@@ -36,9 +36,9 @@
     margin-top: 1%;
 }
 
-@media screen and (min-width: 355px) and (max-width: 499px) {
+@media screen and (min-width: 320px) and (max-width: 499px) {
     #contact-form {
-        margin-top: 15%;
+        margin-top: 20%;
     }
 }
 
@@ -76,7 +76,7 @@
 
 .send-button {
     margin-left: 3px;
-    margin-bottom: 1%;
+    margin-bottom: 8px;
     width: 130px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
