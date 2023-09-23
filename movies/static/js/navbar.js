@@ -1,3 +1,4 @@
+// Fix for JsHint validation
 /* jshint esversion: 6 */
 'use strict';
 
