@@ -32,12 +32,12 @@
         <div id="my-reviews-bg-overlay"></div>
 
         <!-- My reviews -->
-        <div class="row col-10">
+        <div class="row col-10 justify-content-center">
             <h2 id="my-reviews-header">My Reviews</h2>
 
             <!-- Loop through reviews -->
             {% for review in reviews %}
-            <div class="row col-11 col-md-6">
+            <div class="row col-11 col-md-8 col-lg-8">
                 <div class="review-item-my-reviews">
                     <div class="review-overview-and-title-div">
                         <!-- Review title -->
@@ -103,6 +103,7 @@
                 <!-- Edit Review Modal -->
                 <div class="modal fade edit-review-modal-div" id="editReviewModal{{ review.id }}" tabindex="-1"
                     aria-labelledby="editReviewModalLabel-{{ review.id }}" aria-hidden="true">
+                    <div class="edit-review-modal-background"></div>
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
