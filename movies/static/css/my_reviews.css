@@ -113,9 +113,9 @@
 
 /* Review written by User */
 
-#review-user {
+.review-user-my-reviews {
     color: rgb(192 157 0 / 92%);
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -153,6 +153,31 @@
     background-color: black;
     color: #1f4ce5;
     border: 1px solid #1f4ce5;
+}
+
+
+.overview-button-my-reviews {
+    background-color: #bc7c0030;
+    color: burlywood;
+    border: 1px solid rgb(255 200 0);
+    float: left;
+
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.overview-button-my-reviews:hover {
+    background-color: #92610030;
+    border: 1px solid rgb(255, 111, 0);
+}
+
+.fa-film {
+    font-size: 15px;
+    padding-top: 3px;
+    color: burlywood;
 }
 
 /* User Rating */
