@@ -1,3 +1,6 @@
+// Fix for JSHint vaidation 
+/* jshint esversion: 6 */
+
 // Display recent searches
 function displayRecentSearches() {
     console.log("Displaying recent searches");
@@ -53,5 +56,3 @@ window.onload = function() {
         displayRecentSearches();
     }
 };
-
-
