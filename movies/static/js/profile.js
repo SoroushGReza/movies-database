@@ -1,16 +1,6 @@
 // Fix for JsHint validation
 /* jshint esversion: 6 */
 
-/* global $ */
-
-
-// Close message 
-function closeMessage(element) {
-    setTimeout(function() {
-        $(element).closest('.alert').alert('close');
-    }, 5000);
-}
-
 
 // Get CSRF token from cookies 
 function getCookie(name) {
