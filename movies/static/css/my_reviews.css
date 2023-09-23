@@ -41,10 +41,10 @@
     }
 }
 
-@media screen and (min-width: 355px) and (max-width: 499px) {
+@media screen and (min-width: 320px) and (max-width: 499px) {
     #my-reviews-header {
         font-size: 2.0rem;
-        margin-top: 25%;
+        margin-top: 28%;
     }
 }
 
@@ -74,22 +74,14 @@
 
 /* Review  */
 .review-item-my-reviews {
-    width: 60vw;
+    width: 98%;
     margin: auto;
     border: none;
     border-radius: 5px;
     margin-bottom: 5%;
     background-color: #00243ff2;
-    display: block;
+    display: inline;
 }
-
-@media screen and (min-width: 355px) and (max-width: 631px) {
-    .review-item-my-reviews {
-        display: block;
-        width: 100%;
-    }
-}
-
 
 .review-title-bg {
     width: 100%;
@@ -100,22 +92,31 @@
 }
 
 /*  Movie title "MY Reviews" Page  */
-.review-movie-title {
+.review-overview-and-title-div {
     padding-top: 5px;
     padding-bottom: 5px;
-    text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    letter-spacing: 3px;
-    font-size: 21px;
+
+    letter-spacing: 2px;
     background-color: #006f7f44;
     border-radius: 5px 5px 0 0;
 }
+
+@media screen and (min-width: 320px) and (max-width: 499px) {
+    .review-user-my-reviews {
+        font-size: 16px;
+        text-align: center;
+        margin-right: auto;
+    }
+}
+
 
 /* Review written by User */
 
 .review-user-my-reviews {
     color: rgb(192 157 0 / 92%);
     font-size: 18px;
+    margin-left: 5px;
 }
 
 
@@ -142,42 +143,64 @@
 
 
 /* Edit Review Button */
-#edit-review-button {
+.edit-review-button {
     margin-left: 5px;
     background-color: #1f4ce5;
     border: 1px solid rgba(255, 255, 255, 0);
     color: white;
 }
 
-#edit-review-button:hover {
+.edit-review-button:hover {
     background-color: black;
     color: #1f4ce5;
     border: 1px solid #1f4ce5;
 }
 
+@media screen and (min-width: 320px) and (max-width: 499px) {
+    .edit-review-button {
+        font-size: 10px;
+        width: fit-content;
+        margin-top: 8px;
+    }
+
+    .delete-my-review {
+        font-size: 10px;
+        width: fit-content;
+        margin-top: 8px
+    }
+}
 
 .overview-button-my-reviews {
     background-color: #bc7c0030;
     color: burlywood;
     border: 1px solid rgb(255 200 0);
-    float: left;
+    float: right;
 
     border-radius: 5px;
-    padding: 5px;
+    padding: 3px;
     font-size: 12px;
     text-decoration: none;
-    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .overview-button-my-reviews:hover {
-    background-color: #92610030;
-    border: 1px solid rgb(255, 111, 0);
+    background-color: black;
+    border: 1px solid #ffdd00e1;
+    color: #ffdd00e1;
 }
+
 
 .fa-film {
     font-size: 15px;
     padding-top: 3px;
     color: burlywood;
+}
+
+@media screen and (min-width: 320px) and (max-width: 499px) {
+    .overview-button-my-reviews {
+        transform: scale(0.8);
+        margin-right: -5px;
+    }    
 }
 
 /* User Rating */
@@ -195,15 +218,21 @@
     text-align: center;
 }
 
+@media screen and (min-width: 320px) and (max-width: 499px) {
+    .rating-and-date {
+        transform: scale(0.8);
+    }
+}
+
 /* Delete Review */
-#delete-my-review {
+.delete-my-review {
     margin-right: 5px;
     background-color: #bf0000;
     border: 1px solid rgba(255, 255, 255, 0);
     color: white;
 }
 
-#delete-my-review:hover {
+.delete-my-review:hover {
     background-color: black;
     color: #bf0000;
     border: 1px solid #bf0000;
