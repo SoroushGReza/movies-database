@@ -1,6 +1,6 @@
 /*          Movie Search Page          */
 
-.search-page-container{
+.search-page-container {
     --bs-gutter-x: 0;
 }
 
@@ -10,21 +10,19 @@
     font-size: 3.5rem;
     position: relative;
     font-family: fantasy;
+    margin-top: 10%;
     color: #00bbc8dc;
-text-shadow:
-    0 0 5px #004043,
-    0 0 10px #004043,
-    0 0 20px #004043,
-    0 0 40px #004043,
-    0 0 80px #004043,
-    0 0 90px #004043,
-    0 0 100px #004043,
-    0 0 150px #004043;
+    text-shadow:
+        0 0 5px #004043,
+        0 0 10px #004043,
+        0 0 20px #004043,
+        0 0 40px #004043,
+        0 0 80px #004043,
+        0 0 90px #004043,
+        0 0 100px #004043,
+        0 0 150px #004043;
 }
 
-.search-result-headers {
-    margin-top: 10%;
-}
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
     .search-result-headers {
@@ -40,9 +38,9 @@ text-shadow:
     }
 }
 
-@media screen and (min-width: 355px) and (max-width: 499px) {
+@media screen and (min-width: 320px) and (max-width: 499px) {
     .search-result-headers {
-        margin-top: 25%;
+        margin-top: 30%;
         font-size: 2.0rem;
     }
 }
@@ -62,7 +60,7 @@ text-shadow:
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 1; 
+    z-index: 1;
 }
 
 /* background image overlay */
@@ -75,5 +73,5 @@ text-shadow:
     bottom: 0;
     left: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
-    z-index: -1; 
+    z-index: -1;
 }
