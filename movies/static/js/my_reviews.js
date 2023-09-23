@@ -1,3 +1,5 @@
+/* global $ */
+
 // Wait until document is fully loaded
 $(document).ready(function() {
     // Attach event handler to elements with class 'review-form'
