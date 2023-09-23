@@ -19,20 +19,18 @@
                     class="img-fluid image-movie">
                 <!-- Release date -->
                 <h5 class="release-date-overview">
-                    <strong class="release-date-color">Release date: </strong><span class="release-vote">{{
-                        movie.release_date }}</span>
+                    <strong class="release-date-color">Release date: </strong><span class="release-vote">{{ movie.release_date }}</span>
                 </h5>
                 <!-- Rating -->
                 <h5>
-                    <strong class="rating-color">Rating: </strong><span class="release-vote">{{ movie.vote_average
-                        }}</span><strong class="rating-color"> /10</strong>
+                    <strong class="rating-color">Rating: </strong><span class="release-vote">{{ movie.vote_average }}</span><strong class="rating-color"> /10</strong>
                 </h5>
             </div>
             <div class="col-md-6">
                 <!-- Movie title -->
-                <h1 id="search-movie-title" class="movie-details"><strong>{{ movie.title }}</strong></h1>
+                <h1 class="search-movie-title" class="movie-details"><strong>{{ movie.title }}</strong></h1>
                 <!-- Movie Overview -->
-                <p id="search-movie-overview" class="movie-details">{{ movie.overview }}</p>
+                <p class="search-movie-overview" class="movie-details">{{ movie.overview }}</p>
                 <br>
                 <hr class="block-divider overview-block">
                 <!-- Trailer -->
@@ -56,8 +54,7 @@
                     {% for review in reviews %}
                     <div class="col-md-12 col-12 col-lg-12 {% if forloop.counter > 4 %}hidden-review{% endif %}">
                         <div class="review-item-overview">
-                            <div class="review-user-overview"><strong id="review-user-overview">{{ review.user.username
-                                    }}</strong></div>
+                            <div class="review-user-overview"><strong id="review-user-overview">{{ review.user.username }}</strong></div>
                             <div class="review-text-overview" data-full-text="{{ review.text }}">
                                 {{ review.text|slice:":100" }}
                                 {% if review.text|length > 100 %}
