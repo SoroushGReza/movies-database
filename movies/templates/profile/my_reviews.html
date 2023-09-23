@@ -37,40 +37,43 @@
 
             <!-- Loop through reviews -->
             {% for review in reviews %}
-            <div class="review-item-my-reviews">
-                <!-- Review title -->
-                <div class="review-movie-title">
+            <div class="row col-11 col-md-6">
+                <div class="review-item-my-reviews">
+                    <div class="review-overview-and-title-div">
+                        <!-- Review title -->
+                        <strong class="review-user-my-reviews" id="review-user{{ review.id}}">{{ review.movie_title }}</strong>
                         <a class="overview-button-my-reviews"
                             href="{% url 'movies:movie_overview' movie_id=review.movie_id %}"><i
-                            class="fa-solid fa-film"></i>Overview</a>
-                    <strong class="review-user-my-reviews" id="review-user{{ review.id}}">{{ review.movie_title }}</strong>
-                </div>
-                <div class="review-text" data-full-text="{{ review.text }}">
-                    <!-- If reviews i longer then 100 characters, only show 100 characters -->
-                    {{ review.text|slice:":100" }}
-                    {% if review.text|length > 100 %}
-
-                    <!-- Link to show full review -->
-                    ... <a href="#" class="show-full-review">Show full review</a>
-                    {% endif %}
-                </div>
-
-                <!-- User rating -->
-                <div class="actions-and-info">
-                    <!-- Edit Review Button -->
-                    <a href="#" class="btn btn-primary" id="edit-review-button" data-bs-toggle="modal"
-                        data-bs-target="#editReviewModal{{ review.id }}">Edit</a>
-
-                    <div class="rating-and-date">
-                        <div class="rating-user">{{ review.rating_as_stars }}</div>
-
-                        <!-- Creation date of review -->
-                        <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
+                                class="fa-solid fa-film"></i> Overview</a>
                     </div>
-                    <div class="review-actions">
-                        <!-- Delete Button to delete Review (Triggers Modal) -->
-                        <button id="delete-my-review" type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#deleteModal{{ review.id }}" data-review-id="{{ review.id }}">Delete</button>
+                    <div class="review-text" data-full-text="{{ review.text }}">
+                        <!-- If reviews i longer then 100 characters, only show 100 characters -->
+                        {{ review.text|slice:":100" }}
+                        {% if review.text|length > 100 %}
+
+                        <!-- Link to show full review -->
+                        ... <a href="#" class="show-full-review">Show full review</a>
+                        {% endif %}
+                    </div>
+
+                    <!-- User rating -->
+                    <div class="actions-and-info">
+                        <!-- Edit Review Button -->
+                        <a href="#" class="btn btn-primary edit-review-button" data-bs-toggle="modal"
+                            data-bs-target="#editReviewModal{{ review.id }}">Edit</a>
+
+                        <div class="rating-and-date">
+                            <div class="rating-user">{{ review.rating_as_stars }}</div>
+
+                            <!-- Creation date of review -->
+                            <div class="date-created">{{ review.date_created|date:"Y-m-d"}}</div>
+                        </div>
+                        <div class="review-actions">
+                            <!-- Delete Button to delete Review (Triggers Modal) -->
+                            <button type="button" class="btn btn-primary delete-my-review" data-toggle="modal"
+                                data-target="#deleteModal{{ review.id }}"
+                                data-review-id="{{ review.id }}">Delete</button>
+                        </div>
                     </div>
                 </div>
 
