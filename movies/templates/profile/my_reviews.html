@@ -78,13 +78,13 @@
                 </div>
 
                 <!-- Delete Confirmation Modal -->
-                <div class="modal fade col-10 col-md-8 col-lg-10" id="deleteModal{{ review.id }}" tabindex="-1"
-                    role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal fade col-10 col-md-8 col-lg-10" id="deleteModal-{{ review.id }}" tabindex="-1"
+                    role="dialog" aria-labelledby="deleteModalLabel-{{ review.id }}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
-                                <button type="button" class="close" id="close-review-modal" data-dismiss="modal"
+                                <h5 class="modal-title deleteModalLabel" id="deleteModalLabel-{{ review.id }}">Confirm Deletion</h5>
+                                <button type="button" class="close" id="close-review-modal-{{ review.id }}" data-dismiss="modal"
                                     aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -102,11 +102,11 @@
 
                 <!-- Edit Review Modal -->
                 <div class="modal fade edit-review-modal-div" id="editReviewModal{{ review.id }}" tabindex="-1"
-                    aria-labelledby="editReviewModalLabel" aria-hidden="true">
+                    aria-labelledby="editReviewModalLabel-{{ review.id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="editReviewModalLabel">Edit Review</h5>
+                                <h5 class="modal-title" id="editReviewModalLabel-{{ review.id }}">Edit Review</h5>
 
                                 <!-- Edit Review BUtton -->
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -114,7 +114,7 @@
                             </div>
                             <div class="modal-body edit-my-review-modal-body">
                                 <!-- Edit Review Form -->
-                                <form id="edit-review-form-my-reviews" class="review-form transparent-bg" method="POST"
+                                <form id="edit-review-form-my-reviews{{ review.id }}" class="review-form transparent-bg" method="POST"
                                     action="{% url 'movies:edit_review' review.id %}">
                                     {% csrf_token %}
                                     <div class="form-group">
@@ -135,7 +135,7 @@
                                     <div class="form-group">
                                         <div class="row col-12 edit-star-rating justify-content-center">
                                             <p class="edit-rate-movie-p">Rate Movie</p>
-                                            <div id="edit-stars-div">
+                                            <div id="edit-stars-div{{ review.id }}" class="edit-stars-div">
                                                 <div class="rating-stars">
                                                     <input class="star-label rating-star" value="1" type="radio"
                                                         name="rating" id="rs1_{{ review.id }}"><label class="star-label"
@@ -161,10 +161,10 @@
                                     <!-- Modal Close and Save buttons -->
                                     <div class="form-group">
                                         <div class="modal-footer">
-                                            <button type="button" id="close-edited-review-button"
-                                                class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-danger"
-                                                id="save-edited-review-button">Save</button>
+                                            <button type="button" id="close-edited-review-button{{ review.id }}"
+                                                class="btn btn-secondary close-edited-review-button" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-danger save-edited-review-button"
+                                                id="save-edited-review-button{{ review.id }}">Save</button>
                                         </div>
                                     </div>
                                 </form>
