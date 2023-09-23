@@ -41,7 +41,7 @@
     }
 }
 
-@media screen and (min-width: 320px) and (max-width: 499px) {
+@media screen and (min-width: 320px) and (max-width: 500px) {
     #my-reviews-header {
         font-size: 2.0rem;
         margin-top: 28%;
@@ -80,7 +80,7 @@
     border-radius: 5px;
     margin-bottom: 5%;
     background-color: #00243ff2;
-    display: inline;
+    display: block;
 }
 
 .review-title-bg {
@@ -102,14 +102,6 @@
     border-radius: 5px 5px 0 0;
 }
 
-@media screen and (min-width: 320px) and (max-width: 499px) {
-    .review-user-my-reviews {
-        font-size: 16px;
-        text-align: center;
-        margin-right: auto;
-    }
-}
-
 
 /* Review written by User */
 
@@ -117,6 +109,15 @@
     color: rgb(192 157 0 / 92%);
     font-size: 18px;
     margin-left: 5px;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 499px) {
+    .review-user-my-reviews {
+        font-size: 14px;
+        text-align: center;
+        margin-left: 5px;
+    }
 }
 
 
@@ -200,6 +201,7 @@
     .overview-button-my-reviews {
         transform: scale(0.8);
         margin-right: -5px;
+        display: none;
     }    
 }
 
@@ -241,12 +243,37 @@
 
 /* Edit Reviws Modal */
 
-.edit-review-modal-div {
-    margin-bottom: 5%;
+.edit-review-modal-background::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.781);
 }
 
 .edit-review-modal-div {
-    margin-top: 7%;
+    margin-bottom: 5%;
+    z-index: 100000;
+}
+
+@media screen and (min-width:320px) and (max-width: 480px) {
+    .edit-review-modal-div{
+        margin-top: 25%;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .edit-review-modal-div{
+        margin-top:15%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .edit-review-modal-div{
+        margin-top:7%;
+    }
 }
 
 .modal-header {
@@ -301,7 +328,7 @@
 
 .close-edited-review-button {
     background-color: rgba(0, 0, 0, 0.897);
-    color: rgb(98, 125, 125);
+    color: rgb(255, 255, 255);
     border: 1px solid rgba(0, 0, 0, 0);
 }
 
@@ -317,9 +344,11 @@
     text-decoration: none;
     font-weight: bolder;
     color: white;
+
     background-color: #00ff626b;
     border-radius: 5px;
     padding: 4px;
+    white-space: nowrap;
 }
 
 .show-full-review:hover {
