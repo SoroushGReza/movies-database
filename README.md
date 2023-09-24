@@ -27,6 +27,68 @@ To install and run this project, follow these steps:
 
 
 ## How to use
+### Legend Explaining Instruction icons.  <br><br>
+![Legend](/movies/static/media/How%20To%20Use/0%20Legend.png) <br><br>
+
+### If you already have an account you can signin, by typing your **Username** and **Password** and then pressing the **Login** button. <br>
+![Login](/movies/static/media/How%20To%20Use/1%20Login.png) <br><br>
+
+### If you don't have an account and press **Register**, you will be navigated to the registration page. Her you need to fill out all the form fields before pressing **Register** button. <br>
+![Register](/movies/static/media/How%20To%20Use/2%20Register.png) <br><br>
+
+### Look at the image below to see how to navigate to your **Profile**. <br>
+![Profile](/movies/static/media/How%20To%20Use/3%20Profile.png) <br><br>
+
+### In the **Profile** page you can **Edit Profile**, Navigate to **My Reviews** and you can also **Delete Account**. <br>
+* After Pressing the **Edit Profile** button you will se the edit form. <br>
+* It is optional if you want to **Update Email** or **Change Password**, however if you fill in the **Old Password** field then **New Password** and **Confirm New Password** fields will be required. <br>
+* After filling out the form you can press **Update Profile** button. <br>
+* You can also **Delete Account** as a registered user by pressing the **Delete Account** button. 
+ <br>
+
+![Edit Profile](/movies/static/media/How%20To%20Use/4%20Edit%20Profile.png) <br><br>
+
+### When pressing the **Delete Account** button a confirmation modal with pop up. <br>
+* If you pressed the button by mistake you can close the modal by pressing **Close** or **X** in the top right of the modal. 
+* If you want to delete your account, you got to fill in your current password and then press **Delete Account** button. <br><br>
+
+* <span style="color:orange">WARNING</span>: If you delete your account, all your data will be deleted, including your posted reviews. <br>
+
+![Delete Account](/movies/static/media/How%20To%20Use/5%20Delete%20Account.png) <br><br>
+
+### You can also search for movies in the top right of the navbar.
+* Type your search and press **Search** or **Enter**.  <br>
+
+![Movie Search](/movies/static/media/How%20To%20Use/6%20Movie%20Search.png) <br><br>
+
+### If you need to contact the page owner follow this steps : 
+* Press on the **Contact** link in the navbar. 
+* Type your **Name** followed by you **Email** and your **Message** and then press **Send**. <br>
+
+![Contact](/movies/static/media/How%20To%20Use/7%20Contact.png) <br><br>
+
+### You can post reviews **ONLY** as a signed in member in Movie Base application. 
+* You can write a review that is up to 1000 characters long. 
+* Note that, if you don't choose a rating, the form will rate **Three <span style="color:yellow">★★★</span>** per default. 
+* Before you reviews is presented on the page, they need to get approval from the admin. Once they are approved you can find them on the specific movie overview page and **My Reeviews** page.
+<br> 
+
+![Post Review](/movies/static/media/How%20To%20Use/8%20Post%20Review.png) <br><br>
+
+### When navigating to **My Reviews** page, you can se alla of your approved reviews inthe page. <br>
+
+#### Now you can: <br>
+* Edit your reviews, byr pressing the **Edit** button and adjusting the text and rating.
+(Note that your updated review will be removed from the **My Reviews** page and will need admin approval once again before presented on the site.) <br>
+
+* Delete  your reviews by pressing the **Delete** button and confirming deletion. 
+
+* You can also press **Overview** link to navigate to the specific movie overview, where you can see trailer for the movie and see all reviews posted for the movie by all users. <br><br> 
+![Edit/Delete Reviews](/movies/static/media/How%20To%20Use/9%20Edit%20Delete%20review.png) <br><br>
+
+### If you don't know what you are looking you you can navigate to **Recomendations** page where popular movies from the current year is presented. <br>
+![Reccomendations](/movies/static/media/How%20To%20Use/10%20Recommendations.png) <br><br>
+
 
 
 ## Deployment
@@ -162,4 +224,5 @@ To set up and deploy this APP to heroku you can use [this teps](https://docs.goo
 * [**ChatGPT**](https://chat.openai.com/) by OpenAI for providing valuable insights through out the development process.
 * [**Canva**](https://www.canva.com/) - Where I could create the images / gifs presented in the app. 
 * **Antonio Rodriguez** - My mentor
-* [**Free Front End**](https://freefrontend.com/css-star-ratings/) - For the beautiful rating stars used for user ratings in the app. 
+* [**Free Front End**](https://freefrontend.com/css-star-ratings/) - For the beautiful rating stars used for user ratings in the app.
+* [**CompressJPG**](https://compressjpeg.com/) - Where I compressed all images for the application.
