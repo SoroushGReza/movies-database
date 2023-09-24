@@ -83,10 +83,12 @@ To install and run this project, follow these steps:
 
 * Delete  your reviews by pressing the **Delete** button and confirming deletion. 
 
-* You can also press **Overview** link to navigate to the specific movie overview, where you can see trailer for the movie and see all reviews posted for the movie by all users. <br><br> 
+* You can also press **Overview** link to navigate to the specific movie overview, where you can see trailer for the movie and see all reviews posted for the movie by all users. <br>
+
 ![Edit/Delete Reviews](/movies/static/media/How%20To%20Use/9%20Edit%20Delete%20review.png) <br><br>
 
 ### If you don't know what you are looking you you can navigate to **Recomendations** page where popular movies from the current year is presented. <br>
+
 ![Reccomendations](/movies/static/media/How%20To%20Use/10%20Recommendations.png) <br><br>
 
 
@@ -104,6 +106,10 @@ To set up and deploy this APP to heroku you can use [this teps](https://docs.goo
 - **Movie Search**: Users can search for movies, through the [**TMDB**](https://developer.themoviedb.org/docs) API.
 - **Account Deletion**: Users can delete their acount from the profile page.<br><br>
 
+## Colour Themes
+This is the colors used in this application. I've tried to make different parts of the app have slightly different colors, but without to big of a contrast between them. Overall I've gone for a dark look, which is why the footer and navigation bar is the same darkgrey color on all pages. <br>
+
+![Color Theme](/movies/static/media/Application%20Colour%20Theme.png)
 
 ## Technologies Used
 
@@ -166,20 +172,20 @@ To set up and deploy this APP to heroku you can use [this teps](https://docs.goo
 <input type="checkbox" checked="checked"/> - Present "No results found" header when a searched movie does not exist in the database (TMDB). 
 <br><br>
 
-&#x1f7e2; - As a **User**, I can **view movie information and trailers**, so that **I can learn more about the movies**.
+&#x1f7e2; As a **User**, I can **view movie information and trailers**, so that **I can learn more about the movies**.
 ### &#x2699; Tasks: 
 
 <input type="checkbox" checked="checked"/> - Display information about the film and an image of the film's cover. <br>
 <input type="checkbox" checked="checked"/> - Implement a link to click to see a trailer. <br> <br>
 
-&#x1f7e2; - As a **User**, I can **initiate contact with the admin via email, or through social networks**, so that **I can provide feedback and address any issues that may arise**.
+&#x1f7e2; As a **User**, I can **initiate contact with the admin via email, or through social networks**, so that **I can provide feedback and address any issues that may arise**.
 ### &#x2699; Tasks: 
 
 <input type="checkbox" checked="checked"/> - Create a contact form for users to be able to send email directly from the app.<br>
 <input type="checkbox" checked="checked"/> - Create social media links for Movie Base in the footer.
 <br><br>
 
-&#x1f7e1; - As a **User**, I can **Leave reviews and Rate movies**, so that **I can share my opinion about the movies with others**.
+&#x1f7e1; As a **User**, I can **Leave reviews and Rate movies**, so that **I can share my opinion about the movies with others**.
 
 ### &#x2699; Tasks:
 
@@ -192,16 +198,40 @@ To set up and deploy this APP to heroku you can use [this teps](https://docs.goo
 <input type="checkbox" checked="checked"/> - Implement functionality to display approved reviews.
 <br><br>
 
+&#x1f7e2; As a **Developer** I can **test the app and all it's functions to make sure that everything works as it should**, and **make sure it follows the criteria**.
+
+### &#x2699; Tasks: 
+
+<input type="checkbox" checked="checked"/> - Validate all HTML files <br>
+<input type="checkbox" checked="checked"/> - Validate all CSS files<br>
+<input type="checkbox" checked="checked"/> - Validate all Python files<br>
+<input type="checkbox" checked="checked"/> - Validate all JavaScript files<br>
+<input type="checkbox" checked="checked"/> - Make sure everything is documented in README.md<br>
+<input type="checkbox" checked="checked"/> - Resolve all workspace warnings and errors.<br>
+<input type="checkbox" checked="checked"/> - Compress all project images, when design decisions are finalised. <br><br>
+
+## Testing
+
+### Automated TDD Tests
+During the development phase, I implemented TDD tests to validate the functionality of the application. All these tests passed successfully and helped to shape the application robustnes.
+
+<span style="color:orange">Note on Automated Testing</span> <br>
+Unfortunately, due to time constraints and technical issues with setting up the test environment toward the end of the project, I was unable to run the automated tests again to confirm their status. However, it should be noted that these tests were functional and passed during the development phase. <br><br>
+
+### Manual Testing 
+In addition to the TDD tests, manual testing was also performed to ensure the application runs as expected. This involve real-time test usage of application, navigating through its functionalities to identify and fix any bugs. <br><br>
+
+
 ## Future Improvements (USER STORIES):
 
-&#x1f7e0; - As a **User**, I can **receive email confirmations**, so that I **can be notified of important account activities**.
+&#x1f7e0; As a **User**, I can **receive email confirmations**, so that I **can be notified of important account activities**.
 ### &#x2699; Tasks: 
 
 <input type="checkbox"/> - Send a welcome email when registering. <br>
 <input type="checkbox"/> - Send confirmation when the password has been changed. <br>
 <input type="checkbox"/> - Send confirmation when the account has been deleted. <br> <br>
 
-&#x1f7e0; - As a **User**, I can **make a list of my favorite movies**, so that I can **share my list with others**.
+&#x1f7e0; As a **User**, I can **make a list of my favorite movies**, so that I can **share my list with others**.
 ### &#x2699; Tasks: 
 <input type="checkbox"/> - Implement functionality to make a list of favorite movies. <br>
 <input type="checkbox"/> - Implement functionality to share the movie list social media, copy link, email, etc. <br><br>
