@@ -119,6 +119,7 @@ This is the colors used in this application. I've tried to make different parts 
 - [**FontAwesome**](https://fontawesome.com/icons): For icons
 - [**TMDB API**](https://developer.themoviedb.org/docs): For fetching movie data
 - [**EmailJS**](https://www.emailjs.com/): For sending emails
+- [**Cloudinary**](https://console.cloudinary.com/): <span style="color:orange">NOTE</span>: Not currently is use, but linked for future improvements.
 - [**Canva**]([Canva](https://www.canva.com/)): For creating images and gifs. 
 - [**ElephantSQL**](https://www.elephantsql.com/): For managing PostgresSQL database service.
 - [**Google Dev Tools**](https://developer.chrome.com/docs/devtools/open/): Used for debugging, testing styles and checking responsiveness.
