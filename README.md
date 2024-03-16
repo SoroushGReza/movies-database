@@ -1,5 +1,4 @@
-# <span style="color:aqua">[Movie Base](https://movie-base-application-c1658d190bfd.herokuapp.com/)</span> <br>
-<img src="images/moviebase-logo.png" alt="Moviebase logo" width="250" height="250"> <br><br>
+# <img src="images/moviebase-logo.png" alt="Moviebase logo" width="50" height="50"> <span style="color:aqua">[Movie Base](https://movie-base-application-c1658d190bfd.herokuapp.com/)</span><br><br>
 
 
 ## Project Overview
