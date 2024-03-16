@@ -1,4 +1,6 @@
-# <img src="images/moviebase-logo.png" alt="Moviebase logo" width="50" height="50"> <span style="color:aqua">[Movie Base](https://movie-base-application-c1658d190bfd.herokuapp.com/)</span><br><br>
+# <span style="color:aqua">[Movie Base](https://movie-base-application-c1658d190bfd.herokuapp.com/)</span> <br>
+
+<img src="images/moviebase-logo.png" alt="Moviebase logo" width="100" height="100"><br><br>
 
 
 ## Project Overview
