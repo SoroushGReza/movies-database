@@ -50,13 +50,14 @@ DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = [
-    '8000-soroushgrez-moviesdatab-21but2m2le2.ws-us104.gitpod.io',
+    '8000-soroushgrez-moviesdatab-ahnn9bvnydt.ws-us115.gitpod.io',
     'movie-base-application-c1658d190bfd.herokuapp.com',
     'localhost',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-soroushgrez-moviesdatab-21but2m2le2.ws-us104.gitpod.io'
+    'https://8000-soroushgrez-moviesdatab-ahnn9bvnydt.ws-us115.gitpod.io',
+    'movie-base-application-c1658d190bfd.herokuapp.com',
 ]
 
 CSRF_COOKIE_NAME = 'csrftoken'
